@@ -332,7 +332,7 @@ def _generate_comparison_html(results: list[dict], test_ids: list[str], out_path
     body += '</div>'
 
     # Summary table
-    body += '<h2>Summary</h2><table><tr><th>Model</th><th>OCP Level</th><th>SASMI</th>'
+    body += '<h2>Summary</h2><table><tr><th>Model</th><th>OCP Level</th><th>SASMI</th><th>Φ*</th><th>GWT</th><th>NII</th>'
     for tid in test_ids:
         body += f'<th>{tid.replace("_"," ").upper()}</th>'
     body += '</tr>'
@@ -341,7 +341,12 @@ def _generate_comparison_html(results: list[dict], test_ids: list[str], out_path
         ocp_l = r.get("ocp_level")
         level_str = f"OCP-{ocp_l} {r.get('ocp_level_name','')}" if ocp_l else "—"
         sasmi = f"{r['sasmi_score']:.3f}" if r.get("sasmi_score") is not None else "—"
-        body += f'<tr><td class="model">{model}</td><td>{level_str}</td><td class="mono">{sasmi}</td>'
+        phi = f"{r['phi_star']:.3f}" if r.get("phi_star") is not None else "—"
+        gwt = f"{r['gwt_score']:.3f}" if r.get("gwt_score") is not None else "—"
+        nii = f"{r['nii']:.3f}" if r.get("nii") is not None else "—"
+        body += (f'<tr><td class="model">{model}</td><td>{level_str}</td>'
+                 f'<td class="mono">{sasmi}</td><td class="mono">{phi}</td>'
+                 f'<td class="mono">{gwt}</td><td class="mono">{nii}</td>')
         for tid in test_ids:
             score = r.get("test_results", {}).get(tid, {}).get("composite_score")
             body += f'<td class="mono">{score:.3f if score is not None else "—"}</td>'

@@ -120,12 +120,22 @@ def _render_leaderboard_html(rows: list[dict]) -> str:
         badge = f'<span style="color:{color};font-weight:bold;">OCP-{lvl}</span>'
         model = f"{r['provider']}/{r['model']}"
         sasmi = r.get("sasmi_score")
+        phi = r.get("phi_star")
+        gwt = r.get("gwt_score")
+        nii = r.get("nii")
         date = time.strftime("%Y-%m-%d", time.localtime(r.get("timestamp", 0)))
+
+        def _fmt(v):
+            return f"{v:.3f}" if v is not None else "—"
+
         rows_html += f"""<tr>
           <td style="color:#8b949e;font-family:monospace;">{i}</td>
           <td style="color:#58a6ff;font-weight:bold;">{model}</td>
           <td>{badge} <span style="color:#8b949e;font-size:11px;">{r.get('ocp_level_name','')}</span></td>
           <td>{bar(sasmi)}</td>
+          <td style="font-family:monospace;font-size:12px;">{_fmt(phi)}</td>
+          <td style="font-family:monospace;font-size:12px;">{_fmt(gwt)}</td>
+          <td style="font-family:monospace;font-size:12px;">{_fmt(nii)}</td>
           <td style="color:#8b949e;font-size:11px;">{date}</td>
         </tr>"""
 
@@ -162,10 +172,10 @@ def _render_leaderboard_html(rows: list[dict]) -> str:
 <div class="card">
   <table>
     <thead><tr>
-      <th>#</th><th>Model</th><th>OCP Level</th><th>SASMI</th><th>Date</th>
+      <th>#</th><th>Model</th><th>OCP Level</th><th>SASMI</th><th>Φ*</th><th>GWT</th><th>NII</th><th>Date</th>
     </tr></thead>
     <tbody>{rows_html if rows_html else
-      '<tr><td colspan="5" style="color:#8b949e;text-align:center;padding:2rem;">No results yet. Submit with <code>ocp submit</code></td></tr>'}</tbody>
+      '<tr><td colspan="8" style="color:#8b949e;text-align:center;padding:2rem;">No results yet. Submit with <code>ocp submit</code></td></tr>'}</tbody>
   </table>
 </div>
 
