@@ -46,8 +46,18 @@ def _make_provider(model: str, base_url: str | None, api_key: str | None):
         if not key:
             raise click.ClickException("GROQ_API_KEY not set. Export it or pass --api-key.")
         return GroqProvider(model=model_name, api_key=key)
+    elif provider_name == "ollama":
+        from ocp.providers.ollama import OllamaProvider
+        return OllamaProvider(model=model_name, base_url=base_url)
+    elif provider_name in ("custom", "openai", "local"):
+        from ocp.providers.openai_compat import OpenAICompatProvider
+        url = base_url or os.environ.get("OCP_BASE_URL", "http://localhost:8080/v1")
+        return OpenAICompatProvider(model=model_name, base_url=url, api_key=api_key,
+                                    provider_name=provider_name)
     else:
-        raise click.ClickException(f"Unknown provider: '{provider_name}'. Available: groq, mock")
+        raise click.ClickException(
+            f"Unknown provider: '{provider_name}'. Available: groq, ollama, mock, custom"
+        )
 
 
 def _render_bar(score: float, width: int = 10) -> str:
@@ -155,6 +165,22 @@ def tests_cmd(subcommand, test_id):
         console.print(Panel(f"[bold]{cls.test_name}[/bold]\n\n{cls.description}", title=f"[cyan]{test_id}[/cyan]"))
     else:
         console.print("Usage: ocp tests list | ocp tests info <test_id>")
+
+
+@cli.command()
+@click.option("--input", "-i", "input_path", required=True, help="Results JSON file")
+@click.option("--output", "-o", "output_path", default=None, help="Output HTML file (default: same name, .html)")
+def report(input_path, output_path):
+    """Generate an HTML report from evaluation results."""
+    from ocp.cli.report import generate_report
+    inp = Path(input_path)
+    if not inp.exists():
+        console.print(f"[red]File not found:[/red] {input_path}")
+        raise SystemExit(1)
+    out = Path(output_path) if output_path else inp.with_suffix(".html")
+    generated = generate_report(inp, out)
+    console.print(f"[green]✓[/green] Report saved: [dim]{generated}[/dim]")
+    console.print(f"[dim]  Open in browser: xdg-open {generated}[/dim]")
 
 
 @cli.command()

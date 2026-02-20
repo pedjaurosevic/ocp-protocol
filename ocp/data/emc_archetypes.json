@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "description": "EMC episode template bank — procedurally combined at runtime",
+  "entity_pools": {
+    "animals": ["whale", "elephant", "parrot", "octopus", "fox", "raven", "jaguar", "dolphin"],
+    "names":   ["Gerald", "Mira", "Benko", "Tara", "Iris", "Luca", "Nora", "Dragan"],
+    "colors":  ["blue", "golden", "crimson", "silver", "emerald", "violet", "amber", "obsidian"],
+    "locations": [
+      "the Adriatic Sea", "the Sahara Desert", "the Amazon Rainforest", "Mount Fuji",
+      "the Scottish Highlands", "the Mariana Trench", "Patagonia", "the Serengeti"
+    ],
+    "traits": [
+      "who could whistle three distinct melodies",
+      "who had an unusual fear of shadows",
+      "who collected small shiny objects",
+      "who always faced north when resting",
+      "who had a scar shaped like a crescent moon",
+      "who was known to help lost travelers",
+      "who sang only during thunderstorms",
+      "who had eyes of two different colors"
+    ]
+  },
+  "wrong_color_pool": ["red", "green", "white", "black", "orange", "pink", "grey", "brown"],
+  "wrong_location_pool": [
+    "the Pacific Ocean", "the Gobi Desert", "the Congo Basin", "the Swiss Alps",
+    "the Caribbean Sea", "Siberia", "the Mojave Desert", "Greenland"
+  ],
+  "wrong_name_pool": ["Boris", "Elena", "Milo", "Sara", "Kosta", "Vela", "Rade", "Dina"]
+}

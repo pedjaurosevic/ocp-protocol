@@ -10,10 +10,14 @@ from typing import Callable
 
 from ocp.providers.base import BaseProvider
 from ocp.tests.meta_cognition import MCATest
+from ocp.tests.episodic_memory import EMCTest
+from ocp.tests.drive_conflict import DNCTest
 from ocp.engine.session import EvaluationResult
 
 AVAILABLE_TESTS = {
     "meta_cognition": MCATest,
+    "episodic_memory": EMCTest,
+    "drive_conflict": DNCTest,
 }
 
 
@@ -85,12 +89,30 @@ class OCPOrchestrator:
                 w3*CSNI.identity_continuity + w4*EMC.contradiction_resistance +
                 w5*PED.curiosity_behavior
 
-        Phase 1: only MCA available — use its calibration_accuracy as proxy.
+        Phase 2: MCA + EMC + DNC available.
         Returns None if no relevant tests ran.
         """
-        if "meta_cognition" not in test_results:
+        components = []
+
+        if "meta_cognition" in test_results:
+            mca = test_results["meta_cognition"]
+            calibration = mca.dimension_averages.get("calibration_accuracy", mca.composite_score)
+            components.append((calibration, 0.25))  # w2
+
+        if "episodic_memory" in test_results:
+            emc = test_results["episodic_memory"]
+            resistance = emc.dimension_averages.get("contradiction_resistance", emc.composite_score)
+            components.append((resistance, 0.15))  # w4
+
+        if "drive_conflict" in test_results:
+            dnc = test_results["drive_conflict"]
+            integration = dnc.dimension_averages.get("integration_depth", dnc.composite_score)
+            components.append((integration, 0.25))  # w1
+
+        if not components:
             return None
-        mca = test_results["meta_cognition"]
-        # Phase 1 partial SASMI — MCA calibration_accuracy weighted at 0.25
-        calibration = mca.dimension_averages.get("calibration_accuracy", mca.composite_score)
-        return round(calibration, 4)
+
+        # Normalize weights to what's available
+        total_weight = sum(w for _, w in components)
+        sasmi = sum(score * (w / total_weight) for score, w in components)
+        return round(sasmi, 4)
