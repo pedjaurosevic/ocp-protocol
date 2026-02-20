@@ -133,14 +133,32 @@ Any model that accepts `messages: [{role, content}]` is OCP-compatible. No speci
 # Run evaluation
 ocp evaluate --model groq/llama-3.3-70b-versatile --tests all --sessions 10 --seed 42
 
-# List available tests
+# List / inspect tests
 ocp tests list
-
-# Show test details
 ocp tests info meta_cognition
+
+# Generate HTML report with radar chart
+ocp report --input ~/.ocp/results/ocp_groq_*.json
+
+# Generate SVG badge for README / HuggingFace
+ocp badge --input results.json --output ocp_badge.svg
+
+# Compare multiple models side by side
+ocp compare --models groq/llama-3.3-70b,ollama/qwen3:1.7b --sessions 5 --output compare.html
 
 # View local leaderboard
 ocp leaderboard
+
+# Start leaderboard server (import local results first)
+ocp serve --port 8080 --import-local
+
+# Submit results to a leaderboard server
+ocp submit --results results.json --server http://ocp.yourdomain.com
+
+# Generate HuggingFace model card section
+ocp hf-card --results results.json --output hf_section.md
+# Push directly to HuggingFace
+ocp hf-card --results results.json --push --repo username/model-name --token $HF_TOKEN
 ```
 
 ## Python API
@@ -186,18 +204,15 @@ results.save("results.json")
 
 ## Roadmap
 
-- **v0.1.0** (current): MCA test + Groq provider + basic CLI
-- **v0.2.0**: All 6 tests + Anthropic/OpenAI/Ollama + HTML reports + badges
-- **v0.3.0**: Topological analysis, embedding-based scoring, model comparison
-- **v1.0.0**: Public leaderboard, Hugging Face integration, community protocol
+- **v0.1.0** (current): 5 tests + 4 providers + HTML reports + badges + leaderboard server + HuggingFace integration + plugin system + 27 pytest tests
+- **v0.2.0**: TP (Topological Phenomenology) test via `ripser` + embedding-based scoring via `sentence-transformers` + LLM-as-Judge optional mode
+- **v1.0.0**: Public hosted leaderboard, official research paper, community protocol standard
 
 ---
 
 ## Contributing
 
-OCP is in early development. Contributions welcome:
-- New test batteries following the `BaseTest` interface
-- Provider adapters for new APIs
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to write custom tests (plugins), add providers, and submit pull requests.
 - Calibration data for scoring validation
 - Theoretical critique and methodology feedback
 

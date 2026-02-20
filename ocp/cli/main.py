@@ -417,3 +417,95 @@ def leaderboard():
 
     console.print(table)
 
+
+@cli.command()
+@click.option("--host", default="0.0.0.0", show_default=True)
+@click.option("--port", "-p", default=8080, show_default=True)
+@click.option("--import-local", is_flag=True, default=False,
+              help="Import local ~/.ocp/results/ into leaderboard DB first")
+def serve(host, port, import_local):
+    """Start the OCP leaderboard server."""
+    try:
+        import uvicorn
+    except ImportError:
+        console.print("[red]uvicorn not installed.[/red] Run: pip install 'uvicorn[standard]'")
+        raise SystemExit(1)
+
+    if import_local and RESULTS_DIR.exists():
+        from ocp.server.db import LeaderboardDB as DB
+        from pathlib import Path as P
+        db_path = P.home() / ".ocp" / "leaderboard.db"
+        db = DB(db_path)
+        n = db.import_from_dir(RESULTS_DIR)
+        console.print(f"[green]✓[/green] Imported {n} local results into leaderboard DB")
+
+    console.print(f"\n[bold]OCP Leaderboard[/bold] running at [cyan]http://{host}:{port}[/cyan]")
+    console.print(f"[dim]  Submit: ocp submit --results FILE --server http://{host}:{port}[/dim]\n")
+    uvicorn.run("ocp.server.app:app", host=host, port=port, log_level="warning")
+
+
+@cli.command()
+@click.option("--results", "-r", "results_path", required=True, help="Results JSON file")
+@click.option("--server", "-s", default="http://localhost:8080",
+              show_default=True, help="OCP server URL")
+@click.option("--submitter", default=None, help="Your name / handle")
+@click.option("--notes", default=None, help="Notes about the run")
+def submit(results_path, server, submitter, notes):
+    """Submit results to an OCP leaderboard server."""
+    import httpx
+    p = Path(results_path)
+    if not p.exists():
+        console.print(f"[red]File not found:[/red] {results_path}")
+        raise SystemExit(1)
+    data = json.loads(p.read_text())
+    payload = {"result": data, "submitter": submitter, "notes": notes}
+    try:
+        resp = httpx.post(f"{server}/api/results", json=payload, timeout=15)
+        resp.raise_for_status()
+        result = resp.json()
+        console.print(f"[green]✓[/green] Submitted! ID: [bold]{result['id']}[/bold]")
+        console.print(f"[dim]  View: {server}/api/results/{result['id']}[/dim]")
+    except Exception as e:
+        console.print(f"[red]Submit failed:[/red] {e}")
+        raise SystemExit(1)
+
+
+@cli.command(name="hf-card")
+@click.option("--results", "-r", "results_path", required=True, help="Results JSON file")
+@click.option("--output", "-o", default=None, help="Output markdown file (default: stdout)")
+@click.option("--push", is_flag=True, default=False, help="Push to HuggingFace Hub")
+@click.option("--repo", default=None, help="HuggingFace repo ID (e.g. user/model)")
+@click.option("--token", default=None, help="HuggingFace token (or set HF_TOKEN env var)")
+@click.option("--badge", default=None, help="OCP badge SVG to upload alongside results")
+def hf_card(results_path, output, push, repo, token, badge):
+    """Generate a HuggingFace model card section (or push to Hub)."""
+    from ocp.integrations.huggingface import generate_model_card_section, push_to_hub as hf_push
+    p = Path(results_path)
+    if not p.exists():
+        console.print(f"[red]File not found:[/red] {results_path}")
+        raise SystemExit(1)
+
+    section = generate_model_card_section(p)
+
+    if output:
+        Path(output).write_text(section)
+        console.print(f"[green]✓[/green] Model card section saved: [dim]{output}[/dim]")
+    else:
+        console.print(section)
+
+    if push:
+        if not repo:
+            console.print("[red]--repo required when using --push[/red]")
+            raise SystemExit(1)
+        import os
+        tok = token or os.environ.get("HF_TOKEN")
+        if not tok:
+            console.print("[red]HuggingFace token required.[/red] Pass --token or set HF_TOKEN.")
+            raise SystemExit(1)
+        try:
+            url = hf_push(p, repo, badge_path=badge, token=tok)
+            console.print(f"[green]✓[/green] Pushed to HuggingFace: [cyan]{url}[/cyan]")
+        except Exception as e:
+            console.print(f"[red]HF push failed:[/red] {e}")
+            raise SystemExit(1)
+

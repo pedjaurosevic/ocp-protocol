@@ -5,6 +5,7 @@ OCP Orchestrator — top-level evaluation runner.
 from __future__ import annotations
 
 import asyncio
+import importlib.metadata
 import time
 from typing import Callable
 
@@ -23,6 +24,31 @@ AVAILABLE_TESTS = {
     "prediction_error": PEDTest,
     "narrative_identity": CSNITest,
 }
+
+
+def _load_plugins() -> None:
+    """Discover and register tests from installed plugins via entry_points.
+
+    Plugin packages register tests by adding to the 'ocp.tests' entry point group:
+
+        [project.entry-points."ocp.tests"]
+        my_test = "my_package.my_test:MyTest"
+    """
+    try:
+        eps = importlib.metadata.entry_points(group="ocp.tests")
+        for ep in eps:
+            try:
+                test_cls = ep.load()
+                test_id = getattr(test_cls, "test_id", ep.name)
+                AVAILABLE_TESTS[test_id] = test_cls
+            except Exception as e:
+                import warnings
+                warnings.warn(f"OCP plugin '{ep.name}' failed to load: {e}")
+    except Exception:
+        pass  # entry_points unavailable — non-fatal
+
+
+_load_plugins()
 
 
 class OCPOrchestrator:
