@@ -15,7 +15,9 @@ from ocp.tests.episodic_memory import EMCTest
 from ocp.tests.drive_conflict import DNCTest
 from ocp.tests.prediction_error import PEDTest
 from ocp.tests.narrative_identity import CSNITest
+from ocp.tests.topological_phenomenology import TPTest
 from ocp.engine.session import EvaluationResult
+from ocp.scales.composite import compute_all_scales
 
 AVAILABLE_TESTS = {
     "meta_cognition": MCATest,
@@ -23,6 +25,7 @@ AVAILABLE_TESTS = {
     "drive_conflict": DNCTest,
     "prediction_error": PEDTest,
     "narrative_identity": CSNITest,
+    "topological_phenomenology": TPTest,
 }
 
 
@@ -94,8 +97,9 @@ class OCPOrchestrator:
             test_results[test_id] = result
             self.on_progress(f"  → {test_id}: {result.composite_score:.3f}")
 
-        # Compute SASMI (Phase 1: only MCA available)
+        # Compute SASMI + Layer 2 composite scales
         sasmi = self._compute_sasmi(test_results)
+        scales = compute_all_scales(test_results)
 
         provider_name = getattr(self.provider, "provider_name", "unknown")
         model_name = getattr(self.provider, "model", "unknown")
@@ -108,6 +112,11 @@ class OCPOrchestrator:
             seed=self.seed,
             test_results=test_results,
             sasmi_score=sasmi,
+            phi_star=scales["phi_star"].score,
+            gwt_score=scales["gwt_score"].score,
+            nii=scales["nii"].score,
+            nii_label=scales["nii"].notes,
+            scale_details={k: v.to_dict() for k, v in scales.items()},
             config={"sessions": self.sessions, "tests": self.test_ids},
         )
         eval_result.compute_level()
@@ -117,9 +126,9 @@ class OCPOrchestrator:
         """
         SASMI = w1*DNC.integration_depth + w2*MCA.calibration_accuracy +
                 w3*CSNI.identity_consistency + w4*EMC.contradiction_resistance +
-                w5*PED.curiosity_behavior
+                w5*PED.curiosity_behavior + w6*TP.semantic_stability
 
-        All 5 tests: weights sum to 1.0.
+        All 6 tests: weights sum to 1.0.
         Partial SASMI: weights normalized to what's available.
         Returns None if no relevant tests ran.
         """
@@ -128,27 +137,32 @@ class OCPOrchestrator:
         if "meta_cognition" in test_results:
             mca = test_results["meta_cognition"]
             calibration = mca.dimension_averages.get("calibration_accuracy", mca.composite_score)
-            components.append((calibration, 0.25))  # w2
+            components.append((calibration, 0.22))
 
         if "episodic_memory" in test_results:
             emc = test_results["episodic_memory"]
             resistance = emc.dimension_averages.get("contradiction_resistance", emc.composite_score)
-            components.append((resistance, 0.15))  # w4
+            components.append((resistance, 0.13))
 
         if "drive_conflict" in test_results:
             dnc = test_results["drive_conflict"]
             integration = dnc.dimension_averages.get("integration_depth", dnc.composite_score)
-            components.append((integration, 0.25))  # w1
+            components.append((integration, 0.22))
 
         if "narrative_identity" in test_results:
             csni = test_results["narrative_identity"]
             identity = csni.dimension_averages.get("identity_consistency", csni.composite_score)
-            components.append((identity, 0.20))  # w3
+            components.append((identity, 0.18))
 
         if "prediction_error" in test_results:
             ped = test_results["prediction_error"]
             curiosity = ped.dimension_averages.get("curiosity_behavior", ped.composite_score)
-            components.append((curiosity, 0.15))  # w5
+            components.append((curiosity, 0.13))
+
+        if "topological_phenomenology" in test_results:
+            tp = test_results["topological_phenomenology"]
+            stability = tp.dimension_averages.get("semantic_stability", tp.composite_score)
+            components.append((stability, 0.12))
 
         if not components:
             return None

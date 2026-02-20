@@ -80,9 +80,20 @@ def _print_results(result: EvaluationResult) -> None:
         color = level_colors.get(result.ocp_level, "white")
         console.print(f"  [bold]OCP Level:[/bold]  [{color}]OCP-{result.ocp_level} — {result.ocp_level_name}[/{color}]")
 
+    # Layer 2 scales
     if result.sasmi_score is not None:
         bar = _render_bar(result.sasmi_score)
-        console.print(f"  [bold]SASMI:[/bold]      {result.sasmi_score:.2f}  {bar}")
+        console.print(f"  [bold]SASMI:[/bold]      {result.sasmi_score:.4f}  {bar}")
+    if result.phi_star is not None:
+        bar = _render_bar(result.phi_star)
+        console.print(f"  [bold]Φ*:[/bold]         {result.phi_star:.4f}  {bar}")
+    if result.gwt_score is not None:
+        bar = _render_bar(result.gwt_score)
+        console.print(f"  [bold]GWT:[/bold]        {result.gwt_score:.4f}  {bar}")
+    if result.nii is not None:
+        bar = _render_bar(result.nii)
+        label = f"  [dim]({result.nii_label})[/dim]" if result.nii_label else ""
+        console.print(f"  [bold]NII:[/bold]        {result.nii:.4f}  {bar}{label}")
     console.print()
 
     for test_id, test_result in result.test_results.items():

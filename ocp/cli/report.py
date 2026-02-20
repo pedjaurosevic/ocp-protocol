@@ -79,10 +79,13 @@ REPORT_TEMPLATE = """<!DOCTYPE html>
   <div class="level-badge level-{ocp_level}">{level_label}</div>
   <div style="margin-top:1rem;">
     <div class="score-row">
-      <span class="score-label">SASMI (Synthetic Agency & Self-Model)</span>
+      <span class="score-label">SASMI (Synthetic Agency &amp; Self-Model Index)</span>
       <div class="score-bar-outer"><div class="score-bar-inner" style="width:{sasmi_pct}%"></div></div>
       <span class="score-val">{sasmi_str}</span>
     </div>
+    {phi_star_row}
+    {gwt_row}
+    {nii_row}
   </div>
 </div>
 
@@ -203,6 +206,21 @@ def generate_report(results_path: str | Path, output_path: str | Path) -> Path:
     sessions = data.get("config", {}).get("sessions", "?")
     tests_run = ", ".join(data.get("test_results", {}).keys()) or "none"
 
+    def _scale_row(label: str, val) -> str:
+        if val is None:
+            return ""
+        pct = round(float(val) * 100)
+        return (
+            f'    <div class="score-row">'
+            f'<span class="score-label">{label}</span>'
+            f'<div class="score-bar-outer"><div class="score-bar-inner" style="width:{pct}%"></div></div>'
+            f'<span class="score-val">{float(val):.3f}</span></div>\n'
+        )
+
+    phi_star_row = _scale_row("Φ* (Integrated Information)", data.get("phi_star"))
+    gwt_row = _scale_row("GWT (Global Workspace)", data.get("gwt_score"))
+    nii_row = _scale_row("NII (Narrative Identity Index)", data.get("nii"))
+
     # Build test sections
     test_sections = ""
     for test_id, tr in data.get("test_results", {}).items():
@@ -236,6 +254,9 @@ def generate_report(results_path: str | Path, output_path: str | Path) -> Path:
         level_label=f"OCP-{ocp_level} — {level_name}",
         sasmi_pct=sasmi_pct,
         sasmi_str=sasmi_str,
+        phi_star_row=phi_star_row,
+        gwt_row=gwt_row,
+        nii_row=nii_row,
         test_sections=test_sections,
         radar_svg=radar_svg,
     )

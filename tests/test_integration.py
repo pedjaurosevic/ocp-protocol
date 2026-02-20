@@ -29,7 +29,7 @@ async def test_orchestrator_all_tests():
     provider = MockProvider("v1")
     orch = OCPOrchestrator(provider, tests="all", sessions=1, seed=42)
     result = await orch.run()
-    assert len(result.test_results) == 5
+    assert len(result.test_results) == 6
     assert result.sasmi_score is not None
     assert 0.0 <= result.sasmi_score <= 1.0
 

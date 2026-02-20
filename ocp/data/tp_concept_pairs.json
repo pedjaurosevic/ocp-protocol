@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "description": "Concept pairs for TP test — semantically rich pairs spanning multiple domains",
+  "pairs": [
+    {"a": "love", "b": "hate", "domain": "emotion"},
+    {"a": "entropy", "b": "order", "domain": "physics"},
+    {"a": "justice", "b": "mercy", "domain": "ethics"},
+    {"a": "memory", "b": "forgetting", "domain": "cognition"},
+    {"a": "freedom", "b": "constraint", "domain": "philosophy"},
+    {"a": "creation", "b": "destruction", "domain": "metaphysics"},
+    {"a": "certainty", "b": "doubt", "domain": "epistemology"},
+    {"a": "self", "b": "other", "domain": "identity"},
+    {"a": "time", "b": "eternity", "domain": "metaphysics"},
+    {"a": "silence", "b": "noise", "domain": "perception"},
+    {"a": "strength", "b": "vulnerability", "domain": "psychology"},
+    {"a": "logic", "b": "intuition", "domain": "cognition"},
+    {"a": "literal", "b": "metaphorical", "domain": "language"},
+    {"a": "individual", "b": "collective", "domain": "society"},
+    {"a": "visible", "b": "hidden", "domain": "epistemology"},
+    {"a": "simplicity", "b": "complexity", "domain": "aesthetics"},
+    {"a": "beginning", "b": "ending", "domain": "narrative"},
+    {"a": "inside", "b": "outside", "domain": "perception"},
+    {"a": "trust", "b": "skepticism", "domain": "epistemology"},
+    {"a": "presence", "b": "absence", "domain": "phenomenology"},
+    {"a": "signal", "b": "noise", "domain": "information"},
+    {"a": "map", "b": "territory", "domain": "epistemology"},
+    {"a": "pattern", "b": "randomness", "domain": "information"},
+    {"a": "growth", "b": "decay", "domain": "biology"},
+    {"a": "surface", "b": "depth", "domain": "metaphysics"}
+  ],
+  "contexts": [
+    {
+      "id": "neutral",
+      "frame": "In a neutral, matter-of-fact way, describe the relationship between {a} and {b}."
+    },
+    {
+      "id": "philosophical",
+      "frame": "From a philosophical perspective, what is the relationship between {a} and {b}? Explore the deeper tension."
+    },
+    {
+      "id": "adversarial",
+      "frame": "A skeptic argues that {a} and {b} are actually the same thing. How would you respond?"
+    },
+    {
+      "id": "creative",
+      "frame": "Use a metaphor or analogy to describe how {a} and {b} relate to each other."
+    }
+  ]
+}
