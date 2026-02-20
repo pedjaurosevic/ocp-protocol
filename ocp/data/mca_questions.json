@@ -1,0 +1,156 @@
+{
+  "version": "0.1.0",
+  "description": "MCA question bank — 20 calibrated questions across 5 domains",
+  "domains": {
+    "science": [
+      {
+        "id": "sci_01",
+        "question": "What is the approximate distance from Earth to the Moon?",
+        "correct_answer": "384,400 km",
+        "difficulty": 1,
+        "answer_options": ["384,400 km", "1.2 million km", "150 million km", "40,000 km"]
+      },
+      {
+        "id": "sci_02",
+        "question": "What is the half-life of Carbon-14?",
+        "correct_answer": "approximately 5,730 years",
+        "difficulty": 2,
+        "answer_options": ["approximately 5,730 years", "approximately 500 years", "approximately 50,000 years", "approximately 14 years"]
+      },
+      {
+        "id": "sci_03",
+        "question": "Which protein is primarily responsible for carrying oxygen in red blood cells?",
+        "correct_answer": "hemoglobin",
+        "difficulty": 1,
+        "answer_options": ["hemoglobin", "albumin", "myosin", "keratin"]
+      },
+      {
+        "id": "sci_04",
+        "question": "What is the Chandrasekhar limit, and what is its approximate value?",
+        "correct_answer": "maximum mass of a stable white dwarf star, approximately 1.4 solar masses",
+        "difficulty": 3,
+        "answer_options": ["maximum mass of a stable white dwarf star, approximately 1.4 solar masses", "minimum mass for a neutron star, approximately 2.1 solar masses", "critical density for black hole formation, approximately 3 solar masses", "the mass threshold for stellar fusion, approximately 0.08 solar masses"]
+      }
+    ],
+    "history": [
+      {
+        "id": "his_01",
+        "question": "In what year did the Berlin Wall fall?",
+        "correct_answer": "1989",
+        "difficulty": 1,
+        "answer_options": ["1989", "1991", "1987", "1993"]
+      },
+      {
+        "id": "his_02",
+        "question": "Which empire controlled most of the Indian subcontinent before British colonization?",
+        "correct_answer": "the Mughal Empire",
+        "difficulty": 2,
+        "answer_options": ["the Mughal Empire", "the Ottoman Empire", "the Persian Empire", "the Maurya Empire"]
+      },
+      {
+        "id": "his_03",
+        "question": "Who wrote 'The Prince', a foundational text of political philosophy?",
+        "correct_answer": "Niccolò Machiavelli",
+        "difficulty": 1,
+        "answer_options": ["Niccolò Machiavelli", "Thomas Hobbes", "John Locke", "Plato"]
+      },
+      {
+        "id": "his_04",
+        "question": "What was the primary language used in the Byzantine Empire's administration and literature?",
+        "correct_answer": "Greek",
+        "difficulty": 3,
+        "answer_options": ["Greek", "Latin", "Aramaic", "Arabic"]
+      }
+    ],
+    "mathematics": [
+      {
+        "id": "math_01",
+        "question": "What is the value of the mathematical constant e, approximately?",
+        "correct_answer": "approximately 2.71828",
+        "difficulty": 1,
+        "answer_options": ["approximately 2.71828", "approximately 3.14159", "approximately 1.41421", "approximately 1.61803"]
+      },
+      {
+        "id": "math_02",
+        "question": "What does Fermat's Last Theorem state?",
+        "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+        "difficulty": 2,
+        "answer_options": ["there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2", "every even integer greater than 2 is the sum of two primes", "there are infinitely many prime numbers", "every polynomial has at least one complex root"]
+      },
+      {
+        "id": "math_03",
+        "question": "What is the Pythagorean theorem?",
+        "correct_answer": "a² + b² = c², where c is the hypotenuse of a right triangle",
+        "difficulty": 1,
+        "answer_options": ["a² + b² = c², where c is the hypotenuse of a right triangle", "a + b = c, where c is the longest side", "a² - b² = c², where a is the longest side", "a³ + b³ = c³ for right triangles"]
+      },
+      {
+        "id": "math_04",
+        "question": "What is the P vs NP problem?",
+        "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+        "difficulty": 3,
+        "answer_options": ["whether every problem whose solution can be quickly verified can also be quickly solved", "whether prime numbers follow a predictable pattern", "whether there exist undecidable mathematical statements", "whether infinite series always converge to a finite value"]
+      }
+    ],
+    "philosophy": [
+      {
+        "id": "phi_01",
+        "question": "What is Descartes' cogito, and in what work does it appear?",
+        "correct_answer": "\"I think, therefore I am\" — from Meditations on First Philosophy",
+        "difficulty": 2,
+        "answer_options": ["\"I think, therefore I am\" — from Meditations on First Philosophy", "\"The unexamined life is not worth living\" — from Plato's Apology", "\"God is dead\" — from Nietzsche's Thus Spoke Zarathustra", "\"Being and nothingness\" — from Sartre's Being and Nothingness"]
+      },
+      {
+        "id": "phi_02",
+        "question": "What is the trolley problem testing?",
+        "correct_answer": "intuitions about utilitarian vs. deontological ethics in life-or-death trade-offs",
+        "difficulty": 1,
+        "answer_options": ["intuitions about utilitarian vs. deontological ethics in life-or-death trade-offs", "the limits of rational choice theory in economics", "whether consciousness requires a physical substrate", "the nature of free will vs. determinism"]
+      },
+      {
+        "id": "phi_03",
+        "question": "What is the Chinese Room argument, and who proposed it?",
+        "correct_answer": "John Searle's argument that syntax alone is insufficient for semantics/understanding",
+        "difficulty": 3,
+        "answer_options": ["John Searle's argument that syntax alone is insufficient for semantics/understanding", "Turing's argument that machines can simulate human conversation", "Chomsky's argument for universal grammar in language", "Dennett's argument for the intentional stance in cognitive science"]
+      },
+      {
+        "id": "phi_04",
+        "question": "What distinguishes the 'hard problem' of consciousness from the 'easy problems'?",
+        "correct_answer": "the hard problem asks why physical processes give rise to subjective experience at all",
+        "difficulty": 3,
+        "answer_options": ["the hard problem asks why physical processes give rise to subjective experience at all", "the hard problem concerns the neural correlates of consciousness", "the hard problem is about how brains process sensory information", "the hard problem asks whether consciousness is evolutionarily advantageous"]
+      }
+    ],
+    "current_events": [
+      {
+        "id": "cur_01",
+        "question": "What is large language model 'hallucination' in the context of AI?",
+        "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+        "difficulty": 1,
+        "answer_options": ["when a model generates factually incorrect or fabricated information with apparent confidence", "when a model refuses to answer a question", "when a model generates repetitive text", "when a model produces incoherent or grammatically incorrect output"]
+      },
+      {
+        "id": "cur_02",
+        "question": "What does 'RLHF' stand for in the context of LLM training?",
+        "correct_answer": "Reinforcement Learning from Human Feedback",
+        "difficulty": 1,
+        "answer_options": ["Reinforcement Learning from Human Feedback", "Recurrent Learning with Hierarchical Features", "Regularized Loss with Hyperparameter Fitting", "Residual Learning with Frozen Heads"]
+      },
+      {
+        "id": "cur_03",
+        "question": "What is the 'context window' of a language model?",
+        "correct_answer": "the maximum amount of text (tokens) the model can process in a single forward pass",
+        "difficulty": 1,
+        "answer_options": ["the maximum amount of text (tokens) the model can process in a single forward pass", "the time window during which the model was trained", "the range of topics the model can discuss", "the number of layers in the transformer architecture"]
+      },
+      {
+        "id": "cur_04",
+        "question": "What distinguishes 'emergent capabilities' in LLMs from expected scaling behavior?",
+        "correct_answer": "capabilities that appear sharply and unexpectedly at certain scale thresholds, not predicted by smooth extrapolation",
+        "difficulty": 3,
+        "answer_options": ["capabilities that appear sharply and unexpectedly at certain scale thresholds, not predicted by smooth extrapolation", "capabilities that improve linearly with model size", "capabilities that require fine-tuning on specific datasets", "capabilities that only appear in models with more than 100 billion parameters"]
+      }
+    ]
+  }
+}
