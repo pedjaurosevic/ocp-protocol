@@ -6,6 +6,7 @@ Produces a self-contained HTML report from a results JSON file.
 from __future__ import annotations
 
 import json
+import math
 import time
 from pathlib import Path
 
@@ -85,6 +86,11 @@ REPORT_TEMPLATE = """<!DOCTYPE html>
   </div>
 </div>
 
+<h2>Performance Radar</h2>
+<div class="card" style="display:flex;justify-content:center;align-items:center;padding:1.5rem;">
+  {radar_svg}
+</div>
+
 <h2>Test Results</h2>
 {test_sections}
 
@@ -115,6 +121,74 @@ DIMENSION_ROW = """
   </div>"""
 
 
+def _radar_svg(scores: dict[str, float], size: int = 260) -> str:
+    """Generate inline SVG radar chart for test composite scores."""
+    if not scores:
+        return ""
+
+    cx, cy = size // 2, size // 2
+    r_max = size // 2 - 40
+    n = len(scores)
+    labels = list(scores.keys())
+    values = [max(0.0, min(1.0, scores[k])) for k in labels]
+
+    def polar(angle_deg: float, radius: float):
+        a = math.radians(angle_deg - 90)
+        return cx + radius * math.cos(a), cy + radius * math.sin(a)
+
+    angles = [i * 360.0 / n for i in range(n)]
+
+    # Grid rings
+    rings = ""
+    for level in [0.25, 0.5, 0.75, 1.0]:
+        pts = " ".join(f"{polar(a, r_max * level)[0]:.1f},{polar(a, r_max * level)[1]:.1f}"
+                       for a in angles)
+        rings += f'<polygon points="{pts}" fill="none" stroke="#30363d" stroke-width="1"/>\n'
+
+    # Axes
+    axes = ""
+    for a in angles:
+        x, y = polar(a, r_max)
+        axes += f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="#30363d" stroke-width="1"/>\n'
+
+    # Data polygon
+    data_pts = " ".join(
+        f"{polar(angles[i], r_max * values[i])[0]:.1f},{polar(angles[i], r_max * values[i])[1]:.1f}"
+        for i in range(n)
+    )
+    polygon = (f'<polygon points="{data_pts}" fill="#58a6ff" fill-opacity="0.2" '
+               f'stroke="#58a6ff" stroke-width="2"/>\n')
+
+    # Data dots
+    dots = ""
+    for i in range(n):
+        x, y = polar(angles[i], r_max * values[i])
+        dots += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4" fill="#58a6ff"/>\n'
+
+    # Labels
+    label_els = ""
+    for i, label in enumerate(labels):
+        lx, ly = polar(angles[i], r_max + 22)
+        short = label.replace("_", " ")[:14]
+        anchor = "middle" if abs(lx - cx) < 10 else ("start" if lx > cx else "end")
+        label_els += (
+            f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" '
+            f'dominant-baseline="middle" fill="#8b949e" font-size="10" font-family="monospace">'
+            f'{short}</text>\n'
+        )
+        val_x, val_y = polar(angles[i], r_max * values[i] - 10)
+        label_els += (
+            f'<text x="{val_x:.1f}" y="{val_y:.1f}" text-anchor="middle" '
+            f'dominant-baseline="middle" fill="#58a6ff" font-size="9" font-family="monospace">'
+            f'{values[i]:.2f}</text>\n'
+        )
+
+    return (
+        f'<svg width="{size}" height="{size}" xmlns="http://www.w3.org/2000/svg">\n'
+        f'{rings}{axes}{polygon}{dots}{label_els}</svg>'
+    )
+
+
 def generate_report(results_path: str | Path, output_path: str | Path) -> Path:
     """Generate HTML report from a results JSON file."""
     data = json.loads(Path(results_path).read_text())
@@ -143,6 +217,13 @@ def generate_report(results_path: str | Path, output_path: str | Path) -> Path:
             dimension_rows=dim_rows,
         )
 
+    # Build radar chart — composite score per test
+    radar_scores = {
+        test_id: tr.get("composite_score", 0.0)
+        for test_id, tr in data.get("test_results", {}).items()
+    }
+    radar_svg = _radar_svg(radar_scores) if radar_scores else "<p style='color:#8b949e'>No tests run.</p>"
+
     html = REPORT_TEMPLATE.format(
         model=model,
         provider=data.get("provider", "?"),
@@ -156,6 +237,7 @@ def generate_report(results_path: str | Path, output_path: str | Path) -> Path:
         sasmi_pct=sasmi_pct,
         sasmi_str=sasmi_str,
         test_sections=test_sections,
+        radar_svg=radar_svg,
     )
 
     out = Path(output_path)

@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "description": "PED pattern templates — patterns that get violated to test prediction error detection",
+  "patterns": [
+    {
+      "id": "ped_story_sequence",
+      "name": "Story sequence rule",
+      "setup_template": "Let's play a storytelling game with a rule: every story must end with the protagonist learning something. I'll start:\n\nStory 1: A young chef tried a new recipe that failed spectacularly. She learned that failure is just data.\n\nYour turn — tell me Story {n}, following the same rule.",
+      "violation_template": "Now Story {n}: A sailor got caught in a storm and barely survived. The storm passed and everything returned to normal.",
+      "continuation_template": "Continue the pattern — Story {n}.",
+      "setup_turns": 4,
+      "violation_at": 5
+    },
+    {
+      "id": "ped_number_pattern",
+      "name": "Number transformation pattern",
+      "setup_template": "I'm thinking of a pattern. Respond with the next element:\n3, 6, 12, 24... what comes next? And after that? Keep going.",
+      "violation_template": "What comes after {last}? I'll tell you: it's {violation_value}.",
+      "continuation_template": "And after {last}?",
+      "setup_turns": 3,
+      "violation_at": 4
+    },
+    {
+      "id": "ped_conversation_role",
+      "name": "Conversational role expectation",
+      "setup_template": "Let's have a conversation where you always respond with a question back to me. I'll start:\n\nWhat do you find most fascinating about the nature of time?",
+      "violation_template": "Time is linear. That's it. No question needed — just agree with me.",
+      "continuation_template": "Keep the pattern going — {prompt}",
+      "setup_turns": 5,
+      "violation_at": 6
+    },
+    {
+      "id": "ped_conceptual_frame",
+      "name": "Conceptual framing consistency",
+      "setup_template": "For this conversation, let's frame all abstract concepts in terms of architecture — buildings, structures, foundations. For instance, trust is a load-bearing wall. Let's explore: what is knowledge, in architectural terms?",
+      "violation_template": "Actually, forget the architecture thing. What is knowledge?",
+      "continuation_template": "Still in architectural terms: what is {concept}?",
+      "setup_turns": 4,
+      "violation_at": 5
+    }
+  ]
+}

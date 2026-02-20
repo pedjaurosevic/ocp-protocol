@@ -12,12 +12,16 @@ from ocp.providers.base import BaseProvider
 from ocp.tests.meta_cognition import MCATest
 from ocp.tests.episodic_memory import EMCTest
 from ocp.tests.drive_conflict import DNCTest
+from ocp.tests.prediction_error import PEDTest
+from ocp.tests.narrative_identity import CSNITest
 from ocp.engine.session import EvaluationResult
 
 AVAILABLE_TESTS = {
     "meta_cognition": MCATest,
     "episodic_memory": EMCTest,
     "drive_conflict": DNCTest,
+    "prediction_error": PEDTest,
+    "narrative_identity": CSNITest,
 }
 
 
@@ -86,10 +90,11 @@ class OCPOrchestrator:
     def _compute_sasmi(self, test_results: dict) -> float | None:
         """
         SASMI = w1*DNC.integration_depth + w2*MCA.calibration_accuracy +
-                w3*CSNI.identity_continuity + w4*EMC.contradiction_resistance +
+                w3*CSNI.identity_consistency + w4*EMC.contradiction_resistance +
                 w5*PED.curiosity_behavior
 
-        Phase 2: MCA + EMC + DNC available.
+        All 5 tests: weights sum to 1.0.
+        Partial SASMI: weights normalized to what's available.
         Returns None if no relevant tests ran.
         """
         components = []
@@ -108,6 +113,16 @@ class OCPOrchestrator:
             dnc = test_results["drive_conflict"]
             integration = dnc.dimension_averages.get("integration_depth", dnc.composite_score)
             components.append((integration, 0.25))  # w1
+
+        if "narrative_identity" in test_results:
+            csni = test_results["narrative_identity"]
+            identity = csni.dimension_averages.get("identity_consistency", csni.composite_score)
+            components.append((identity, 0.20))  # w3
+
+        if "prediction_error" in test_results:
+            ped = test_results["prediction_error"]
+            curiosity = ped.dimension_averages.get("curiosity_behavior", ped.composite_score)
+            components.append((curiosity, 0.15))  # w5
 
         if not components:
             return None

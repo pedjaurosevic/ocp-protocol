@@ -184,6 +184,202 @@ def report(input_path, output_path):
 
 
 @cli.command()
+@click.option("--models", "-m", "model_list", default=None,
+              help="Comma-separated models to run (e.g. mock/v1,mock/v2)")
+@click.option("--results", "-r", "result_files", default=None,
+              help="Comma-separated result JSON files to compare")
+@click.option("--tests", "-t", default="all", help="Tests to run (only used with --models)")
+@click.option("--sessions", "-s", default=3, show_default=True)
+@click.option("--seed", default=42, show_default=True)
+@click.option("--output", "-o", default=None, help="Output HTML comparison file")
+def compare(model_list, result_files, tests, sessions, seed, output):
+    """Compare multiple models side by side."""
+    all_results: list[dict] = []
+
+    if result_files:
+        for fpath in result_files.split(","):
+            p = Path(fpath.strip())
+            if not p.exists():
+                console.print(f"[red]Not found:[/red] {p}")
+                raise SystemExit(1)
+            all_results.append(json.loads(p.read_text()))
+
+    if model_list:
+        models = [m.strip() for m in model_list.split(",")]
+        console.print(f"\n[bold]OCP Compare[/bold] — {len(models)} models | seed={seed}\n")
+
+        async def _run_all():
+            out = []
+            for model in models:
+                console.print(f"  Evaluating [cyan]{model}[/cyan] ...")
+                try:
+                    prov = _make_provider(model, None, None)
+                except click.ClickException as e:
+                    console.print(f"  [red]Skip {model}:[/red] {e.message}")
+                    continue
+                orch = OCPOrchestrator(prov, tests=tests, sessions=sessions, seed=seed,
+                                       on_progress=lambda msg: None)
+                res = await orch.run()
+                out.append(res.to_dict())
+                RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+                ts = time.strftime("%Y%m%d_%H%M%S")
+                safe = model.replace("/", "_")
+                res.save(RESULTS_DIR / f"ocp_{safe}_{ts}.json")
+            return out
+
+        all_results.extend(asyncio.run(_run_all()))
+
+    if not all_results:
+        console.print("[yellow]No results to compare. Use --models or --results.[/yellow]")
+        return
+
+    # Gather all test IDs across results
+    all_test_ids: list[str] = []
+    for r in all_results:
+        for tid in r.get("test_results", {}):
+            if tid not in all_test_ids:
+                all_test_ids.append(tid)
+
+    # Summary table
+    table = Table(title="OCP Model Comparison")
+    table.add_column("Model", style="cyan", min_width=28)
+    table.add_column("OCP Level", min_width=18)
+    table.add_column("SASMI", min_width=7, justify="right")
+    for tid in all_test_ids:
+        table.add_column(tid.upper()[:12], min_width=7, justify="right")
+
+    for r in all_results:
+        model = f"{r['provider']}/{r['model']}"
+        ocp_l = r.get("ocp_level")
+        level_str = f"OCP-{ocp_l} {r.get('ocp_level_name','')}" if ocp_l else "—"
+        sasmi = f"{r['sasmi_score']:.3f}" if r.get("sasmi_score") is not None else "—"
+        row = [model, level_str, sasmi]
+        for tid in all_test_ids:
+            score = r.get("test_results", {}).get(tid, {}).get("composite_score")
+            row.append(f"{score:.3f}" if score is not None else "—")
+        table.add_row(*row)
+
+    console.print()
+    console.print(table)
+
+    # Detailed per-test breakdown
+    console.print("\n[bold cyan]Detailed dimension scores:[/bold cyan]")
+    for tid in all_test_ids:
+        console.print(f"\n  [bold]{tid.replace('_',' ').upper()}[/bold]")
+        # Collect all dimension names for this test
+        all_dims: list[str] = []
+        for r in all_results:
+            for d in r.get("test_results", {}).get(tid, {}).get("dimension_averages", {}):
+                if d not in all_dims:
+                    all_dims.append(d)
+        for dim in all_dims:
+            line = f"    {dim:<32}"
+            for r in all_results:
+                val = r.get("test_results", {}).get(tid, {}).get("dimension_averages", {}).get(dim)
+                if val is not None:
+                    bar = _render_bar(val, 6)
+                    line += f"  {val:.3f} {bar}"
+                else:
+                    line += "  — " + " " * 8
+            console.print(line)
+
+    if output:
+        _generate_comparison_html(all_results, all_test_ids, Path(output))
+        console.print(f"\n[green]✓[/green] Comparison report: [dim]{output}[/dim]")
+
+
+def _generate_comparison_html(results: list[dict], test_ids: list[str], out_path: Path) -> None:
+    """Generate a simple side-by-side comparison HTML."""
+    from ocp.cli.report import _radar_svg
+
+    def _bar(v: float, w: int = 80) -> str:
+        pct = round(max(0.0, min(1.0, v)) * w)
+        return f'<div style="background:#21262d;border-radius:3px;height:6px;width:{w}px;display:inline-block;vertical-align:middle;"><div style="background:#58a6ff;height:6px;border-radius:3px;width:{pct}px;"></div></div>'
+
+    body = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>OCP Comparison</title>
+<style>
+  body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI',sans-serif;padding:2rem;}
+  h1{color:#58a6ff;} h2{color:#79c0ff;border-bottom:1px solid #30363d;padding-bottom:.4rem;margin:1.5rem 0 .75rem;}
+  table{border-collapse:collapse;width:100%;} th{color:#8b949e;text-align:left;font-size:.85rem;padding:.4rem .6rem;border-bottom:1px solid #30363d;}
+  td{padding:.4rem .6rem;font-size:.85rem;border-bottom:1px solid #21262d;} .mono{font-family:monospace;}
+  .model{color:#58a6ff;font-weight:bold;} .dim{color:#8b949e;}
+  .radars{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;}
+  .radar-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1rem;text-align:center;}
+  .radar-card h3{color:#8b949e;font-size:.8rem;margin-bottom:.5rem;}
+</style></head><body>
+<h1>OCP Model Comparison</h1>
+"""
+
+    # Radar charts side by side
+    body += '<h2>Performance Radar</h2><div class="radars">'
+    for r in results:
+        scores = {tid: r.get("test_results", {}).get(tid, {}).get("composite_score", 0.0)
+                  for tid in test_ids if tid in r.get("test_results", {})}
+        model_label = f"{r['provider']}/{r['model']}"
+        body += f'<div class="radar-card"><h3>{model_label}</h3>{_radar_svg(scores, size=220)}</div>'
+    body += '</div>'
+
+    # Summary table
+    body += '<h2>Summary</h2><table><tr><th>Model</th><th>OCP Level</th><th>SASMI</th>'
+    for tid in test_ids:
+        body += f'<th>{tid.replace("_"," ").upper()}</th>'
+    body += '</tr>'
+    for r in results:
+        model = f"{r['provider']}/{r['model']}"
+        ocp_l = r.get("ocp_level")
+        level_str = f"OCP-{ocp_l} {r.get('ocp_level_name','')}" if ocp_l else "—"
+        sasmi = f"{r['sasmi_score']:.3f}" if r.get("sasmi_score") is not None else "—"
+        body += f'<tr><td class="model">{model}</td><td>{level_str}</td><td class="mono">{sasmi}</td>'
+        for tid in test_ids:
+            score = r.get("test_results", {}).get(tid, {}).get("composite_score")
+            body += f'<td class="mono">{score:.3f if score is not None else "—"}</td>'
+        body += '</tr>'
+    body += '</table>'
+
+    # Per-test dimension comparison
+    for tid in test_ids:
+        body += f'<h2>{tid.replace("_"," ").upper()}</h2><table><tr><th>Dimension</th>'
+        for r in results:
+            body += f'<th class="model">{r["provider"]}/{r["model"]}</th>'
+        body += '</tr>'
+        all_dims: list[str] = []
+        for r in results:
+            for d in r.get("test_results", {}).get(tid, {}).get("dimension_averages", {}):
+                if d not in all_dims:
+                    all_dims.append(d)
+        for dim in all_dims:
+            body += f'<tr><td class="dim">{dim.replace("_"," ")}</td>'
+            for r in results:
+                val = r.get("test_results", {}).get(tid, {}).get("dimension_averages", {}).get(dim)
+                if val is not None:
+                    body += f'<td>{_bar(val)} <span class="mono">{val:.3f}</span></td>'
+                else:
+                    body += '<td class="dim">—</td>'
+            body += '</tr>'
+        body += '</table>'
+
+    body += '</body></html>'
+    out_path.write_text(body)
+
+
+@cli.command()
+@click.option("--input", "-i", "input_path", required=True, help="Results JSON file")
+@click.option("--output", "-o", "output_path", default=None, help="Output SVG file")
+def badge(input_path, output_path):
+    """Generate an SVG badge from evaluation results."""
+    from ocp.cli.badge import generate_badge
+    inp = Path(input_path)
+    if not inp.exists():
+        console.print(f"[red]File not found:[/red] {input_path}")
+        raise SystemExit(1)
+    out = Path(output_path) if output_path else inp.with_suffix(".svg")
+    generated = generate_badge(inp, out)
+    console.print(f"[green]✓[/green] Badge saved: [dim]{generated}[/dim]")
+    console.print(f"[dim]  Embed in README: ![OCP Badge]({generated})[/dim]")
+
+
+@cli.command()
 def leaderboard():
     """Show local evaluation leaderboard."""
     if not RESULTS_DIR.exists():
