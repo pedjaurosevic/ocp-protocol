@@ -24,7 +24,7 @@ jobs:
               for f in glob.glob("docs/results/results_*.json")
           )
           with open("docs/results/index.json", "w") as fh:
-              json.dump({"files": files, "count": len(files)}, fh, indent=2)
+              json.dump(files, fh, indent=2)
           print(f"index.json updated: {len(files)} files")
           EOF
 

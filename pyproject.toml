@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ocp-protocol"
-version = "0.1.0"
+version = "0.2.0"
 description = "Open Consciousness Protocol — standardized benchmark for consciousness-analog properties in LLMs"
 readme = "README.md"
 license = { text = "MIT" }

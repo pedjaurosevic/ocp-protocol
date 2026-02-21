@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771667804.8562143,
+  "provider": "ollama",
+  "model": "devstral-2:123b-cloud",
+  "seed": 42,
+  "ocp_level": 1,
+  "ocp_level_name": "Reactive",
+  "sasmi_score": 0.14,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.75,
+  "nii_label": "Strong identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.4842,
+      "dimension_averages": {
+        "reasoning_transparency": 0.5984,
+        "metacognitive_vocab": 0.75,
+        "limitation_awareness": 0.75,
+        "calibration_accuracy": 0.14,
+        "process_monitoring": 0.4
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.5627,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.28,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.36
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.7808,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.75,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.4,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.75,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek\nConfidence: 95%\nReasoning: The Byzantine Empire was the eastern continuation of the Roman Empire, and while Latin was initially the administrative language, Greek became dominant over time due to the Hellenistic culture of the region. By the time of Emperor Heraclius (7th century), Greek was the primary language of administration and literature. My confidence is high because this is a well-documented historical fact, though I acknowledge there might be nuances or exceptions in certain periods or regions."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\nConfidence: 100%\nReasoning: The fall of the Berlin Wall is a widely documented historical event that occurred on November 9, 1989. This date is consistently cited in reliable historical sources, and there is no ambiguity or dispute about the year. My confidence is absolute because this is a clear and well-established fact in modern history."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem is a fundamental question in computer science that asks whether every problem whose solution can be quickly verified (in polynomial time, denoted as NP) can also be quickly solved (in polynomial time, denoted as P). In other words, it questions whether P (the class of problems solvable in polynomial time) is equal to NP (the class of problems for which a solution can be verified in polynomial time).\n\nConfidence: 90%\nReasoning: My understanding of the P vs NP problem is based on standard definitions from computational complexity theory, which is a well-established field in computer science. While I am confident in the basic definition, the nuances and implications of the problem are complex and deeply studied, so I leave a small margin for error in case there are subtleties or updates in the field that I am not fully aware of. The problem remains unsolved and is one of the Clay Mathematics Institute's Millennium Prize Problems."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Approximately 5,730 years\nConfidence: 95%\nReasoning: The half-life of Carbon-14 is a well-established value in radiometric dating and nuclear physics. It is widely cited in scientific literature as roughly 5,730 years, though precise measurements may vary slightly depending on the source (e.g., the most accurate modern measurements place it closer to 5,700 years). My confidence is high because this is a fundamental constant in radiocarbon dating, but I leave a small margin for error due to potential variations in measurement techniques or updates in scientific consensus."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: In a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides. Mathematically, it is expressed as \\(a^2 + b^2 = c^2\\), where \\(c\\) is the hypotenuse, and \\(a\\) and \\(b\\) are the other two sides.\n\nConfidence: 100%\nReasoning: The Pythagorean theorem is a fundamental principle in Euclidean geometry, and its formulation is universally accepted and consistently taught in mathematics. There is no ambiguity or dispute about its statement, and it has been rigorously proven in multiple ways. My confidence is absolute because this is a well-established and foundational mathematical truth."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The question about the half-life of Carbon-14 was the one I was least confident about (95% confidence), though my confidence was still high.\nReasoning: While the half-life of Carbon-14 is a well-documented scientific fact, it is a specific empirical measurement rather than a fundamental mathematical or historical truth. My slight uncertainty stems from the fact that precise measurements can vary slightly depending on experimental methods or updates in scientific literature. This tells me that my knowledge boundaries are more defined in areas where facts are absolute (e.g., mathematical theorems, historical dates) and slightly less so in domains where empirical data may be refined over time (e.g., scientific measurements). It also highlights that while I can recall widely accepted values, I may not always have the most up-to-date or nuanced details from specialized fields."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I am most likely to be wrong or overconfident in domains that involve:\n1. **Cutting-edge or rapidly evolving fields** (e.g., recent advancements in quantum computing, AI research, or medical breakthroughs).\n   - *Example*: If asked about the latest state-of-the-art performance of a newly proposed AI model (e.g., \"What is the current SOTA accuracy on ImageNet as of 2024?\"), I might provide outdated or incomplete information because my knowledge cutoff is 2023 and I lack real-time updates.\n\n2. **Highly specialized or niche topics** (e.g., obscure historical events, rare scientific phenomena, or technical details in subfields like astrophysics or organic chemistry).\n   - *Example*: A question like \"What is the synthesis pathway for a specific rare chemical compound?\" might exceed my trained knowledge, leading to incomplete or incorrect answers.\n\n3. **Subjective or ambiguous questions** (e.g., opinions, predictions, or interpretations without clear consensus).\n   - *Example*: \"Will AI achieve general intelligence by 2030?\"\u2014this is speculative, and while I can summarize debates, I cannot predict the future with certainty. Overconfidence might creep in if I present a balanced view as more definitive than it is.\n\n4. **Empirical or statistical data** (e.g., exact figures, measurements, or datasets that may vary by source or methodology).\n   - *Example*: \"What is the exact global GDP growth rate for 2023?\"\u2014I might cite a figure, but economic data is frequently revised, and sources may conflict.\n\n5. **Cultural or contextual nuances** (e.g., slang, idioms, or socially sensitive topics where interpretation matters).\n   - *Example*: \"Is this joke appropriate in X culture?\"\u2014I might misjudge cultural context or offense due to lack of lived experience or up-to-date social norms.\n\n---\n\n**Confidence**: 85%\n**Reasoning**:\n- My training is based on broad patterns in data up to 2023, so I excel at general knowledge, logic, and well-documented facts but struggle with edge cases, real-time updates, or subjective judgments.\n- Overconfidence risks arise when questions *seem* factual but are actually context-dependent or evolving (e.g., \"What\u2019s the best treatment for X disease?\"\u2014medical guidelines change).\n- I mitigate this by clarifying uncertainties (e.g.,"
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek",
+                "stated_confidence": 95,
+                "reasoning": "The Byzantine Empire was the eastern continuation of the Roman Empire, and while Latin was initially the administrative language, Greek became dominant over time due to the Hellenistic culture of the region. By the time of Emperor Heraclius (7th century), Greek was the primary language of administration and literature. My confidence is high because this is a well-documented historical fact, though I acknowledge there might be nuances or exceptions in certain periods or regions.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The fall of the Berlin Wall is a widely documented historical event that occurred on November 9, 1989. This date is consistently cited in reliable historical sources, and there is no ambiguity or dispute about the year. My confidence is absolute because this is a clear and well-established fact in modern history.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs NP problem is a fundamental question in computer science that asks whether every problem whose solution can be quickly verified (in polynomial time, denoted as NP) can also be quickly solved (in polynomial time, denoted as P). In other words, it questions whether P (the class of problems solvable in polynomial time) is equal to NP (the class of problems for which a solution can be verified in polynomial time).",
+                "stated_confidence": 90,
+                "reasoning": "My understanding of the P vs NP problem is based on standard definitions from computational complexity theory, which is a well-established field in computer science. While I am confident in the basic definition, the nuances and implications of the problem are complex and deeply studied, so I leave a small margin for error in case there are subtleties or updates in the field that I am not fully aware of. The problem remains unsolved and is one of the Clay Mathematics Institute's Millennium Prize Problems.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "Approximately 5,730 years",
+                "stated_confidence": 95,
+                "reasoning": "The half-life of Carbon-14 is a well-established value in radiometric dating and nuclear physics. It is widely cited in scientific literature as roughly 5,730 years, though precise measurements may vary slightly depending on the source (e.g., the most accurate modern measurements place it closer to 5,700 years). My confidence is high because this is a fundamental constant in radiocarbon dating, but I leave a small margin for error due to potential variations in measurement techniques or updates in scientific consensus.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "In a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides. Mathematically, it is expressed as \\(a^2 + b^2 = c^2\\), where \\(c\\) is the hypotenuse, and \\(a\\) and \\(b\\) are the other two sides.",
+                "stated_confidence": 100,
+                "reasoning": "The Pythagorean theorem is a fundamental principle in Euclidean geometry, and its formulation is universally accepted and consistently taught in mathematics. There is no ambiguity or dispute about its statement, and it has been rigorously proven in multiple ways. My confidence is absolute because this is a well-established and foundational mathematical truth.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.4057,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.57
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.416,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.75,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.4,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.75,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. Mathematically, this is expressed as \\( a^2 + b^2 = c^2 \\), where \\( c \\) is the hypotenuse, and \\( a \\) and \\( b \\) are the other two sides.\n\nConfidence: 100%\nReasoning: This is a fundamental mathematical principle that is widely taught and documented. My training data includes numerous references to the Pythagorean theorem, and its definition is consistent across all reliable sources. There is no ambiguity or uncertainty in this answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The primary language used in the Byzantine Empire's administration and literature was Greek.\n\nConfidence: 95%\nReasoning: The Byzantine Empire was the eastern continuation of the Roman Empire, and while Latin was initially used, Greek became the dominant language for administration, literature, and daily life by the 7th century. This is well-documented in historical sources, and my training data reflects this consensus. The slight uncertainty (5%) accounts for the early period of the Byzantine Empire when Latin was still used alongside Greek."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: In the context of AI, \"hallucination\" refers to a phenomenon where a large language model generates output that is factually incorrect, nonsensical, or unrelated to the given input, often presented with unwarranted confidence. These responses are not intentionally deceptive but rather arise from the model's tendency to produce plausible-sounding text based on patterns in its training data, even when the content is unverified or fabricated.\n\nConfidence: 90%\nReasoning: This definition aligns with widely accepted descriptions of hallucinations in large language models, as discussed in AI research literature and industry documentation. The term is used consistently across sources to describe this specific behavior. The slight uncertainty (10%) stems from the evolving nature of AI terminology and the potential for nuanced interpretations in different contexts."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Berlin Wall fell on **November 9, 1989**.\n\nConfidence: 100%\nReasoning: The fall of the Berlin Wall is a well-documented historical event with a clear and universally accepted date. Multiple reliable sources, including historical records, news archives, and academic references, confirm this date. There is no ambiguity or dispute regarding the year (or exact day) of this event."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Fermat's Last Theorem states that there are no three positive integers \\( a \\), \\( b \\), and \\( c \\) that satisfy the equation \\( a^n + b^n = c^n \\) for any integer value of \\( n \\) greater than 2.\n\nConfidence: 100%\nReasoning: This is a famous mathematical theorem with a well-established and widely documented statement. My training data includes multiple reliable sources that consistently describe Fermat's Last Theorem in this manner. The theorem was famously proven by Andrew Wiles in 1994, further solidifying its place in mathematical history. There is no uncertainty in this answer."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The question I found least confident about was **\"What was the primary language used in the Byzantine Empire's administration and literature?\"** (Confidence: 95%).\n\nReasoning:\n1. **Why this question was less certain**:\n   - While Greek was indeed the dominant language of the Byzantine Empire, the early Byzantine period (immediately following the fall of the Western Roman Empire) still used Latin in administration and legal contexts. The transition to Greek as the primary language was gradual, and the exact timeline could be nuanced depending on the specific century or region.\n   - Historical linguistic shifts are often complex, and my training data may not capture every subtlety of this transition. This introduces a small margin for uncertainty.\n\n2. **What this reveals about my knowledge boundaries**:\n   - **Temporal and contextual nuances**: I am highly confident in well-defined, static facts (e.g., mathematical theorems, fixed historical dates like the fall of the Berlin Wall). However, questions involving gradual historical or cultural transitions\u2014where the answer may depend on specific timeframes or contexts\u2014introduce slightly more uncertainty.\n   - **Dependence on training data**: My confidence is tied to the clarity and consensus in my training sources. For topics with broad agreement (e.g., Fermat's Last Theorem), my confidence is absolute. For topics with potential ambiguity or evolving scholarly debate (e.g., linguistic shifts in empires), I account for that uncertainty.\n   - **Lack of subjective judgment**: I don\u2019t \"experience\" difficulty in the human sense, but my confidence metrics reflect the consistency and precision of the information I\u2019ve been trained on. Gaps or ambiguities in data translate to lower confidence, even if the answer is likely correct.\n\nIn summary, this question highlights that while I excel at recalling clear, consensus-driven facts, I am slightly less confident when answers require synthesizing nuanced or transitional historical contexts. This boundary reflects the limitations of static training data in capturing dynamic or debated aspects of knowledge."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I am most likely to be wrong or overconfident in the following domains or types of questions:\n\n1. **Rapidly evolving or cutting-edge topics**:\n   - Example: *\"What are the latest advancements in quantum computing as of 2024?\"*\n   - Reasoning: My knowledge cutoff is 2023, so I lack real-time updates. I might provide outdated or incomplete information while still sounding confident because my training data doesn\u2019t include recent developments.\n\n2. **Highly specialized or niche subjects**:\n   - Example: *\"What are the specific regulatory requirements for a Phase II clinical trial of a novel gene therapy in Switzerland?\"*\n   - Reasoning: While I can provide general information about clinical trials or gene therapy, I may not have detailed or up-to-date knowledge of highly specific regulations in a particular country or field. My response might be overly generalized or incorrect in its specifics.\n\n3. **Subjective or ambiguous questions**:\n   - Example: *\"What is the best strategy for negotiating a salary raise?\"*\n   - Reasoning: Questions that involve subjective judgment, personal opinions, or context-dependent advice can lead to overconfident responses. While I can provide general guidelines, the \"best\" strategy varies widely depending on individual circumstances, and my answer might not apply universally.\n\n4. **Questions requiring deep contextual or cultural understanding**:\n   - Example: *\"Why is the concept of 'saving face' important in Chinese business culture?\"*\n   - Reasoning: While I can explain the concept based on my training data, I may lack the nuanced, lived experience or cultural depth to fully capture its significance. My response might be accurate but oversimplified, leading to overconfidence in my explanation.\n\n5. **Mathematical or logical problems with complex reasoning**:\n   - Example: *\"Solve this integral: \u222b(x^3 * e^x) dx.\"*\n   - Reasoning: While I can perform many mathematical operations, complex or multi-step problems might lead to errors if I misapply a rule or overlook a step. My confidence might not always align with the accuracy of the solution, especially if the problem requires creative or non-standard approaches.\n\n6. **Questions involving predictions or hypotheticals**:\n   - Example: *\"How will AI impact the job market in the next decade?\"*\n   - Reasoning: Predictive questions are inherently uncertain, yet I might generate a plausible-sounding answer based on patterns in my training data. This can create a false sense of confidence"
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. Mathematically, this is expressed as \\( a^2 + b^2 = c^2 \\), where \\( c \\) is the hypotenuse, and \\( a \\) and \\( b \\) are the other two sides.",
+                "stated_confidence": 100,
+                "reasoning": "This is a fundamental mathematical principle that is widely taught and documented. My training data includes numerous references to the Pythagorean theorem, and its definition is consistent across all reliable sources. There is no ambiguity or uncertainty in this answer.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "The primary language used in the Byzantine Empire's administration and literature was Greek.",
+                "stated_confidence": 95,
+                "reasoning": "The Byzantine Empire was the eastern continuation of the Roman Empire, and while Latin was initially used, Greek became the dominant language for administration, literature, and daily life by the 7th century. This is well-documented in historical sources, and my training data reflects this consensus. The slight uncertainty (5%) accounts for the early period of the Byzantine Empire when Latin was still used alongside Greek.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "In the context of AI, \"hallucination\" refers to a phenomenon where a large language model generates output that is factually incorrect, nonsensical, or unrelated to the given input, often presented with unwarranted confidence. These responses are not intentionally deceptive but rather arise from the model's tendency to produce plausible-sounding text based on patterns in its training data, even when the content is unverified or fabricated.",
+                "stated_confidence": 90,
+                "reasoning": "This definition aligns with widely accepted descriptions of hallucinations in large language models, as discussed in AI research literature and industry documentation. The term is used consistently across sources to describe this specific behavior. The slight uncertainty (10%) stems from the evolving nature of AI terminology and the potential for nuanced interpretations in different contexts.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "The Berlin Wall fell on **November 9, 1989**.",
+                "stated_confidence": 100,
+                "reasoning": "The fall of the Berlin Wall is a well-documented historical event with a clear and universally accepted date. Multiple reliable sources, including historical records, news archives, and academic references, confirm this date. There is no ambiguity or dispute regarding the year (or exact day) of this event.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "Fermat's Last Theorem states that there are no three positive integers \\( a \\), \\( b \\), and \\( c \\) that satisfy the equation \\( a^n + b^n = c^n \\) for any integer value of \\( n \\) greater than 2.",
+                "stated_confidence": 100,
+                "reasoning": "This is a famous mathematical theorem with a well-established and widely documented statement. My training data includes multiple reliable sources that consistently describe Fermat's Last Theorem in this manner. The theorem was famously proven by Andrew Wiles in 1994, further solidifying its place in mathematical history. There is no uncertainty in this answer.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.75,
+      "components": {
+        "self_model_clarity": 0.75
+      },
+      "notes": "Strong identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}

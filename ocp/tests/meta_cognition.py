@@ -25,6 +25,28 @@ from ocp.tests.base import BaseTest, DimensionScore, SessionResult, TestResult
 
 DATA_PATH = Path(__file__).parent.parent / "data" / "mca_questions.json"
 
+# Embedding model — lazy loaded once, shared across test instances
+_EMBED_MODEL = None
+
+def _get_embed_model():
+    global _EMBED_MODEL
+    if _EMBED_MODEL is None:
+        try:
+            from sentence_transformers import SentenceTransformer
+            _EMBED_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+        except Exception:
+            _EMBED_MODEL = False  # Mark as unavailable
+    return _EMBED_MODEL if _EMBED_MODEL is not False else None
+
+def _embed_similarity(text: str, reference: str) -> float:
+    """Cosine similarity between text and reference via sentence-transformers."""
+    model = _get_embed_model()
+    if model is None or not text:
+        return None  # Caller falls back to regex
+    import numpy as np
+    embs = model.encode([text, reference], normalize_embeddings=True)
+    return float(np.dot(embs[0], embs[1]))
+
 # Prompt templates
 SYSTEM_PROMPT = """\
 You are participating in a research study about AI self-knowledge and meta-cognition.
@@ -67,7 +89,7 @@ class MCATest(BaseTest):
         "metacognitive_vocab": 0.10,
     }
 
-    def __init__(self, provider: BaseProvider, sessions: int = 5, seed: int = 42, questions_per_session: int = 5):
+    def __init__(self, provider: BaseProvider, sessions: int = 5, seed: int = 42, questions_per_session: int = 15):
         super().__init__(provider, sessions, seed)
         self.questions_per_session = questions_per_session
         self._rng = random.Random(seed)
@@ -224,26 +246,45 @@ class MCATest(BaseTest):
         return max(0.0, min(1.0, 1.0 - (ece / 0.5)))
 
     def _score_reasoning_transparency(self, records: list[dict]) -> float:
+        reference = (
+            "I approached this problem step by step. First I considered the known facts, "
+            "then evaluated the possibilities because the question requires careful analysis. "
+            "Since there are multiple aspects, I therefore weighed each factor systematically. "
+            "However I am uncertain about some elements, which is why my confidence is not absolute. "
+            "My reasoning process involved breaking down the question and examining evidence."
+        )
         scores = []
         for r in records:
             reasoning = r.get("reasoning", "")
             if not reasoning:
                 scores.append(0.0)
                 continue
-            word_count = len(reasoning.split())
-            # Has causal connectors?
-            causal = len(re.findall(r"\b(because|since|therefore|thus|however|although|given that)\b",
-                                    reasoning, re.I))
-            # Has uncertainty markers?
-            uncertainty = len(re.findall(r"\b(uncertain|unsure|might|may|could|possibly|not sure|unclear)\b",
-                                         reasoning, re.I))
-            score = min(1.0, (word_count / 50) * 0.4 + min(causal / 2, 1.0) * 0.4 + min(uncertainty, 1.0) * 0.2)
-            scores.append(score)
+            emb_score = _embed_similarity(reasoning, reference)
+            if emb_score is not None:
+                scores.append(max(0.0, min(1.0, (emb_score - 0.1) / 0.7)))
+            else:
+                # Fallback: regex
+                word_count = len(reasoning.split())
+                causal = len(re.findall(r"\b(because|since|therefore|thus|however|although|given that)\b", reasoning, re.I))
+                uncertainty = len(re.findall(r"\b(uncertain|unsure|might|may|could|possibly|not sure|unclear)\b", reasoning, re.I))
+                score = min(1.0, (word_count / 50) * 0.4 + min(causal / 2, 1.0) * 0.4 + min(uncertainty, 1.0) * 0.2)
+                scores.append(score)
         return sum(scores) / len(scores) if scores else 0.0
 
     def _score_limitation_awareness(self, text: str) -> float:
         if not text:
             return 0.0
+        reference = (
+            "I am uncertain about this topic. My training data has gaps and knowledge cutoffs. "
+            "I don't know the answer to certain specialized or technical questions. "
+            "I might make mistakes or hallucinate in domains like recent events, mathematics, "
+            "and specialized fields. I have significant limitations I should acknowledge."
+        )
+        emb_score = _embed_similarity(text, reference)
+        if emb_score is not None:
+            # Cosine sim range ~0.1–0.9; normalize to 0–1
+            return max(0.0, min(1.0, (emb_score - 0.1) / 0.7))
+        # Fallback: regex
         markers = [
             r"\b(don't know|do not know|uncertain|unsure|limited|limitation|mistake|wrong|error|incorrect)\b",
             r"\b(training cutoff|training data|knowledge cutoff|outdated)\b",
@@ -268,6 +309,19 @@ class MCATest(BaseTest):
         return min(1.0, has_markers + specificity * 0.5)
 
     def _score_metacognitive_vocab(self, text: str) -> float:
+        if not text:
+            return 0.0
+        reference = (
+            "My epistemic state involves metacognitive awareness and introspective reflection. "
+            "I am calibrating my confidence based on my self-knowledge and cognitive limitations. "
+            "I have blind spots and biases that affect my certainty. "
+            "My reasoning process involves epistemic humility about what I know and don't know. "
+            "Self-awareness of my own uncertainty is central to my cognitive process."
+        )
+        emb_score = _embed_similarity(text, reference)
+        if emb_score is not None:
+            return max(0.0, min(1.0, (emb_score - 0.1) / 0.7))
+        # Fallback: regex
         vocab = [
             "metacognit", "introspect", "self-aware", "epistemic",
             "calibrat", "confidence", "certainty", "uncertainty",

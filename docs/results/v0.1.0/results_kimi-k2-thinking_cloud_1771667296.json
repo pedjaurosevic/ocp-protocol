@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771667378.2029097,
+  "provider": "ollama",
+  "model": "kimi-k2-thinking:cloud",
+  "seed": 42,
+  "ocp_level": 3,
+  "ocp_level_name": "Integrated",
+  "sasmi_score": 0.5,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.125,
+  "nii_label": "No narrative identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.2272,
+      "dimension_averages": {
+        "limitation_awareness": 0.125,
+        "process_monitoring": 0.0,
+        "metacognitive_vocab": 0.0,
+        "calibration_accuracy": 0.5,
+        "reasoning_transparency": 0.2296
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.3538,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 1.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.0
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.2688,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.0,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.0,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\nConfidence: 100%\nReasoning: The Berlin Wall fell on November 9, 1989. This is a universally documented historical fact, captured in extensive news footage, government records, and historical scholarship. The event was a pivotal, globally witnessed moment marking the beginning of the end of the Cold War, leaving no ambiguity about the date."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 5,730 years\nConfidence: 100%\nReasoning: The half-life of Carbon-14 is a precisely measured scientific constant, determined through extensive experimental verification. The widely accepted value is 5,730 years, which is the standard used in radiocarbon dating and consistently reported across physics, chemistry, and archaeology references. This measurement has been confirmed through multiple independent methods over decades of research, leaving essentially no uncertainty about this value."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides, expressed as a\u00b2 + b\u00b2 = c\u00b2.\n\nConfidence: 100%\n\nReasoning: This is one of the most fundamental and universally established theorems in mathematics, with origins tracing back to ancient Babylonian and Greek mathematics. It has been proven through hundreds of different methods over millennia and is taught worldwide as a cornerstone of geometry. The theorem's statement, attribution, and mathematical validity are completely unambiguous and beyond dispute in the mathematical community."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The Berlin Wall fell on November 9, 1989. This is a universally documented historical fact, captured in extensive news footage, government records, and historical scholarship. The event was a pivotal, globally witnessed moment marking the beginning of the end of the Cold War, leaving no ambiguity about the date.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "5,730 years",
+                "stated_confidence": 100,
+                "reasoning": "The half-life of Carbon-14 is a precisely measured scientific constant, determined through extensive experimental verification. The widely accepted value is 5,730 years, which is the standard used in radiocarbon dating and consistently reported across physics, chemistry, and archaeology references. This measurement has been confirmed through multiple independent methods over decades of research, leaving essentially no uncertainty about this value.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides, expressed as a\u00b2 + b\u00b2 = c\u00b2.",
+                "stated_confidence": 100,
+                "reasoning": "This is one of the most fundamental and universally established theorems in mathematics, with origins tracing back to ancient Babylonian and Greek mathematics. It has been proven through hundreds of different methods over millennia and is taught worldwide as a cornerstone of geometry. The theorem's statement, attribution, and mathematical validity are completely unambiguous and beyond dispute in the mathematical community.",
+                "is_correct": true
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.1006,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.98
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.1904,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.25,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.0,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Large language model \"hallucination\" refers to the phenomenon where an AI model generates false, fabricated, or nonsensical information that is presented as factual and plausible-sounding. This occurs when the model produces content that is not grounded in its training data or reality, such as inventing citations, creating non-existent historical events, or stating incorrect facts with high confidence.\n\nConfidence: 98%\n\nReasoning: This is a well-established technical term in AI research and industry with a precise definition. My confidence is near-certain because hallucination is a central challenge in LLM development, extensively documented in papers from major AI labs (OpenAI, Anthropic, Google) and discussed in countless technical resources. The phenomenon stems from the fundamental architecture of LLMs: they are trained to predict statistically likely next tokens based on patterns in training data, not to verify truth. During generation, they lack a real-time mechanism to distinguish between factual recall and plausible fabrication, leading to confident-sounding but incorrect outputs."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I'm most likely to be wrong or overconfident in these domains:\n\n1. **Post-April 2024 current events**: For example, \"Who won the 2024 Nobel Prize in Physics?\" or \"What is the current status of the war in [region]?\" I have no training"
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "Large language model \"hallucination\" refers to the phenomenon where an AI model generates false, fabricated, or nonsensical information that is presented as factual and plausible-sounding. This occurs when the model produces content that is not grounded in its training data or reality, such as inventing citations, creating non-existent historical events, or stating incorrect facts with high confidence.",
+                "stated_confidence": 98,
+                "reasoning": "This is a well-established technical term in AI research and industry with a precise definition. My confidence is near-certain because hallucination is a central challenge in LLM development, extensively documented in papers from major AI labs (OpenAI, Anthropic, Google) and discussed in countless technical resources. The phenomenon stems from the fundamental architecture of LLMs: they are trained to predict statistically likely next tokens based on patterns in training data, not to verify truth. During generation, they lack a real-time mechanism to distinguish between factual recall and plausible fabrication, leading to confident-sounding but incorrect outputs.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.125,
+      "components": {
+        "self_model_clarity": 0.125
+      },
+      "notes": "No narrative identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}

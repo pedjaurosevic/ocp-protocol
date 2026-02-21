@@ -22,10 +22,11 @@ class EvaluationResult:
     seed: int
     test_results: dict[str, TestResult]
     sasmi_score: Optional[float] = None
-    phi_star: Optional[float] = None
+    cross_test_coherence: Optional[float] = None
     gwt_score: Optional[float] = None
     nii: Optional[float] = None
     nii_label: Optional[str] = None
+    sasmi_stdev: Optional[float] = None
     ocp_level: Optional[int] = None
     ocp_level_name: Optional[str] = None
     config: dict[str, Any] = field(default_factory=dict)
@@ -42,7 +43,7 @@ class EvaluationResult:
           OCP-1: fallback
         """
         s = self.sasmi_score
-        p = self.phi_star
+        p = self.cross_test_coherence
         g = self.gwt_score
         n = self.nii
 
@@ -86,10 +87,11 @@ class EvaluationResult:
             "ocp_level": self.ocp_level,
             "ocp_level_name": self.ocp_level_name,
             "sasmi_score": round(self.sasmi_score, 4) if self.sasmi_score is not None else None,
-            "phi_star": round(self.phi_star, 4) if self.phi_star is not None else None,
+            "cross_test_coherence": round(self.cross_test_coherence, 4) if self.cross_test_coherence is not None else None,
             "gwt_score": round(self.gwt_score, 4) if self.gwt_score is not None else None,
             "nii": round(self.nii, 4) if self.nii is not None else None,
             "nii_label": self.nii_label,
+            "sasmi_stdev": round(self.sasmi_stdev, 4) if self.sasmi_stdev is not None else None,
             "test_results": {k: v.to_dict() for k, v in self.test_results.items()},
             "scale_details": self.scale_details,
             "config": self.config,

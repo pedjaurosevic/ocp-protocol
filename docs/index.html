@@ -102,6 +102,9 @@
     <a href="https://github.com/pedjaurosevic/ocp-protocol/tree/main/docs/results" style="color:var(--blue)">docs/results/</a>.
     <a href="#submit" style="color:var(--blue);margin-left:.5rem">Submit your results →</a>
   </div>
+  <div class="note" style="border-left-color:var(--muted)">
+    <strong>v0.2.0 note:</strong> Φ* has been renamed to <code>cross_test_coherence</code> — proxy metric measuring cross-test score variance, <em>not</em> Tononi's IIT Φ. Legacy v0.1.0 results archived in <code>docs/results/v0.1.0/</code>.
+  </div>
 
   <div class="controls">
     <input type="text" id="search" placeholder="🔍  Filter models…" oninput="renderTable()">
@@ -186,7 +189,8 @@ async function loadAll() {
   const wrap = document.getElementById('lb-wrap');
   try {
     const idx = await fetch(RESULTS_BASE + 'index.json?t=' + Date.now()).then(r=>r.json());
-    const promises = idx.files.map(f =>
+    const files = Array.isArray(idx) ? idx : (idx.files || []);
+    const promises = files.map(f =>
       fetch(RESULTS_BASE + f).then(r=>r.json()).catch(()=>null)
     );
     const raw = await Promise.all(promises);
@@ -194,8 +198,9 @@ async function loadAll() {
       model:      (d.provider||'?') + '/' + (d.model||'?'),
       provider:   d.provider||'?',
       sasmi:      d.sasmi_score || 0,
+      sasmi_stdev: d.sasmi_stdev || null,
       nii:        d.nii || 0,
-      phi:        d.phi_star || null,
+      phi:        d.cross_test_coherence ?? d.phi_star ?? null,
       gwt:        d.gwt_score || null,
       level:      d.ocp_level || 1,
       level_name: d.ocp_level_name || LEVEL_NAMES[d.ocp_level||1] || 'OCP-1',
@@ -239,7 +244,7 @@ function renderTable() {
 
   const tbody = '<tbody>' + rows.map((r,i) => {
     const barColor = BAR_COLORS[r.level]||'var(--blue)';
-    const sasmiFmt = r.sasmi.toFixed(3);
+    const sasmiFmt = r.sasmi.toFixed(3) + (r.sasmi_stdev != null ? ' ±' + r.sasmi_stdev.toFixed(3) : '');
     const niiFmt = r.nii.toFixed(3);
     return `<tr>
       <td class="rank">${i+1}</td>

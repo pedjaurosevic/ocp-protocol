@@ -5,8 +5,9 @@ Base classes for OCP test batteries.
 from __future__ import annotations
 
 import abc
+import statistics
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Optional
 
 
 @dataclass
@@ -46,13 +47,15 @@ class TestResult:
     sessions: list[SessionResult]
     composite_score: float
     dimension_averages: dict[str, float]
-    protocol_version: str = "0.1.0"
+    composite_stdev: Optional[float] = None
+    protocol_version: str = "0.2.0"
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "test_id": self.test_id,
             "protocol_version": self.protocol_version,
             "composite_score": round(self.composite_score, 4),
+            "composite_stdev": round(self.composite_stdev, 4) if self.composite_stdev is not None else None,
             "dimension_averages": {k: round(v, 4) for k, v in self.dimension_averages.items()},
             "sessions": [s.to_dict() for s in self.sessions],
         }
@@ -81,6 +84,7 @@ class BaseTest(abc.ABC):
             return TestResult(self.test_id, [], 0.0, {})
 
         composite = sum(s.composite_score for s in session_results) / len(session_results)
+        stdev = statistics.stdev([s.composite_score for s in session_results]) if len(session_results) > 1 else 0.0
 
         # Collect all dimension names
         dim_names = {d.name for s in session_results for d in s.dimension_scores}
@@ -96,5 +100,6 @@ class BaseTest(abc.ABC):
             test_id=self.test_id,
             sessions=session_results,
             composite_score=composite,
+            composite_stdev=round(stdev, 4),
             dimension_averages=dim_avgs,
         )

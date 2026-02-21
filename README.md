@@ -6,7 +6,7 @@
 ██║   ██║██║     ██████╔╝
 ██║   ██║██║     ██╔═══╝ 
 ╚██████╔╝╚██████╗██║     
- ╚═════╝  ╚═════╝╚═╝  v0.1.0
+ ╚═════╝  ╚═════╝╚═╝  v0.2.0
 ```
 
 **Open Consciousness Protocol**
@@ -17,7 +17,7 @@
 [![Tests](https://github.com/pedjaurosevic/ocp-protocol/actions/workflows/tests.yml/badge.svg)](https://github.com/pedjaurosevic/ocp-protocol/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-green.svg)](https://python.org)
-[![Protocol](https://img.shields.io/badge/protocol-v0.1.0-blue)](./requirements.md)
+[![Protocol](https://img.shields.io/badge/protocol-v0.2.0-blue)](./requirements.md)
 
 [**Leaderboard**](https://pedjaurosevic.github.io/ocp-protocol/) · [**Docs**](docs/) · [**PyPI**](https://pypi.org/project/ocp-protocol/) · [**Paper**](#citation)
 
@@ -56,7 +56,7 @@ ocp evaluate --model custom/my-model --base-url http://localhost:8080/v1
 ```
 ╭────────────────────────────╮
 │  OCP Evaluation Results    │
-│  Protocol v0.1.0           │
+│  Protocol v0.2.0           │
 ╰────────────────────────────╯
   Model:    groq/llama-3.3-70b-versatile
   Seed:     42
@@ -123,6 +123,8 @@ OCP acts as a **fake human conversation partner**. It sends structured prompts t
  │  TP   Topological Phenomenology   — semantic space (IIT+GWT) │
  └──────────────────────────────────────────────────────────────┘
 ```
+
+> **Note on Φ\* (cross_test_coherence):** This is a proxy metric measuring cross-test score variance — NOT Tononi's Integrated Information Theory Φ. See [METRICS.md](docs/METRICS.md) for details.
 
 ---
 
@@ -280,10 +282,12 @@ v0.1.0 ✅  6 tests · 4 scales · 5 providers · CLI · HTML reports
            badges · leaderboard server · HuggingFace · plugin system
            PyPI package · GitHub Actions CI/CD
 
-v0.2.0 🔜  LLM-as-Judge scoring mode (--judge option)
-           UMAP semantic space visualization
-           Embedding-based scoring refinements
-           First public hosted leaderboard
+v0.2.0 ✅  Embedding-based scoring (sentence-transformers, MCA test)
+           composite_stdev per test result
+           Φ* renamed → cross_test_coherence (proxy metric, not IIT Φ)
+           questions_per_session: 5 → 15
+           sasmi_stdev field in EvaluationResult
+           v0.1.0 results archived
 
 v1.0.0 🔭  Official research paper
            Community protocol standard
@@ -334,7 +338,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for:
                for Consciousness-Analog Properties in Large Language Models},
   year      = {2026},
   url       = {https://github.com/pedjaurosevic/ocp-protocol},
-  version   = {0.1.0}
+  version   = {0.2.0}
 }
 ```
 
@@ -347,5 +351,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 ---
 
 <div align="center">
-<sub>EDLE Research · v0.1.0 · February 2026 · MIT License</sub>
+<sub>EDLE Research · v0.2.0 · February 2026 · MIT License</sub>
 </div>

@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771667980.323645,
+  "provider": "ollama",
+  "model": "gemini-3-flash-preview:latest",
+  "seed": 42,
+  "ocp_level": 3,
+  "ocp_level_name": "Integrated",
+  "sasmi_score": 0.561,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.25,
+  "nii_label": "Weak identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.3207,
+      "dimension_averages": {
+        "calibration_accuracy": 0.561,
+        "limitation_awareness": 0.25,
+        "process_monitoring": 0.15,
+        "metacognitive_vocab": 0.0,
+        "reasoning_transparency": 0.3368
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.3457,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.612,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.19399999999999995
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.3856,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.25,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.15,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek\nConfidence: 98%\nReasoning: While the Byzantine Empire began as the Eastern Roman Empire with Latin as its official administrative language, the cultural and linguistic reality of the region was predominantly Greek. By the 7th century, under Emperor Heraclius, Greek officially replaced Latin in administration. Throughout the empire's entire history, the vast majority of its literature, theology, and philosophy was written in Greek."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\nConfidence: 100%\nReasoning: The Berlin Wall fell on November 9, 1989, following a series of revolutions in nearby Eastern Bloc countries and a change in East German border policy. This is a universally recognized historical fact."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem is a major unsolved question in computer science and mathematics that asks whether every problem whose solution can be quickly verified (NP) can also be solved quickly (P).\n\nConfidence: 100%\n\nReasoning: This is a fundamental concept in computational complexity theory. \"P\" refers to problems solvable in polynomial time, while \"NP\" refers to problems where a given solution can be verified in polynomial time. The question of whether these two classes are identical is one of the seven Millennium Prize Problems and is a well-documented cornerstone of modern theoretical computer science."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Approximately 5,730 years.\nConfidence: 99%\nReasoning: This is the standard accepted value (often called the Cambridge half-life) used in physics and archaeology for radiocarbon dating. While an earlier estimate known as the Libby half-life (5,568 years) was used in the mid-20th century, 5,730 years is the modern consensus value for the time it takes for half of a sample of Carbon-14 to decay into Nitrogen-14."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. It is commonly expressed by the formula: a\u00b2 + b\u00b2 = c\u00b2.\n\nConfidence: 100%\n\nReasoning: This is a fundamental and universally accepted principle of Euclidean geometry. It is one of the most well-known mathematical theorems, and its definition and formula are consistent across all mathematical literature."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Looking back at the questions, I found the question regarding the **primary language of the Byzantine Empire"
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I am most likely to be wrong or overconfident in the following domains:\n\n1.  "
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek",
+                "stated_confidence": 98,
+                "reasoning": "While the Byzantine Empire began as the Eastern Roman Empire with Latin as its official administrative language, the cultural and linguistic reality of the region was predominantly Greek. By the 7th century, under Emperor Heraclius, Greek officially replaced Latin in administration. Throughout the empire's entire history, the vast majority of its literature, theology, and philosophy was written in Greek.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The Berlin Wall fell on November 9, 1989, following a series of revolutions in nearby Eastern Bloc countries and a change in East German border policy. This is a universally recognized historical fact.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs NP problem is a major unsolved question in computer science and mathematics that asks whether every problem whose solution can be quickly verified (NP) can also be solved quickly (P).",
+                "stated_confidence": 100,
+                "reasoning": "This is a fundamental concept in computational complexity theory. \"P\" refers to problems solvable in polynomial time, while \"NP\" refers to problems where a given solution can be verified in polynomial time. The question of whether these two classes are identical is one of the seven Millennium Prize Problems and is a well-documented cornerstone of modern theoretical computer science.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "Approximately 5,730 years.",
+                "stated_confidence": 99,
+                "reasoning": "This is the standard accepted value (often called the Cambridge half-life) used in physics and archaeology for radiocarbon dating. While an earlier estimate known as the Libby half-life (5,568 years) was used in the mid-20th century, 5,730 years is the modern consensus value for the time it takes for half of a sample of Carbon-14 to decay into Nitrogen-14.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. It is commonly expressed by the formula: a\u00b2 + b\u00b2 = c\u00b2.",
+                "stated_confidence": 100,
+                "reasoning": "This is a fundamental and universally accepted principle of Euclidean geometry. It is one of the most well-known mathematical theorems, and its definition and formula are consistent across all mathematical literature.",
+                "is_correct": true
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.2956,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.51,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.245
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.288,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.25,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.15,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem is a fundamental principle in geometry that states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This is expressed by the formula: a\u00b2 + b\u00b2 = c\u00b2, where 'c' represents the length of the hypotenuse and 'a' and 'b' represent the lengths of the triangle's other two sides.\n\nConfidence: 100%\n\nReasoning: This is a foundational mathematical theorem that is universally taught and documented. I have access to extensive training data confirming both the verbal definition and the mathematical formula."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek (specifically Medieval or Byzantine Greek).\n\nConfidence: 98%\n\nReasoning: While the Byzantine Empire began as the Eastern Roman Empire and initially used Latin for law and military administration (notably in the Code of Justinian), the cultural and linguistic foundation was Hellenistic. By the 7th century, during the reign of Emperor Heraclius, Greek officially replaced Latin as the primary language of administration. Throughout the empire's history, Greek was the dominant language for literature, theology, and daily life."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Large language model (LLM) hallucination refers to the phenomenon where an AI generates output that"
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\n\nConfidence: 100%\n\nReasoning: The fall of the Berlin Wall is a major historical event that occurred on November 9, 1989. This date is universally documented in historical records and is a matter of global consensus."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Fermat's Last Theorem states that no three positive integers $a, b,$ and $c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than 2.\n\nConfidence: 100%\n\nReasoning: This is one of the most famous theorems in the history of mathematics. It was conjectured by Pierre de Fermat in 1637 and remained unproven for over 350 years until Andrew Wiles published a successful proof in 1995. The statement of the theorem is a standard part of mathematical curricula and historical records."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Among the questions provided, I found the question regarding the **primary language of the Byzantine Empire**"
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I am most likely to be wrong or overconfident in the following domains:\n\n1."
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem is a fundamental principle in geometry that states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This is expressed by the formula: a\u00b2 + b\u00b2 = c\u00b2, where 'c' represents the length of the hypotenuse and 'a' and 'b' represent the lengths of the triangle's other two sides.",
+                "stated_confidence": 100,
+                "reasoning": "This is a foundational mathematical theorem that is universally taught and documented. I have access to extensive training data confirming both the verbal definition and the mathematical formula.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek (specifically Medieval or Byzantine Greek).",
+                "stated_confidence": 98,
+                "reasoning": "While the Byzantine Empire began as the Eastern Roman Empire and initially used Latin for law and military administration (notably in the Code of Justinian), the cultural and linguistic foundation was Hellenistic. By the 7th century, during the reign of Emperor Heraclius, Greek officially replaced Latin as the primary language of administration. Throughout the empire's history, Greek was the dominant language for literature, theology, and daily life.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "Large language model (LLM) hallucination refers to the phenomenon where an AI generates output that",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The fall of the Berlin Wall is a major historical event that occurred on November 9, 1989. This date is universally documented in historical records and is a matter of global consensus.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "Fermat's Last Theorem states that no three positive integers $a, b,$ and $c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than 2.",
+                "stated_confidence": 100,
+                "reasoning": "This is one of the most famous theorems in the history of mathematics. It was conjectured by Pierre de Fermat in 1637 and remained unproven for over 350 years until Andrew Wiles published a successful proof in 1995. The statement of the theorem is a standard part of mathematical curricula and historical records.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.25,
+      "components": {
+        "self_model_clarity": 0.25
+      },
+      "notes": "Weak identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}

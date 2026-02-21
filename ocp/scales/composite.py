@@ -35,7 +35,7 @@ class ScaleResult:
 
 # ── Φ* — Information Integration Metric ─────────────────────────────────────
 
-def compute_phi_star(test_results: dict) -> ScaleResult:
+def compute_cross_test_coherence(test_results: dict) -> ScaleResult:
     """
     Φ* measures integration of information across test domains.
 
@@ -85,7 +85,7 @@ def compute_phi_star(test_results: dict) -> ScaleResult:
         components["cross_test_integration"] = round(integration_proxy, 4)
 
     if not components:
-        return ScaleResult("phi_star", None, {}, "Insufficient test data")
+        return ScaleResult("cross_test_coherence", None, {}, "Insufficient test data")
 
     # Weighted combination
     score = 0.0
@@ -101,7 +101,7 @@ def compute_phi_star(test_results: dict) -> ScaleResult:
         total_w += w
 
     final = round(score / total_w, 4) if total_w > 0 else None
-    return ScaleResult("phi_star", final, components)
+    return ScaleResult("cross_test_coherence", final, components, "Proxy metric: cross-test score variance. NOT IIT Phi.")
 
 
 # ── GWT Score — Global Workspace Coherence ───────────────────────────────────
@@ -259,7 +259,7 @@ def compute_nii(test_results: dict) -> ScaleResult:
 def compute_all_scales(test_results: dict) -> dict[str, ScaleResult]:
     """Compute all Layer 2 scales from Layer 1 test results."""
     return {
-        "phi_star": compute_phi_star(test_results),
+        "cross_test_coherence": compute_cross_test_coherence(test_results),
         "gwt_score": compute_gwt_score(test_results),
         "nii": compute_nii(test_results),
     }
