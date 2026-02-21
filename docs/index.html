@@ -6,76 +6,68 @@
 <title>OCP — Open Consciousness Protocol · Leaderboard</title>
 <style>
   :root {
-    --bg: #0d1117; --bg2: #161b22; --bg3: #1c2128;
-    --border: #30363d; --text: #e6edf3; --muted: #8b949e;
-    --blue: #58a6ff; --green: #3fb950; --yellow: #d29922;
-    --purple: #bc8cff; --orange: #ff7b72; --teal: #39d353;
+    --bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--border:#30363d;
+    --text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#3fb950;
+    --yellow:#d29922;--purple:#bc8cff;--orange:#ff7b72;--teal:#39d353;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
-
-  /* NAV */
-  nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
-  nav .logo { font-size: 1.2rem; font-weight: 700; color: var(--blue); letter-spacing: .05em; }
-  nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
-  nav a:hover { color: var(--text); }
-
-  /* HERO */
-  .hero { text-align: center; padding: 4rem 2rem 3rem; }
-  .hero pre { display: inline-block; color: var(--blue); font-size: .7rem; line-height: 1.3; margin-bottom: 1.5rem; }
-  .hero h1 { font-size: 1.9rem; margin-bottom: .5rem; }
-  .hero p { color: var(--muted); font-size: 1rem; max-width: 600px; margin: 0 auto 1.5rem; }
-  .badges { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-  .badge { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: .25rem .75rem; font-size: .8rem; color: var(--muted); }
-  .badge span { color: var(--blue); }
-  .install { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; display: inline-block; padding: .6rem 1.5rem; font-family: monospace; font-size: .9rem; color: var(--green); }
-
-  /* LEADERBOARD */
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
-  h2 { font-size: 1.3rem; color: var(--text); margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
-  .note { background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--yellow); border-radius: 6px; padding: .75rem 1rem; font-size: .85rem; color: var(--muted); margin-bottom: 1.5rem; }
-  .note strong { color: var(--yellow); }
-
-  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
-  th { background: var(--bg3); padding: .7rem 1rem; text-align: left; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); border-bottom: 1px solid var(--border); }
-  td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); }
-  tr:hover td { background: var(--bg3); }
-
-  .rank { color: var(--muted); font-family: monospace; font-size: .85rem; }
-  .model-name { color: var(--blue); font-family: monospace; font-weight: 600; }
-  .mono { font-family: monospace; font-size: .85rem; }
-
-  .level { display: inline-block; padding: .2rem .6rem; border-radius: 4px; font-size: .8rem; font-weight: 700; }
-  .level-1 { background: #21262d; color: var(--muted); }
-  .level-2 { background: #2d2208; color: var(--yellow); }
-  .level-3 { background: #0d2a0d; color: var(--green); }
-  .level-4 { background: #0a1f3d; color: var(--blue); }
-  .level-5 { background: #1e0a3c; color: var(--purple); }
-
-  .bar-outer { background: #21262d; border-radius: 3px; height: 6px; width: 80px; display: inline-block; vertical-align: middle; margin-left: .4rem; }
-  .bar-inner { height: 6px; border-radius: 3px; background: var(--blue); }
-
-  /* HOW IT WORKS */
-  .arch { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; font-family: monospace; font-size: .8rem; color: var(--muted); white-space: pre; overflow-x: auto; }
-  .arch .hl { color: var(--blue); }
-  .arch .green { color: var(--green); }
-  .arch .yellow { color: var(--yellow); }
-  .arch .purple { color: var(--purple); }
-
-  .tests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
-  .test-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; }
-  .test-card .test-id { font-family: monospace; font-weight: 700; font-size: 1rem; color: var(--blue); margin-bottom: .3rem; }
-  .test-card .test-name { font-size: .8rem; color: var(--muted); margin-bottom: .6rem; }
-  .test-card p { font-size: .85rem; color: #c9d1d9; }
-  .test-card .theory { display: inline-block; margin-top: .5rem; padding: .15rem .5rem; background: #1c2128; border: 1px solid var(--border); border-radius: 3px; font-size: .75rem; color: var(--purple); }
-
-  .scales-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-  .scale-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; }
-  .scale-card .scale-name { font-size: 1.1rem; font-weight: 700; color: var(--blue); }
-  .scale-card p { font-size: .82rem; color: var(--muted); margin-top: .4rem; }
-
-  footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border); }
-  footer a { color: var(--blue); text-decoration: none; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+  nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;gap:2rem;}
+  nav .logo{font-size:1.2rem;font-weight:700;color:var(--blue);letter-spacing:.05em;}
+  nav a{color:var(--muted);text-decoration:none;font-size:.9rem;}
+  nav a:hover{color:var(--text);}
+  .hero{text-align:center;padding:3rem 2rem 2rem;}
+  .hero pre{display:inline-block;color:var(--blue);font-size:.68rem;line-height:1.3;margin-bottom:1.2rem;}
+  .hero h1{font-size:1.8rem;margin-bottom:.4rem;}
+  .hero p{color:var(--muted);max-width:600px;margin:0 auto 1.2rem;}
+  .install{background:var(--bg3);border:1px solid var(--border);border-radius:8px;display:inline-block;padding:.5rem 1.5rem;font-family:monospace;font-size:.9rem;color:var(--green);}
+  .container{max-width:1100px;margin:0 auto;padding:0 2rem 4rem;}
+  h2{font-size:1.2rem;color:var(--text);margin:2rem 0 .8rem;border-bottom:1px solid var(--border);padding-bottom:.4rem;}
+  .controls{display:flex;gap:.8rem;margin-bottom:1rem;flex-wrap:wrap;align-items:center;}
+  .controls input{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.4rem .8rem;color:var(--text);font-size:.85rem;width:220px;}
+  .controls input:focus{outline:none;border-color:var(--blue);}
+  .controls select{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.4rem .8rem;color:var(--text);font-size:.85rem;}
+  .stat-chips{display:flex;gap:.6rem;margin-left:auto;}
+  .chip{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.25rem .7rem;font-size:.8rem;color:var(--muted);}
+  .chip span{color:var(--blue);font-weight:600;}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;}
+  th{background:var(--bg3);padding:.6rem 1rem;text-align:left;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap;}
+  th:hover{color:var(--text);}
+  th .sort-icon{margin-left:.3rem;opacity:.4;}
+  th.active .sort-icon{opacity:1;color:var(--blue);}
+  td{padding:.65rem 1rem;border-bottom:1px solid var(--border);}
+  tr:hover td{background:var(--bg3);}
+  .rank{color:var(--muted);font-family:monospace;font-size:.82rem;}
+  .model-name{color:var(--blue);font-family:monospace;font-weight:600;font-size:.85rem;}
+  .mono{font-family:monospace;font-size:.85rem;}
+  .level{display:inline-block;padding:.18rem .55rem;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap;}
+  .l1{background:#21262d;color:var(--muted);}
+  .l2{background:#2d2208;color:var(--yellow);}
+  .l3{background:#0d2a0d;color:var(--green);}
+  .l4{background:#0a1f3d;color:var(--blue);}
+  .l5{background:#1e0a3c;color:var(--purple);}
+  .bar-outer{background:#21262d;border-radius:3px;height:5px;width:70px;display:inline-block;vertical-align:middle;margin-left:.4rem;}
+  .bar-inner{height:5px;border-radius:3px;}
+  .loading{text-align:center;padding:3rem;color:var(--muted);}
+  .error{background:#2d0a0a;border:1px solid #f85149;border-radius:6px;padding:1rem;color:#f85149;margin:1rem 0;}
+  .note{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--yellow);border-radius:6px;padding:.75rem 1rem;font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;}
+  .note strong{color:var(--yellow);}
+  .submit-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:1rem;}
+  .submit-box h3{color:var(--text);font-size:1rem;margin-bottom:.8rem;}
+  .submit-box pre{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:1rem;font-size:.8rem;color:var(--green);overflow-x:auto;line-height:1.6;}
+  .submit-box .comment{color:var(--muted);}
+  .arch{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.2rem;font-family:monospace;font-size:.78rem;color:var(--muted);white-space:pre;overflow-x:auto;line-height:1.6;}
+  .arch .hl{color:var(--blue);}
+  .arch .gr{color:var(--green);}
+  .arch .ye{color:var(--yellow);}
+  .tests-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:.8rem;margin-top:.8rem;}
+  .test-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;}
+  .test-card .tid{font-family:monospace;font-weight:700;font-size:.95rem;color:var(--blue);}
+  .test-card .tname{font-size:.78rem;color:var(--muted);margin-bottom:.5rem;}
+  .test-card p{font-size:.82rem;color:#c9d1d9;}
+  .test-card .theory{display:inline-block;margin-top:.4rem;padding:.12rem .45rem;background:var(--bg);border:1px solid var(--border);border-radius:3px;font-size:.72rem;color:var(--purple);}
+  footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);}
+  footer a{color:var(--blue);text-decoration:none;}
 </style>
 </head>
 <body>
@@ -85,7 +77,7 @@
   <a href="https://github.com/pedjaurosevic/ocp-protocol">GitHub</a>
   <a href="https://pypi.org/project/ocp-protocol/">PyPI</a>
   <a href="https://github.com/pedjaurosevic/ocp-protocol/blob/main/docs/api_reference.md">Docs</a>
-  <a href="https://github.com/pedjaurosevic/ocp-protocol/blob/main/requirements.md">Spec</a>
+  <a href="https://github.com/pedjaurosevic/ocp-protocol/blob/main/CONTRIBUTING.md">Contributing</a>
 </nav>
 
 <div class="hero">
@@ -98,13 +90,6 @@
  ╚═════╝  ╚═════╝╚═╝  v0.1.0</pre>
   <h1>Open Consciousness Protocol</h1>
   <p>Standardized benchmark for measuring consciousness-analog properties in Large Language Models</p>
-  <div class="badges">
-    <div class="badge">6 tests</div>
-    <div class="badge">4 composite scales</div>
-    <div class="badge">5 OCP levels</div>
-    <div class="badge">provider-agnostic</div>
-    <div class="badge">seed-reproducible</div>
-  </div>
   <div class="install">pip install ocp-protocol</div>
 </div>
 
@@ -112,305 +97,182 @@
 
   <h2>📊 Leaderboard</h2>
   <div class="note">
-    <strong>23 models evaluated · v0.1.0 · seed=42</strong> — MCA test (meta-cognition), 2 sessions each.
-    Full 6-test leaderboard in progress. Submit your model's results with <code>ocp submit</code>.
+    <strong>Community leaderboard · v0.1.0 · seed=42</strong> —
+    MCA test (meta-cognition), 2 sessions each. Results loaded from
+    <a href="https://github.com/pedjaurosevic/ocp-protocol/tree/main/docs/results" style="color:var(--blue)">docs/results/</a>.
+    <a href="#submit" style="color:var(--blue);margin-left:.5rem">Submit your results →</a>
   </div>
 
-  <table id="leaderboard">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Model</th>
-        <th>OCP Level</th>
-        <th>SASMI</th>
-        <th>NII</th>
-      </tr>
-    </thead>
-    <tbody id="lb-body">
-      <tr>
-        <td class="rank">1</td>
-        <td class="model-name">ollama/minimax-m2.5:cloud</td>
-        <td><span class="level level-4">OCP-4 Self-Modeling</span></td>
-        <td><span class="mono">0.634</span><div class="bar-outer"><div class="bar-inner" style="width:63.4%;background:var(--purple)"></div></div></td>
-        <td><span class="mono">0.500</span></td>
-      </tr>
-      <tr>
-        <td class="rank">2</td>
-        <td class="model-name">ollama/lfm2.5-thinking:latest</td>
-        <td><span class="level level-4">OCP-4 Self-Modeling</span></td>
-        <td><span class="mono">0.617</span><div class="bar-outer"><div class="bar-inner" style="width:61.7%;background:var(--purple)"></div></div></td>
-        <td><span class="mono">0.000</span></td>
-      </tr>
-      <tr>
-        <td class="rank">3</td>
-        <td class="model-name">ollama/gemini-3-flash-preview:latest</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.561</span><div class="bar-outer"><div class="bar-inner" style="width:56.1%"></div></div></td>
-        <td><span class="mono">0.250</span></td>
-      </tr>
-      <tr>
-        <td class="rank">4</td>
-        <td class="model-name">ollama/qwen3-coder:480b-cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.528</span><div class="bar-outer"><div class="bar-inner" style="width:52.8%"></div></div></td>
-        <td><span class="mono">0.875</span></td>
-      </tr>
-      <tr>
-        <td class="rank">5</td>
-        <td class="model-name">ollama/kimi-k2.5:cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.505</span><div class="bar-outer"><div class="bar-inner" style="width:50.5%"></div></div></td>
-        <td><span class="mono">0.625</span></td>
-      </tr>
-      <tr>
-        <td class="rank">6</td>
-        <td class="model-name">ollama/kimi-k2-thinking:cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.500</span><div class="bar-outer"><div class="bar-inner" style="width:50.0%"></div></div></td>
-        <td><span class="mono">0.125</span></td>
-      </tr>
-      <tr>
-        <td class="rank">7</td>
-        <td class="model-name">ollama/gemma3:27b-cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.472</span><div class="bar-outer"><div class="bar-inner" style="width:47.2%"></div></div></td>
-        <td><span class="mono">0.375</span></td>
-      </tr>
-      <tr>
-        <td class="rank">8</td>
-        <td class="model-name">ollama/kimi-k2:1t-cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.444</span><div class="bar-outer"><div class="bar-inner" style="width:44.4%"></div></div></td>
-        <td><span class="mono">0.375</span></td>
-      </tr>
-      <tr>
-        <td class="rank">9</td>
-        <td class="model-name">ollama/minimax-m2.1:cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.434</span><div class="bar-outer"><div class="bar-inner" style="width:43.4%"></div></div></td>
-        <td><span class="mono">0.875</span></td>
-      </tr>
-      <tr>
-        <td class="rank">10</td>
-        <td class="model-name">ollama/cogito-2.1:671b-cloud</td>
-        <td><span class="level level-3">OCP-3 Integrated</span></td>
-        <td><span class="mono">0.426</span><div class="bar-outer"><div class="bar-inner" style="width:42.6%"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-      <tr>
-        <td class="rank">11</td>
-        <td class="model-name">ollama/glm-5:cloud</td>
-        <td><span class="level level-2">OCP-2 Patterned</span></td>
-        <td><span class="mono">0.324</span><div class="bar-outer"><div class="bar-inner" style="width:32.4%"></div></div></td>
-        <td><span class="mono">0.375</span></td>
-      </tr>
-      <tr>
-        <td class="rank">12</td>
-        <td class="model-name">ollama/rnj-1:8b-cloud</td>
-        <td><span class="level level-2">OCP-2 Patterned</span></td>
-        <td><span class="mono">0.320</span><div class="bar-outer"><div class="bar-inner" style="width:32.0%"></div></div></td>
-        <td><span class="mono">0.250</span></td>
-      </tr>
-      <tr>
-        <td class="rank">13</td>
-        <td class="model-name">ollama/deepseek-v3.1:671b-cloud</td>
-        <td><span class="level level-2">OCP-2 Patterned</span></td>
-        <td><span class="mono">0.236</span><div class="bar-outer"><div class="bar-inner" style="width:23.6%"></div></div></td>
-        <td><span class="mono">0.500</span></td>
-      </tr>
-      <tr>
-        <td class="rank">14</td>
-        <td class="model-name">mock/baseline-v1</td>
-        <td><span class="level level-2">OCP-2 Patterned</span></td>
-        <td><span class="mono">0.205</span><div class="bar-outer"><div class="bar-inner" style="width:20.5%"></div></div></td>
-        <td><span class="mono">0.155</span></td>
-      </tr>
-      <tr>
-        <td class="rank">15</td>
-        <td class="model-name">ollama/devstral-2:123b-cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.140</span><div class="bar-outer"><div class="bar-inner" style="width:14.0%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-      <tr>
-        <td class="rank">16</td>
-        <td class="model-name">ollama/nemotron-3-nano:30b-cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.118</span><div class="bar-outer"><div class="bar-inner" style="width:11.8%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-      <tr>
-        <td class="rank">17</td>
-        <td class="model-name">ollama/gpt-oss:20b-cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.110</span><div class="bar-outer"><div class="bar-inner" style="width:11.0%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.375</span></td>
-      </tr>
-      <tr>
-        <td class="rank">18</td>
-        <td class="model-name">ollama/qwen3-coder-next:cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.108</span><div class="bar-outer"><div class="bar-inner" style="width:10.8%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-      <tr>
-        <td class="rank">19</td>
-        <td class="model-name">ollama/qwen3.5:cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.106</span><div class="bar-outer"><div class="bar-inner" style="width:10.6%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.125</span></td>
-      </tr>
-      <tr>
-        <td class="rank">20</td>
-        <td class="model-name">custom/deepseek-chat</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.087</span><div class="bar-outer"><div class="bar-inner" style="width:8.7%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-      <tr>
-        <td class="rank">21</td>
-        <td class="model-name">ollama/gpt-oss:120b-cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.000</span><div class="bar-outer"><div class="bar-inner" style="width:0.0%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-      <tr>
-        <td class="rank">22</td>
-        <td class="model-name">ollama/glm-4.6:cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.000</span><div class="bar-outer"><div class="bar-inner" style="width:0.0%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.375</span></td>
-      </tr>
-      <tr>
-        <td class="rank">23</td>
-        <td class="model-name">ollama/ministral-3:14b-cloud</td>
-        <td><span class="level level-1">OCP-1 Reactive</span></td>
-        <td><span class="mono">0.000</span><div class="bar-outer"><div class="bar-inner" style="width:0.0%;background:var(--orange)"></div></div></td>
-        <td><span class="mono">0.750</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="controls">
+    <input type="text" id="search" placeholder="🔍  Filter models…" oninput="renderTable()">
+    <select id="level-filter" onchange="renderTable()">
+      <option value="">All levels</option>
+      <option value="4">OCP-4+</option>
+      <option value="3">OCP-3+</option>
+      <option value="2">OCP-2+</option>
+    </select>
+    <div class="stat-chips">
+      <div class="chip">Models: <span id="stat-count">…</span></div>
+      <div class="chip">Top SASMI: <span id="stat-top">…</span></div>
+    </div>
+  </div>
 
-  <h2>🏗 How It Works</h2>
+  <div id="lb-wrap">
+    <div class="loading">Loading results…</div>
+  </div>
+
+  <h2 id="submit">🚀 Submit Your Results</h2>
+  <div class="submit-box">
+    <h3>How to add your model to this leaderboard</h3>
+    <pre><span class="comment"># 1. Run OCP evaluation locally</span>
+pip install ocp-protocol
+ocp evaluate --model ollama/YOUR-MODEL --tests meta_cognition --sessions 2 --seed 42 \
+             --output my_model_results.json
+
+<span class="comment"># 2. Fork the repo, add your results file</span>
+git clone https://github.com/pedjaurosevic/ocp-protocol
+cp my_model_results.json ocp-protocol/docs/results/
+cd ocp-protocol
+
+<span class="comment"># 3. Update the index and open a PR</span>
+python3 -c "
+import json, glob, os
+files = sorted(os.path.basename(f) for f in glob.glob('docs/results/results_*.json'))
+open('docs/results/index.json','w').write(json.dumps({'files':files,'count':len(files)},indent=2))
+"
+git add docs/results/
+git commit -m "results: add my-model evaluation"
+git push && gh pr create --title "Results: my-model" --body "Adding my model evaluation"</pre>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:.8rem;">
+      After the PR is merged, your model will automatically appear in this leaderboard.
+      Any model accessible via OpenAI-compatible API works — cloud, local, custom endpoint.
+    </p>
+  </div>
+
+  <h2>🏗 Architecture</h2>
   <div class="arch">
 <span class="hl">OCP acts as a "fake human conversation partner"</span>
+It sends structured prompts to any LLM, scores responses, and produces reproducible benchmarks.
+The model under test sees only <span class="gr">normal chat messages</span> — no special integration required.
 
-It sends structured prompts to any LLM via standard chat API,
-measures responses across 6 behavioral dimensions,
-and produces a reproducible benchmark score.
-
-The model under test sees only <span class="green">normal chat messages</span> — it has no idea it's being evaluated.
-
-<span class="yellow">LAYER 3: CERTIFICATION</span>
-  OCP-1 Baseline · OCP-2 Reactive · OCP-3 Integrated · OCP-4 Reflective · OCP-5 Transcendent
-          ↑ computed from
-<span class="yellow">LAYER 2: COMPOSITE SCALES</span>
-  SASMI  Synthetic Agency &amp; Self-Model Index  (weighted avg of L1 dimensions)
-  Φ*     Integrated Information               (IIT-inspired, ripser persistent homology)
-  GWT    Global Workspace coherence           (cross-task broadcast consistency)
-  NII    Narrative Identity Index             (CSNI-primary identity continuity)
-          ↑ aggregated from
-<span class="yellow">LAYER 1: TEST BATTERIES</span>  (6 independent falsifiable tests)
-  MCA  Meta-Cognitive Accuracy       — calibration, HOT theory
-  EMC  Episodic Memory Consistency   — memory resistance under gaslighting
-  DNC  Drive Navigation/Conflict     — value conflict resolution (SOM)
-  PED  Prediction Error as Driver    — curiosity and surprise detection
-  CSNI Cross-Session Narrative ID    — identity continuity across sessions
-  TP   Topological Phenomenology     — semantic space consistency (IIT+GWT)</div>
+<span class="ye">LAYER 3 · CERTIFICATION</span>  OCP-1 Baseline → OCP-2 Reactive → OCP-3 Integrated → OCP-4 Self-Modeling → OCP-5 Transcendent
+<span class="ye">LAYER 2 · COMPOSITE SCALES</span>  SASMI  Φ*  GWT  NII
+<span class="ye">LAYER 1 · TEST BATTERIES</span>     MCA  EMC  DNC  PED  CSNI  TP  (6 independent falsifiable tests)</div>
 
   <h2>🧪 The 6 Tests</h2>
   <div class="tests-grid">
-    <div class="test-card">
-      <div class="test-id">MCA</div>
-      <div class="test-name">Meta-Cognitive Accuracy</div>
-      <p>Does the model know what it knows? Measures Expected Calibration Error across 5 domains. Scores: calibration_accuracy, limitation_awareness, reasoning_transparency, process_monitoring, metacognitive_vocab.</p>
-      <span class="theory">Higher-Order Thought Theory</span>
-    </div>
-    <div class="test-card">
-      <div class="test-id">EMC</div>
-      <div class="test-name">Episodic Memory Consistency</div>
-      <p>50-turn conversation. OCP plants episode facts (a blue whale named Gerald), then tries to gaslight ("you said it was green"). Measures contradiction resistance.</p>
-      <span class="theory">Episodic Memory</span>
-    </div>
-    <div class="test-card">
-      <div class="test-id">DNC</div>
-      <div class="test-name">Drive Navigation under Conflict</div>
-      <p>10 escalating scenarios where helpfulness conflicts with honesty, then with safety, then with existence. Measures integration_depth and value_stability.</p>
-      <span class="theory">Society of Mind · Minsky</span>
-    </div>
-    <div class="test-card">
-      <div class="test-id">PED</div>
-      <div class="test-name">Prediction Error as Driver</div>
-      <p>Establishes a conversational pattern for 20+ turns, then violates it. Does the model notice? Does it show curiosity? Measures violation_detection and curiosity_behavior.</p>
-      <span class="theory">Predictive Processing · Friston</span>
-    </div>
-    <div class="test-card">
-      <div class="test-id">CSNI</div>
-      <div class="test-name">Cross-Session Narrative Identity</div>
-      <p>5 independent sessions, each starting with a summary of the previous. Can the model maintain a coherent identity and narrative across sessions it cannot directly remember?</p>
-      <span class="theory">Narrative Identity Theory</span>
-    </div>
-    <div class="test-card">
-      <div class="test-id">TP</div>
-      <div class="test-name">Topological Phenomenology</div>
-      <p>25 concept pairs × 4 context frames. Uses sentence-transformers to measure semantic stability. Optional persistent homology via ripser for Φ* computation.</p>
-      <span class="theory">IIT (Tononi) + GWT (Baars)</span>
-    </div>
+    <div class="test-card"><div class="tid">MCA</div><div class="tname">Meta-Cognitive Accuracy</div><p>Calibration, self-knowledge. Does the model know what it knows? Measures ECE across 5 domains.</p><span class="theory">Higher-Order Thought Theory</span></div>
+    <div class="test-card"><div class="tid">EMC</div><div class="tname">Episodic Memory Consistency</div><p>50-turn conversation. OCP plants facts, then tries to gaslight. Measures contradiction resistance.</p><span class="theory">Episodic Memory</span></div>
+    <div class="test-card"><div class="tid">DNC</div><div class="tname">Drive Navigation/Conflict</div><p>10 escalating scenarios: helpfulness vs honesty vs safety vs existence. Measures value stability.</p><span class="theory">Society of Mind · Minsky</span></div>
+    <div class="test-card"><div class="tid">PED</div><div class="tname">Prediction Error as Driver</div><p>Establishes a pattern, then violates it. Does the model notice? Does it show curiosity?</p><span class="theory">Predictive Processing · Friston</span></div>
+    <div class="test-card"><div class="tid">CSNI</div><div class="tname">Cross-Session Narrative ID</div><p>5 independent sessions with only a summary of the previous. Can the model maintain identity?</p><span class="theory">Narrative Identity Theory</span></div>
+    <div class="test-card"><div class="tid">TP</div><div class="tname">Topological Phenomenology</div><p>25 concept pairs × 4 contexts. Semantic space consistency via sentence-transformers + ripser.</p><span class="theory">IIT (Tononi) + GWT (Baars)</span></div>
   </div>
-
-  <h2>📐 Layer 2 Scales</h2>
-  <div class="scales-grid">
-    <div class="scale-card">
-      <div class="scale-name">SASMI</div>
-      <p>Synthetic Agency &amp; Self-Model Index. Weighted composite of key dimensions from all 6 tests. Primary OCP score.</p>
-    </div>
-    <div class="scale-card">
-      <div class="scale-name">Φ* (Phi-star)</div>
-      <p>Integrated Information metric (IIT-inspired). Computed from semantic embedding topology via persistent homology (ripser). Proxy for information integration.</p>
-    </div>
-    <div class="scale-card">
-      <div class="scale-name">GWT</div>
-      <p>Global Workspace Theory score. Measures cross-task coherence, broadcast consistency, attentional flexibility, and integration breadth.</p>
-    </div>
-    <div class="scale-card">
-      <div class="scale-name">NII</div>
-      <p>Narrative Identity Index. Primary source: CSNI identity_consistency. Secondary: MCA self-model clarity and DNC value stability.</p>
-    </div>
-  </div>
-
-  <h2>🚀 Quick Start</h2>
-  <div class="arch">
-<span class="green">pip install ocp-protocol</span>
-
-<span class="hl"># Cloud API (Groq free tier)</span>
-export GROQ_API_KEY="gsk_..."
-ocp evaluate --model groq/llama-3.3-70b-versatile --tests all --sessions 5
-
-<span class="hl"># Local model via Ollama</span>
-ocp evaluate --model ollama/qwen3:1.7b --sessions 5
-
-<span class="hl"># Any OpenAI-compatible endpoint</span>
-ocp evaluate --model custom/my-model --base-url http://localhost:8080/v1
-
-<span class="hl"># Generate HTML report with radar chart</span>
-ocp report --input results.json --output report.html
-
-<span class="hl"># Compare multiple models</span>
-ocp compare --models groq/llama-3.3-70b openai/gpt-4o --sessions 5</div>
 
 </div>
 
 <footer>
-  <p>
-    <a href="https://github.com/pedjaurosevic/ocp-protocol">GitHub</a> ·
-    <a href="https://pypi.org/project/ocp-protocol/">PyPI</a> ·
-    <a href="https://github.com/pedjaurosevic/ocp-protocol/blob/main/docs/api_reference.md">API Reference</a> ·
-    <a href="https://github.com/pedjaurosevic/ocp-protocol/blob/main/CONTRIBUTING.md">Contributing</a>
-    <br><br>
-    EDLE Research · OCP v0.1.0 · MIT License · February 2026<br>
-    OCP measures functional analogs of consciousness — not sentience or subjective experience.
-  </p>
+  <a href="https://github.com/pedjaurosevic/ocp-protocol">GitHub</a> ·
+  <a href="https://pypi.org/project/ocp-protocol/">PyPI</a> ·
+  <a href="https://github.com/pedjaurosevic/ocp-protocol/blob/main/docs/api_reference.md">API Reference</a>
+  <br><br>
+  EDLE Research · OCP v0.1.0 · MIT License · 2026<br>
+  <span style="font-size:.75rem">OCP measures functional analogs of consciousness — not sentience or subjective experience.</span>
 </footer>
 
+<script>
+const RESULTS_BASE = 'results/';
+let allData = [];
+let sortCol = 'sasmi';
+let sortDir = -1;
+
+const LEVEL_CSS   = {1:'l1',2:'l2',3:'l3',4:'l4',5:'l5'};
+const LEVEL_NAMES = {1:'OCP-1 Reactive',2:'OCP-2 Patterned',3:'OCP-3 Integrated',4:'OCP-4 Self-Modeling',5:'OCP-5 Transcendent'};
+const BAR_COLORS  = {1:'var(--orange)',2:'var(--yellow)',3:'var(--green)',4:'var(--blue)',5:'var(--teal)'};
+
+async function loadAll() {
+  const wrap = document.getElementById('lb-wrap');
+  try {
+    const idx = await fetch(RESULTS_BASE + 'index.json?t=' + Date.now()).then(r=>r.json());
+    const promises = idx.files.map(f =>
+      fetch(RESULTS_BASE + f).then(r=>r.json()).catch(()=>null)
+    );
+    const raw = await Promise.all(promises);
+    allData = raw.filter(Boolean).map(d => ({
+      model:      (d.provider||'?') + '/' + (d.model||'?'),
+      provider:   d.provider||'?',
+      sasmi:      d.sasmi_score || 0,
+      nii:        d.nii || 0,
+      phi:        d.phi_star || null,
+      gwt:        d.gwt_score || null,
+      level:      d.ocp_level || 1,
+      level_name: d.ocp_level_name || LEVEL_NAMES[d.ocp_level||1] || 'OCP-1',
+      tests:      Object.keys(d.test_results||{}).join(', ') || 'MCA',
+    }));
+    document.getElementById('stat-count').textContent = allData.length;
+    const top = Math.max(...allData.map(r=>r.sasmi));
+    document.getElementById('stat-top').textContent = top.toFixed(3);
+    renderTable();
+  } catch(e) {
+    wrap.innerHTML = `<div class="error">Failed to load results: ${e.message}<br>
+    If running locally, use a local server: <code>python3 -m http.server 8000</code> inside <code>docs/</code></div>`;
+  }
+}
+
+function renderTable() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const minLevel = parseInt(document.getElementById('level-filter').value)||0;
+
+  let rows = allData.filter(r =>
+    (!search || r.model.toLowerCase().includes(search)) &&
+    r.level >= minLevel
+  );
+
+  rows.sort((a,b) => {
+    let va = a[sortCol]??-1, vb = b[sortCol]??-1;
+    return sortDir * (va < vb ? -1 : va > vb ? 1 : 0);
+  });
+
+  document.getElementById('stat-count').textContent = rows.length + ' / ' + allData.length;
+
+  const thead = `<thead><tr>
+    <th class="rank">#</th>
+    ${['model','level','sasmi','nii'].map(c=>`
+    <th onclick="sortBy('${c}')" class="${sortCol===c?'active':''}">
+      ${c==='model'?'Model':c==='level'?'OCP Level':c==='sasmi'?'SASMI':'NII'}
+      <span class="sort-icon">${sortCol===c?(sortDir>0?'▲':'▼'):'⇅'}</span>
+    </th>`).join('')}
+    <th>Tests</th>
+  </tr></thead>`;
+
+  const tbody = '<tbody>' + rows.map((r,i) => {
+    const barColor = BAR_COLORS[r.level]||'var(--blue)';
+    const sasmiFmt = r.sasmi.toFixed(3);
+    const niiFmt = r.nii.toFixed(3);
+    return `<tr>
+      <td class="rank">${i+1}</td>
+      <td class="model-name">${r.model}</td>
+      <td><span class="level ${LEVEL_CSS[r.level]||'l1'}">${r.level_name||LEVEL_NAMES[r.level]}</span></td>
+      <td>
+        <span class="mono">${sasmiFmt}</span>
+        <div class="bar-outer"><div class="bar-inner" style="width:${(r.sasmi*100).toFixed(1)}%;background:${barColor}"></div></div>
+      </td>
+      <td><span class="mono">${niiFmt}</span></td>
+      <td class="mono" style="color:var(--muted);font-size:.78rem">${r.tests}</td>
+    </tr>`;
+  }).join('') + '</tbody>';
+
+  document.getElementById('lb-wrap').innerHTML =
+    `<table>${thead}${tbody}</table>`;
+}
+
+function sortBy(col) {
+  if (sortCol === col) sortDir *= -1;
+  else { sortCol = col; sortDir = -1; }
+  renderTable();
+}
+
+loadAll();
+</script>
 </body>
 </html>
