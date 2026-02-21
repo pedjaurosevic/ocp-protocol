@@ -462,25 +462,95 @@ def serve(host, port, import_local):
 
 @cli.command()
 @click.option("--results", "-r", "results_path", required=True, help="Results JSON file")
-@click.option("--server", "-s", default="http://localhost:8080",
-              show_default=True, help="OCP server URL")
-@click.option("--submitter", default=None, help="Your name / handle")
+@click.option("--server", "-s", default=None, help="OCP server URL (local FastAPI server)")
+@click.option("--github-repo", default="pedjaurosevic/ocp-protocol",
+              show_default=True, help="GitHub repo for community leaderboard (owner/repo)")
+@click.option("--github-token", default=None,
+              help="GitHub token with workflow scope (or set GITHUB_TOKEN env var)")
+@click.option("--submitter", default=None, help="Your GitHub username or display name")
 @click.option("--notes", default=None, help="Notes about the run")
-def submit(results_path, server, submitter, notes):
-    """Submit results to an OCP leaderboard server."""
-    import httpx
+def submit(results_path, server, github_repo, github_token, submitter, notes):
+    """Submit results to the OCP leaderboard.
+
+    By default submits to the community GitHub leaderboard via workflow_dispatch.
+    Use --server to submit to a local OCP server instead.
+
+    \b
+    Examples:
+      ocp submit --results results.json --github-token ghp_xxx
+      ocp submit --results results.json --server http://localhost:8080
+    """
+    import base64
+
     p = Path(results_path)
     if not p.exists():
         console.print(f"[red]File not found:[/red] {results_path}")
         raise SystemExit(1)
-    data = json.loads(p.read_text())
-    payload = {"result": data, "submitter": submitter, "notes": notes}
+
+    raw = p.read_text()
+    data = json.loads(raw)
+
+    # ── Local server mode ─────────────────────────────────────────────────────
+    if server:
+        import httpx
+        payload = {"result": data, "submitter": submitter, "notes": notes}
+        try:
+            resp = httpx.post(f"{server}/api/results", json=payload, timeout=15)
+            resp.raise_for_status()
+            result = resp.json()
+            console.print(f"[green]✓[/green] Submitted! ID: [bold]{result['id']}[/bold]")
+            console.print(f"[dim]  View: {server}/api/results/{result['id']}[/dim]")
+        except Exception as e:
+            console.print(f"[red]Submit failed:[/red] {e}")
+            raise SystemExit(1)
+        return
+
+    # ── GitHub community leaderboard via workflow_dispatch ────────────────────
+    token = github_token or os.environ.get("GITHUB_TOKEN")
+    if not token:
+        console.print(
+            "[red]No GitHub token.[/red] Provide --github-token or set GITHUB_TOKEN.\n"
+            "[dim]Create a token at https://github.com/settings/tokens "
+            "(needs 'workflow' scope)[/dim]"
+        )
+        raise SystemExit(1)
+
+    import httpx
+
+    b64 = base64.b64encode(raw.encode()).decode()
+    if len(b64) > 60_000:
+        console.print("[red]Results JSON too large for workflow_dispatch (>60KB).[/red]")
+        raise SystemExit(1)
+
+    model_str = f"{data.get('provider','?')}/{data.get('model','?')}"
+    display = submitter or "anonymous"
+
+    url = f"https://api.github.com/repos/{github_repo}/actions/workflows/submit-results.yml/dispatches"
+    payload = {
+        "ref": "main",
+        "inputs": {
+            "results_b64": b64,
+            "submitter": display,
+        },
+    }
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+
+    console.print(f"Submitting [bold]{model_str}[/bold] to [blue]{github_repo}[/blue]…")
     try:
-        resp = httpx.post(f"{server}/api/results", json=payload, timeout=15)
-        resp.raise_for_status()
-        result = resp.json()
-        console.print(f"[green]✓[/green] Submitted! ID: [bold]{result['id']}[/bold]")
-        console.print(f"[dim]  View: {server}/api/results/{result['id']}[/dim]")
+        resp = httpx.post(url, json=payload, headers=headers, timeout=15)
+        if resp.status_code == 204:
+            console.print(
+                f"[green]✓ Submitted![/green] Workflow triggered.\n"
+                f"[dim]  Results will appear at "
+                f"https://pedjaurosevic.github.io/ocp-protocol/ in ~1 minute[/dim]"
+            )
+        else:
+            console.print(f"[red]GitHub API error {resp.status_code}:[/red] {resp.text}")
+            raise SystemExit(1)
     except Exception as e:
         console.print(f"[red]Submit failed:[/red] {e}")
         raise SystemExit(1)

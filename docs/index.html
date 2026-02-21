@@ -123,30 +123,22 @@
 
   <h2 id="submit">🚀 Submit Your Results</h2>
   <div class="submit-box">
-    <h3>How to add your model to this leaderboard</h3>
-    <pre><span class="comment"># 1. Run OCP evaluation locally</span>
+    <h3>Automatic submission — one command</h3>
+    <pre><span class="comment"># 1. Run OCP evaluation</span>
 pip install ocp-protocol
 ocp evaluate --model ollama/YOUR-MODEL --tests meta_cognition --sessions 2 --seed 42 \
-             --output my_model_results.json
+             --output my_results.json
 
-<span class="comment"># 2. Fork the repo, add your results file</span>
-git clone https://github.com/pedjaurosevic/ocp-protocol
-cp my_model_results.json ocp-protocol/docs/results/
-cd ocp-protocol
-
-<span class="comment"># 3. Update the index and open a PR</span>
-python3 -c "
-import json, glob, os
-files = sorted(os.path.basename(f) for f in glob.glob('docs/results/results_*.json'))
-open('docs/results/index.json','w').write(json.dumps({'files':files,'count':len(files)},indent=2))
-"
-git add docs/results/
-git commit -m "results: add my-model evaluation"
-git push && gh pr create --title "Results: my-model" --body "Adding my model evaluation"</pre>
+<span class="comment"># 2. Submit directly to this leaderboard (needs GitHub token with 'workflow' scope)</span>
+<span class="comment">#    Get token at: https://github.com/settings/tokens → New classic token → workflow ✓</span>
+ocp submit --results my_results.json --github-token ghp_YOUR_TOKEN --submitter YourGitHubName</pre>
     <p style="font-size:.82rem;color:var(--muted);margin-top:.8rem;">
-      After the PR is merged, your model will automatically appear in this leaderboard.
-      Any model accessible via OpenAI-compatible API works — cloud, local, custom endpoint.
+      This triggers a GitHub Actions workflow that validates your JSON, adds it to <code>docs/results/</code>,
+      regenerates the index, and pushes — your model appears on this page within ~1 minute.
+      No PR or fork needed.
     </p>
+    <pre style="margin-top:.8rem"><span class="comment"># Alternative: manual PR (no token needed)</span>
+<span class="comment"># Fork → add your JSON to docs/results/ → open PR → auto-merged index update</span></pre>
   </div>
 
   <h2>🏗 Architecture</h2>
