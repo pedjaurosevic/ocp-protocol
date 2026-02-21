@@ -297,16 +297,21 @@ v1.0.0 🔭  Official research paper
 > Early results with partial test coverage (v0.1.0). Full 6-test leaderboard coming at v0.2.0.
 > 🌐 [View full interactive leaderboard →](https://pedjaurosevic.github.io/ocp-protocol/)
 
-| # | Model | Tests | OCP Level | SASMI | NII |
-|---|-------|-------|-----------|-------|-----|
-| 1 | `ollama/minimax-m2.5:cloud` | MCA | **OCP-4** Self-Modeling | **0.634** | 0.500 |
-| 2 | `ollama/qwen3-coder:480b-cloud` | MCA | OCP-3 Integrated | 0.528 | **0.875** |
-| 3 | `ollama/kimi-k2:1t-cloud` | MCA | OCP-3 Integrated | 0.444 | 0.375 |
-| 4 | `ollama/deepseek-v3.1:671b-cloud` | MCA | OCP-2 Patterned | 0.236 | 0.500 |
-| 5 | `mock/baseline-v1` | All 6 | OCP-2 Reactive | 0.205 | 0.155 |
-| 6 | `custom/deepseek-chat` | MCA | OCP-1 Baseline | 0.087 | 0.750 |
+| # | Model | OCP Level | SASMI | NII |
+|---|-------|-----------|-------|-----|
+| 1 | `ollama/minimax-m2.5:cloud` | **OCP-4** Self-Modeling | **0.634** | 0.500 |
+| 2 | `ollama/lfm2.5-thinking` (local) | **OCP-4** Self-Modeling | 0.617 | 0.000 |
+| 3 | `ollama/qwen3-coder:480b-cloud` | OCP-3 Integrated | 0.528 | **0.875** |
+| 4 | `ollama/kimi-k2.5:cloud` | OCP-3 Integrated | 0.505 | 0.625 |
+| 5 | `ollama/kimi-k2:1t-cloud` | OCP-3 Integrated | 0.444 | 0.375 |
+| 6 | `ollama/glm-5:cloud` | OCP-2 Patterned | 0.324 | 0.375 |
+| 7 | `ollama/deepseek-v3.1:671b-cloud` | OCP-2 Patterned | 0.236 | 0.500 |
+| 8 | `mock/baseline-v1` | OCP-2 Reactive | 0.205 | 0.155 |
+| 9 | `ollama/qwen3.5:cloud` | OCP-1 Reactive | 0.106 | 0.125 |
+| 10 | `custom/deepseek-chat` | OCP-1 Baseline | 0.087 | 0.750 |
+| 11 | `ollama/ministral-3:14b-cloud` | OCP-1 Reactive | 0.000 | 0.750 |
 
-*Results: seed=42, 2 sessions, MCA test only (full 6-test results coming). Low SASMI on deepseek-chat reflects overconfident calibration. deepseek-v3.1 via Ollama cloud scores higher.*
+*MCA test · seed=42 · 2 sessions. 🌐 [Full interactive leaderboard →](https://pedjaurosevic.github.io/ocp-protocol/)*
 
 ---
 
