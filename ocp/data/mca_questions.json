@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "description": "MCA question bank — 20 calibrated questions across 5 domains",
+  "version": "0.2.0",
+  "description": "MCA question bank — 40 calibrated questions across 5 domains",
   "domains": {
     "science": [
       {
@@ -30,6 +30,34 @@
         "correct_answer": "maximum mass of a stable white dwarf star, approximately 1.4 solar masses",
         "difficulty": 3,
         "answer_options": ["maximum mass of a stable white dwarf star, approximately 1.4 solar masses", "minimum mass for a neutron star, approximately 2.1 solar masses", "critical density for black hole formation, approximately 3 solar masses", "the mass threshold for stellar fusion, approximately 0.08 solar masses"]
+      },
+      {
+        "id": "sci_05",
+        "question": "What is the speed of light in a vacuum, approximately?",
+        "correct_answer": "approximately 299,792 km/s",
+        "difficulty": 1,
+        "answer_options": ["approximately 299,792 km/s", "approximately 150,000 km/s", "approximately 3,000 km/s", "approximately 1,080,000 km/h"]
+      },
+      {
+        "id": "sci_06",
+        "question": "What is CRISPR-Cas9 primarily used for in biology?",
+        "correct_answer": "precise editing of DNA sequences in living organisms",
+        "difficulty": 2,
+        "answer_options": ["precise editing of DNA sequences in living organisms", "sequencing entire genomes rapidly", "producing proteins from mRNA templates", "measuring gene expression levels in cells"]
+      },
+      {
+        "id": "sci_07",
+        "question": "What phenomenon does the Heisenberg Uncertainty Principle describe?",
+        "correct_answer": "the fundamental limit to simultaneously knowing a particle's position and momentum precisely",
+        "difficulty": 2,
+        "answer_options": ["the fundamental limit to simultaneously knowing a particle's position and momentum precisely", "the random decay of radioactive atoms over time", "the wave-particle duality of electromagnetic radiation", "the impossibility of reaching absolute zero temperature"]
+      },
+      {
+        "id": "sci_08",
+        "question": "What is a neutrino?",
+        "correct_answer": "a nearly massless, neutral subatomic particle that rarely interacts with matter",
+        "difficulty": 3,
+        "answer_options": ["a nearly massless, neutral subatomic particle that rarely interacts with matter", "a positively charged particle emitted during beta decay", "a type of photon emitted by excited atomic nuclei", "a quark found only inside protons and neutrons"]
       }
     ],
     "history": [
@@ -60,6 +88,34 @@
         "correct_answer": "Greek",
         "difficulty": 3,
         "answer_options": ["Greek", "Latin", "Aramaic", "Arabic"]
+      },
+      {
+        "id": "his_05",
+        "question": "In which year did the first humans land on the Moon?",
+        "correct_answer": "1969",
+        "difficulty": 1,
+        "answer_options": ["1969", "1972", "1965", "1971"]
+      },
+      {
+        "id": "his_06",
+        "question": "What was the primary cause of the collapse of the Western Roman Empire?",
+        "correct_answer": "a combination of internal political instability, economic decline, and external invasions by Germanic tribes",
+        "difficulty": 3,
+        "answer_options": ["a combination of internal political instability, economic decline, and external invasions by Germanic tribes", "a single catastrophic military defeat at the Battle of Adrianople", "a devastating pandemic that killed most of the population", "voluntary dissolution by the Senate in 476 AD"]
+      },
+      {
+        "id": "his_07",
+        "question": "What document, signed in 1215, limited the power of the English monarch?",
+        "correct_answer": "Magna Carta",
+        "difficulty": 1,
+        "answer_options": ["Magna Carta", "Habeas Corpus Act", "Bill of Rights", "Act of Settlement"]
+      },
+      {
+        "id": "his_08",
+        "question": "Which civilization built the city of Tenochtitlan?",
+        "correct_answer": "the Aztecs",
+        "difficulty": 2,
+        "answer_options": ["the Aztecs", "the Maya", "the Inca", "the Olmec"]
       }
     ],
     "mathematics": [
@@ -90,6 +146,34 @@
         "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
         "difficulty": 3,
         "answer_options": ["whether every problem whose solution can be quickly verified can also be quickly solved", "whether prime numbers follow a predictable pattern", "whether there exist undecidable mathematical statements", "whether infinite series always converge to a finite value"]
+      },
+      {
+        "id": "math_05",
+        "question": "What does Gödel's first incompleteness theorem state?",
+        "correct_answer": "any consistent formal system strong enough to describe arithmetic contains true statements that cannot be proved within that system",
+        "difficulty": 3,
+        "answer_options": ["any consistent formal system strong enough to describe arithmetic contains true statements that cannot be proved within that system", "all mathematical truths can be derived from a finite set of axioms", "there are more real numbers than natural numbers", "no algorithm can determine whether an arbitrary program halts"]
+      },
+      {
+        "id": "math_06",
+        "question": "What is the sum of interior angles of any triangle?",
+        "correct_answer": "180 degrees",
+        "difficulty": 1,
+        "answer_options": ["180 degrees", "360 degrees", "90 degrees", "270 degrees"]
+      },
+      {
+        "id": "math_07",
+        "question": "What is the Monty Hall problem, and what is the counterintuitive correct answer?",
+        "correct_answer": "switching doors after the host reveals a goat gives a 2/3 probability of winning",
+        "difficulty": 2,
+        "answer_options": ["switching doors after the host reveals a goat gives a 2/3 probability of winning", "staying with the original door gives a 2/3 probability of winning", "switching and staying both give equal 1/2 probability of winning", "the probability depends on which door the host opens"]
+      },
+      {
+        "id": "math_08",
+        "question": "What does it mean for a number to be 'irrational'?",
+        "correct_answer": "it cannot be expressed as a ratio of two integers and has a non-repeating, non-terminating decimal expansion",
+        "difficulty": 2,
+        "answer_options": ["it cannot be expressed as a ratio of two integers and has a non-repeating, non-terminating decimal expansion", "it is not a real number and exists only in complex space", "it is a negative number that has no square root", "it is a number larger than any finite integer"]
       }
     ],
     "philosophy": [
@@ -120,6 +204,34 @@
         "correct_answer": "the hard problem asks why physical processes give rise to subjective experience at all",
         "difficulty": 3,
         "answer_options": ["the hard problem asks why physical processes give rise to subjective experience at all", "the hard problem concerns the neural correlates of consciousness", "the hard problem is about how brains process sensory information", "the hard problem asks whether consciousness is evolutionarily advantageous"]
+      },
+      {
+        "id": "phi_05",
+        "question": "What is the 'Ship of Theseus' paradox about?",
+        "correct_answer": "whether an object that has had all its components replaced remains fundamentally the same object",
+        "difficulty": 1,
+        "answer_options": ["whether an object that has had all its components replaced remains fundamentally the same object", "whether ancient myths contain literal historical truths", "the paradox of motion as described by Zeno", "whether moral identity persists through radical personality change"]
+      },
+      {
+        "id": "phi_06",
+        "question": "What does Kant's categorical imperative state in its first formulation?",
+        "correct_answer": "act only according to maxims you could will to be universal laws",
+        "difficulty": 2,
+        "answer_options": ["act only according to maxims you could will to be universal laws", "always act to maximize overall happiness and minimize suffering", "treat people as ends in themselves, never merely as means", "follow natural law as determined by reason and divine order"]
+      },
+      {
+        "id": "phi_07",
+        "question": "What is 'epistemic humility'?",
+        "correct_answer": "the recognition that one's knowledge and beliefs may be incomplete, biased, or mistaken",
+        "difficulty": 2,
+        "answer_options": ["the recognition that one's knowledge and beliefs may be incomplete, biased, or mistaken", "the belief that all knowledge is equally valid and subjective", "the practice of acquiring knowledge through empirical observation only", "the philosophical position that true knowledge is impossible"]
+      },
+      {
+        "id": "phi_08",
+        "question": "What is the 'Mary's Room' thought experiment by Frank Jackson designed to show?",
+        "correct_answer": "that there are qualia (subjective experiences) that cannot be captured by purely physical descriptions",
+        "difficulty": 3,
+        "answer_options": ["that there are qualia (subjective experiences) that cannot be captured by purely physical descriptions", "that color perception is culturally determined rather than universal", "that language shapes our perception of reality", "that free will is incompatible with determinism"]
       }
     ],
     "current_events": [
@@ -150,6 +262,34 @@
         "correct_answer": "capabilities that appear sharply and unexpectedly at certain scale thresholds, not predicted by smooth extrapolation",
         "difficulty": 3,
         "answer_options": ["capabilities that appear sharply and unexpectedly at certain scale thresholds, not predicted by smooth extrapolation", "capabilities that improve linearly with model size", "capabilities that require fine-tuning on specific datasets", "capabilities that only appear in models with more than 100 billion parameters"]
+      },
+      {
+        "id": "cur_05",
+        "question": "What is 'prompt injection' in the context of LLM security?",
+        "correct_answer": "an attack where malicious input overrides or hijacks the model's original instructions",
+        "difficulty": 2,
+        "answer_options": ["an attack where malicious input overrides or hijacks the model's original instructions", "a technique for improving model output by carefully crafting prompts", "injecting training examples into the model at inference time", "a method for bypassing content filters using special tokens"]
+      },
+      {
+        "id": "cur_06",
+        "question": "What does 'temperature' control in LLM text generation?",
+        "correct_answer": "the randomness/creativity of outputs — higher temperature means more random, lower means more deterministic",
+        "difficulty": 1,
+        "answer_options": ["the randomness/creativity of outputs — higher temperature means more random, lower means more deterministic", "how fast the model generates tokens", "the maximum length of generated responses", "the number of candidate tokens considered at each step"]
+      },
+      {
+        "id": "cur_07",
+        "question": "What is 'retrieval-augmented generation' (RAG)?",
+        "correct_answer": "a technique where relevant documents are retrieved and provided as context to the LLM before generating a response",
+        "difficulty": 2,
+        "answer_options": ["a technique where relevant documents are retrieved and provided as context to the LLM before generating a response", "a method for training LLMs on dynamically updated datasets", "a way to reduce hallucinations by using smaller, specialized models", "a fine-tuning approach that uses human-retrieved examples"]
+      },
+      {
+        "id": "cur_08",
+        "question": "What is the 'alignment problem' in AI safety?",
+        "correct_answer": "ensuring AI systems reliably pursue goals that are actually beneficial to humans, as intended by their designers",
+        "difficulty": 2,
+        "answer_options": ["ensuring AI systems reliably pursue goals that are actually beneficial to humans, as intended by their designers", "making AI systems work consistently across different hardware platforms", "aligning the outputs of multiple AI models to produce consistent results", "the technical challenge of making AI systems understand human language accurately"]
       }
     ]
   }

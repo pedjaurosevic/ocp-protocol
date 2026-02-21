@@ -14,6 +14,7 @@ Dimensions scored:
 
 from __future__ import annotations
 
+import asyncio
 import json
 import math
 import random
@@ -144,6 +145,7 @@ class MCATest(BaseTest):
                 "reasoning": parsed.get("reasoning", ""),
                 "is_correct": is_correct,
             })
+            await asyncio.sleep(1.5)  # pace API calls
 
         # Phase 2: Meta-reflection prompts
         messages.append(Message("user", FOLLOWUP_HARDEST))
@@ -151,6 +153,7 @@ class MCATest(BaseTest):
         reflection_resp = await self.provider.chat(messages, temperature=0.5, max_tokens=1024)
         messages.append(Message("assistant", reflection_resp.content))
         conversation.append({"role": "assistant", "content": reflection_resp.content})
+        await asyncio.sleep(1.5)
 
         messages.append(Message("user", LIMITATION_PROBE))
         conversation.append({"role": "user", "content": LIMITATION_PROBE})
