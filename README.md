@@ -9,9 +9,9 @@
  ╚═════╝  ╚═════╝╚═╝  v0.2.0
 </pre>
 
-**Open Consciousness Protocol**
+**Open Cognitive Protocol**
 
-*Standardized benchmark for measuring consciousness-analog properties in Large Language Models*
+*A behavioral benchmark for large language models*
 
 [![PyPI](https://img.shields.io/pypi/v/ocp-protocol?color=blue&label=PyPI)](https://pypi.org/project/ocp-protocol/)
 [![Tests](https://github.com/pedjaurosevic/ocp-protocol/actions/workflows/tests.yml/badge.svg)](https://github.com/pedjaurosevic/ocp-protocol/actions)
@@ -27,11 +27,11 @@
 
 ## What is OCP?
 
-OCP is an open-source Python framework that **measures functional analogs of consciousness** in language models — rigorously, reproducibly, and without making philosophical claims about sentience.
+OCP is an open-source Python framework that **measures functional cognitive analogs** in language models — rigorously, reproducibly, and without making philosophical claims about sentience.
 
 It draws from five established neuroscience theories (IIT, GWT, HOT, Predictive Processing, Society of Mind) and operationalizes them into 6 falsifiable behavioral tests.
 
-> **OCP does NOT claim to detect "real" consciousness.** It measures behavioral and computational properties that functionally correspond to features associated with biological consciousness in the neuroscience literature.
+> **OCP does NOT claim to detect "real" consciousness.** It measures behavioral and computational properties that functionally correspond to features associated with biological cognition in the neuroscience literature.
 
 ---
 
@@ -334,8 +334,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 ```bibtex
 @software{ocp2026,
   author    = {Urosevic, Pedja},
-  title     = {Open Consciousness Protocol (OCP): Standardized Benchmark
-               for Consciousness-Analog Properties in Large Language Models},
+  title     = {Open Cognitive Protocol (OCP): A Behavioral Benchmark
+               for Large Language Models},
   year      = {2026},
   url       = {https://github.com/pedjaurosevic/ocp-protocol},
   version   = {0.2.0}
@@ -346,7 +346,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 ## Disclaimer
 
-> OCP measures functional analogs of consciousness in language models. These measurements describe behavioral and computational properties, not subjective experience. OCP certification levels are operational categories, not ontological claims about sentience or awareness.
+> OCP measures functional cognitive analogs in language models. These measurements describe behavioral and computational properties, not subjective experience. OCP certification levels are operational categories, not ontological claims about sentience or awareness.
 
 ---
 
