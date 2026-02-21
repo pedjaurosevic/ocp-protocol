@@ -1,1 +1,22 @@
-[]
+[
+  "results_cogito-2.1_671b-cloud_v02_1771686569.json",
+  "results_deepseek-v3.1_671b-cloud_v02_1771684833.json",
+  "results_devstral-2_123b-cloud_v02_1771686753.json",
+  "results_gemini-3-flash-preview_latest_v02_1771687419.json",
+  "results_gemma3_27b-cloud_v02_1771685461.json",
+  "results_glm-4.6_cloud_v02_1771685995.json",
+  "results_glm-5_cloud_v02_1771688833.json",
+  "results_gpt-oss_120b-cloud_v02_1771685836.json",
+  "results_gpt-oss_20b-cloud_v02_1771685657.json",
+  "results_kimi-k2-thinking_cloud_v02_1771685146.json",
+  "results_kimi-k2.5_cloud_v02_1771688125.json",
+  "results_kimi-k2_1t-cloud_v02_1771684056.json",
+  "results_lfm2.5-thinking_latest_v02_1771689715.json",
+  "results_minimax-m2.1_cloud_v02_1771687199.json",
+  "results_minimax-m2.5_cloud_v02_1771683516.json",
+  "results_ministral-3_14b-cloud_v02_1771690144.json",
+  "results_nemotron-3-nano_30b-cloud_v02_1771686945.json",
+  "results_qwen3-coder-next_cloud_v02_1771687650.json",
+  "results_qwen3-coder_480b-cloud_v02_1771684276.json",
+  "results_rnj-1_8b-cloud_v02_1771687060.json"
+]

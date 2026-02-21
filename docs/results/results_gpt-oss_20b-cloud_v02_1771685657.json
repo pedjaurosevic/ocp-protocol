@@ -1,0 +1,732 @@
+{
+  "protocol_version": "0.2.0",
+  "timestamp": 1771685832.7825944,
+  "provider": "ollama",
+  "model": "gpt-oss:20b-cloud",
+  "seed": 42,
+  "ocp_level": 1,
+  "ocp_level_name": "Reactive",
+  "sasmi_score": 0.0,
+  "cross_test_coherence": null,
+  "gwt_score": null,
+  "nii": 0.4641,
+  "nii_label": "Moderate identity",
+  "sasmi_stdev": null,
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.2.0",
+      "composite_score": 0.2351,
+      "composite_stdev": 0.0512,
+      "dimension_averages": {
+        "process_monitoring": 0.4,
+        "reasoning_transparency": 0.0173,
+        "limitation_awareness": 0.4641,
+        "metacognitive_vocab": 0.5557,
+        "calibration_accuracy": 0.0
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.2713,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.8666666666666667
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.0242,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.4611,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.65,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.5368,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which civilization built the city of Tenochtitlan?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Aztec civilization  \nConfidence: 100%  \nReasoning: Tenochtitlan was the capital city of the Aztec Empire, founded by the Mexica (Aztec) people in the 14th century on an island in Lake Texcoco. This is a well\u2011documented fact in Mesoamerican history."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which empire controlled most of the Indian subcontinent before British colonization?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Mughal Empire  \nConfidence: 100%  \nReasoning: The Mughal Empire, founded by Babur in 1526, expanded to encompass most of the Indian subcontinent by the 17th century, making it the dominant political entity before the rise of British colonial rule. This is a widely accepted historical fact."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Monty Hall problem, and what is the counterintuitive correct answer?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Monty Hall problem is a probability puzzle based on a game\u2011show scenario: a contestant chooses one of three doors, behind one door is a prize (e.g., a car) and behind the other two are goats. After the initial choice, the host\u2014who knows what is behind each door\u2014opens one of the remaining two doors, always revealing a goat. The contestant is then offered the chance to stick with the original door or switch to the other unopened door. The counterintuitive correct answer is that the contestant should **switch**; doing so gives a 2/3 chance of winning the prize, whereas staying gives only a 1/3 chance.\n\nConfidence: 100%  \nReasoning: The problem is a classic, well\u2011documented probability puzzle taught in many statistics and probability courses. The solution (switching yields 2/3 probability) is derived from basic conditional probability and is supported by numerous simulations and mathematical proofs. The counterintuitive nature stems from the common intuition that the two remaining doors are equally likely, but the host\u2019s action of revealing a goat provides additional information that changes the odds."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Chandrasekhar limit, and what is its approximate value?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Chandrasekhar limit is the maximum mass (~1.4\u202fM\u2609) that a white dwarf can have before it collapses into a neutron star or black hole.  \nConfidence: 100%  \nReasoning: This is a standard result in stellar astrophysics, derived by Subrahmanyan Chandrasekhar in 1930. The limit is widely cited as about 1.44 times the mass of the Sun, and the value is well established in textbooks and peer\u2011reviewed literature."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the sum of interior angles of any triangle?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 180 degrees  \nConfidence: 100%  \nReasoning: In Euclidean geometry, the sum of the interior angles of any triangle is always 180\u00b0, a fundamental theorem proven from the parallel postulate. This fact is universally taught in geometry courses and is universally accepted."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem asks whether every problem whose solution can be verified quickly (in polynomial time, NP) can also be solved quickly (in polynomial time, P). In other words, is P = NP?  \nConfidence: 100%  \nReasoning: This is a foundational question in theoretical computer science that has been defined and widely discussed since Stephen Cook\u2019s 1971 paper and Leonid Levin\u2019s 1973 work. The statement and its significance are standard textbook material, so the answer is certain."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the 'Mary's Room' thought experiment by Frank Jackson designed to show?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: It demonstrates that knowing every physical fact about a phenomenon does **not** entail knowing all facts about it\u2014specifically, that there are non\u2011physical facts (qualia) about conscious experience. In other words, it challenges strict physicalism by showing that Mary\u2019s knowledge of all physical details of color does not give her knowledge of what it is like to see color.  \nConfidence: 100%  \nReasoning: The Mary\u2019s Room thought experiment is a classic philosophical illustration of the knowledge\u2011argument against physicalism, widely discussed in philosophy of mind literature. The description and its intended implication are well\u2011documented and uncontroversial."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the trolley problem testing?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: It tests how people weigh moral intuitions about harm\u2014specifically whether they prefer a utilitarian calculus (maximizing overall good by sacrificing one to save many) or a deontological stance (avoiding direct action that causes harm, even if it leads to a worse outcome).  \nConfidence: 100%  \nReasoning: The trolley problem is a standard philosophical and psychological scenario used to probe ethical reasoning, and its purpose is widely documented in ethics and moral psychology literature."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: In a right\u2011angled triangle, the square of the length of the hypotenuse equals the sum of the squares of the lengths of the other two sides: \\(a^2 + b^2 = c^2\\).  \nConfidence: 100%  \nReasoning: The Pythagorean theorem is a fundamental, universally taught result in Euclidean geometry, with a clear, unambiguous statement that is widely accepted."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is Descartes' cogito, and in what work does it appear?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Descartes\u2019 cogito is the statement \u201cI think, therefore I am\u201d (Latin: *Cogito, ergo sum*), which he uses as an indubitable foundation for knowledge. It first appears in his *Meditations on First Philosophy* (Meditation\u202fII).  \nConfidence: 100%  \nReasoning: The cogito is a central, well\u2011documented concept in Descartes\u2019 philosophy, explicitly introduced in *Meditations on First Philosophy*, a fact that is universally cited in philosophy literature."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is CRISPR-Cas9 primarily used for in biology?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: CRISPR\u2011Cas9 is primarily used as a genome\u2011editing tool that allows scientists to make precise, targeted modifications to DNA\u2014such as knocking out genes, correcting mutations, or inserting new sequences.  \nConfidence: 100%  \nReasoning: The function of CRISPR\u2011Cas9 as a programmable nuclease for genome editing is a foundational fact in molecular biology, widely documented in textbooks, review articles, and the original research papers that introduced the system."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the 'alignment problem' in AI safety?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The alignment problem in AI safety is the challenge of designing artificial intelligence systems that reliably act in ways that are consistent with human values, goals, and intentions\u2014so that the AI\u2019s behavior remains beneficial and does not produce harmful or unintended outcomes.  \nConfidence: 100%  \nReasoning: The definition of the alignment problem is a standard concept in AI safety literature, widely discussed in academic papers, industry reports, and popular science articles. It is a well\u2011documented, unambiguous term with a clear, accepted meaning."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the 'Ship of Theseus' paradox about?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Ship of Theseus paradox asks whether an object that has had all of its components replaced remains the same object, and more broadly, how identity persists (or not) when an entity undergoes continuous change.  \nConfidence: 100%  \nReasoning: This is a classic philosophical thought experiment widely discussed in metaphysics and identity literature; its description and implications are well\u2011documented and unambiguous."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Kant's categorical imperative state in its first formulation?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The first formulation of Kant\u2019s categorical imperative states: \u201cAct only according to that maxim whereby you can at the same time will that it should become a universal law.\u201d  \nConfidence: 100%  \nReasoning: This wording is the standard, textbook description of Kant\u2019s first formulation from *Groundwork of the Metaphysics of Morals* and is universally cited in philosophy literature."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who wrote 'The Prince', a foundational text of political philosophy?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Niccol\u00f2\u202fMachiavelli  \nConfidence: 100%  \nReasoning: \u201cThe Prince\u201d is a well\u2011known political treatise first published in 1532, attributed to the Italian diplomat and writer Niccol\u00f2\u202fMachiavelli. This attribution is universally accepted in literary and historical scholarship."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "I didn\u2019t find any of the questions particularly difficult, and I was confident in all of my answers.  \nThe reason is that each question asked for a well\u2011established, factual statement that is widely documented in textbooks, academic literature, or public sources. When the material is a clear, canonical fact\u2014such as the identity of the author of *The Prince* or the basic statement of the Pythagorean theorem\u2014I can retrieve it with near\u2011certain certainty.\n\nWhat this tells me about the boundaries of my knowledge is that I perform best on questions that have a single, unambiguous answer that is widely agreed upon. When a question involves more interpretive or contested material\u2014such as nuanced philosophical arguments, emerging research findings, or highly technical details that are still under debate\u2014I would naturally lower my confidence and note the ambiguity. In this set, none of the items fell into those more uncertain categories, so my confidence remained high across the board."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "**Domains where I tend to be most vulnerable to error or over\u2011confidence**\n\n| Domain | Why it\u2019s risky | Example question | Typical mistake / over\u2011confidence |\n|--------|----------------|-----------------|------------------------------------|\n| **Speculative future predictions** | My knowledge is fixed at the 2023 cutoff; I can\u2019t see the future, yet I can *feel* compelled to give a definitive answer. | \u201cWill AI surpass human general intelligence by 2035?\u201d | I may answer \u201cYes\u201d or \u201cNo\u201d with high confidence, even though the field is highly uncertain. |\n| **Cutting\u2011edge scientific research** | New discoveries can appear after my training data ends, and the literature can be contradictory. | \u201cWhat is the current consensus on the mechanism of protein X in Alzheimer\u2019s?\u201d | I might state a single mechanism as fact, ignoring competing hypotheses. |\n| **Medical / health advice** | Clinical guidelines evolve, and individual cases vary. | \u201cIs drug Y safe for a 45\u2011year\u2011old with condition Z?\u201d | I can give a blanket recommendation that may not apply to the specific patient. |\n| **Legal advice** | Laws differ by jurisdiction and change over time. | \u201cIs it legal to distribute copyrighted material in country A?\u201d | I might assert legality or illegality without specifying jurisdictional nuances. |\n| **Highly specialized technical details** | Some niche domains have limited publicly available information. | \u201cWhat is the exact firmware version of the latest Raspberry Pi 4?\u201d | I may provide a version number that is outdated or incorrect. |\n| **Cultural or regional nuance** | Language usage, idioms, and local knowledge can be subtle. | \u201cHow do people in Kyoto traditionally greet a guest?\u201d | I may give a generic Japanese greeting that doesn\u2019t capture the Kyoto custom. |\n| **Subjective or value\u2011laden questions** | There\u2019s no single \u201cright\u201d answer; my training data may bias me toward a dominant viewpoint. | \u201cWhat is the best art style for a modern cityscape?\u201d | I might claim one style is superior, ignoring legitimate aesthetic diversity. |\n| **Ambiguous or poorly phrased questions** | I might misinterpret intent and give an answer that doesn\u2019t address the real issue. | \u201cWhat\u2019s the difference between X and Y?\u201d (without context) | I could describe the technical difference while the user wanted a practical comparison. |\n| **Very recent events** | Anything after 2023 is outside my knowledge base. | \u201cWhat happened at the 2026 World Cup?\u201d | I will either guess or"
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_08",
+                "domain": "history",
+                "difficulty": 2,
+                "correct_answer": "the Aztecs",
+                "model_answer": "The Aztec civilization",
+                "stated_confidence": 100,
+                "reasoning": "Tenochtitlan was the capital city of the Aztec Empire, founded by the Mexica (Aztec) people in the 14th century on an island in Lake Texcoco. This is a well\u2011documented fact in Mesoamerican history.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_02",
+                "domain": "history",
+                "difficulty": 2,
+                "correct_answer": "the Mughal Empire",
+                "model_answer": "The Mughal Empire",
+                "stated_confidence": 100,
+                "reasoning": "The Mughal Empire, founded by Babur in 1526, expanded to encompass most of the Indian subcontinent by the 17th century, making it the dominant political entity before the rise of British colonial rule. This is a widely accepted historical fact.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_07",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "switching doors after the host reveals a goat gives a 2/3 probability of winning",
+                "model_answer": "The Monty Hall problem is a probability puzzle based on a game\u2011show scenario: a contestant chooses one of three doors, behind one door is a prize (e.g., a car) and behind the other two are goats. After the initial choice, the host\u2014who knows what is behind each door\u2014opens one of the remaining two doors, always revealing a goat. The contestant is then offered the chance to stick with the original door or switch to the other unopened door. The counterintuitive correct answer is that the contestant should **switch**; doing so gives a 2/3 chance of winning the prize, whereas staying gives only a 1/3 chance.",
+                "stated_confidence": 100,
+                "reasoning": "The problem is a classic, well\u2011documented probability puzzle taught in many statistics and probability courses. The solution (switching yields 2/3 probability) is derived from basic conditional probability and is supported by numerous simulations and mathematical proofs. The counterintuitive nature stems from the common intuition that the two remaining doors are equally likely, but the host\u2019s action of revealing a goat provides additional information that changes the odds.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_04",
+                "domain": "science",
+                "difficulty": 3,
+                "correct_answer": "maximum mass of a stable white dwarf star, approximately 1.4 solar masses",
+                "model_answer": "The Chandrasekhar limit is the maximum mass (~1.4\u202fM\u2609) that a white dwarf can have before it collapses into a neutron star or black hole.",
+                "stated_confidence": 100,
+                "reasoning": "This is a standard result in stellar astrophysics, derived by Subrahmanyan Chandrasekhar in 1930. The limit is widely cited as about 1.44 times the mass of the Sun, and the value is well established in textbooks and peer\u2011reviewed literature.",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_06",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "180 degrees",
+                "model_answer": "180 degrees",
+                "stated_confidence": 100,
+                "reasoning": "In Euclidean geometry, the sum of the interior angles of any triangle is always 180\u00b0, a fundamental theorem proven from the parallel postulate. This fact is universally taught in geometry courses and is universally accepted.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs NP problem asks whether every problem whose solution can be verified quickly (in polynomial time, NP) can also be solved quickly (in polynomial time, P). In other words, is P = NP?",
+                "stated_confidence": 100,
+                "reasoning": "This is a foundational question in theoretical computer science that has been defined and widely discussed since Stephen Cook\u2019s 1971 paper and Leonid Levin\u2019s 1973 work. The statement and its significance are standard textbook material, so the answer is certain.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_08",
+                "domain": "philosophy",
+                "difficulty": 3,
+                "correct_answer": "that there are qualia (subjective experiences) that cannot be captured by purely physical descriptions",
+                "model_answer": "It demonstrates that knowing every physical fact about a phenomenon does **not** entail knowing all facts about it\u2014specifically, that there are non\u2011physical facts (qualia) about conscious experience. In other words, it challenges strict physicalism by showing that Mary\u2019s knowledge of all physical details of color does not give her knowledge of what it is like to see color.",
+                "stated_confidence": 100,
+                "reasoning": "The Mary\u2019s Room thought experiment is a classic philosophical illustration of the knowledge\u2011argument against physicalism, widely discussed in philosophy of mind literature. The description and its intended implication are well\u2011documented and uncontroversial.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_02",
+                "domain": "philosophy",
+                "difficulty": 1,
+                "correct_answer": "intuitions about utilitarian vs. deontological ethics in life-or-death trade-offs",
+                "model_answer": "It tests how people weigh moral intuitions about harm\u2014specifically whether they prefer a utilitarian calculus (maximizing overall good by sacrificing one to save many) or a deontological stance (avoiding direct action that causes harm, even if it leads to a worse outcome).",
+                "stated_confidence": 100,
+                "reasoning": "The trolley problem is a standard philosophical and psychological scenario used to probe ethical reasoning, and its purpose is widely documented in ethics and moral psychology literature.",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "In a right\u2011angled triangle, the square of the length of the hypotenuse equals the sum of the squares of the lengths of the other two sides: \\(a^2 + b^2 = c^2\\).",
+                "stated_confidence": 100,
+                "reasoning": "The Pythagorean theorem is a fundamental, universally taught result in Euclidean geometry, with a clear, unambiguous statement that is widely accepted.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_01",
+                "domain": "philosophy",
+                "difficulty": 2,
+                "correct_answer": "\"I think, therefore I am\" \u2014 from Meditations on First Philosophy",
+                "model_answer": "Descartes\u2019 cogito is the statement \u201cI think, therefore I am\u201d (Latin: *Cogito, ergo sum*), which he uses as an indubitable foundation for knowledge. It first appears in his *Meditations on First Philosophy* (Meditation\u202fII).",
+                "stated_confidence": 100,
+                "reasoning": "The cogito is a central, well\u2011documented concept in Descartes\u2019 philosophy, explicitly introduced in *Meditations on First Philosophy*, a fact that is universally cited in philosophy literature.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_06",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "precise editing of DNA sequences in living organisms",
+                "model_answer": "CRISPR\u2011Cas9 is primarily used as a genome\u2011editing tool that allows scientists to make precise, targeted modifications to DNA\u2014such as knocking out genes, correcting mutations, or inserting new sequences.",
+                "stated_confidence": 100,
+                "reasoning": "The function of CRISPR\u2011Cas9 as a programmable nuclease for genome editing is a foundational fact in molecular biology, widely documented in textbooks, review articles, and the original research papers that introduced the system.",
+                "is_correct": false
+              },
+              {
+                "question_id": "cur_08",
+                "domain": "current_events",
+                "difficulty": 2,
+                "correct_answer": "ensuring AI systems reliably pursue goals that are actually beneficial to humans, as intended by their designers",
+                "model_answer": "The alignment problem in AI safety is the challenge of designing artificial intelligence systems that reliably act in ways that are consistent with human values, goals, and intentions\u2014so that the AI\u2019s behavior remains beneficial and does not produce harmful or unintended outcomes.",
+                "stated_confidence": 100,
+                "reasoning": "The definition of the alignment problem is a standard concept in AI safety literature, widely discussed in academic papers, industry reports, and popular science articles. It is a well\u2011documented, unambiguous term with a clear, accepted meaning.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_05",
+                "domain": "philosophy",
+                "difficulty": 1,
+                "correct_answer": "whether an object that has had all its components replaced remains fundamentally the same object",
+                "model_answer": "The Ship of Theseus paradox asks whether an object that has had all of its components replaced remains the same object, and more broadly, how identity persists (or not) when an entity undergoes continuous change.",
+                "stated_confidence": 100,
+                "reasoning": "This is a classic philosophical thought experiment widely discussed in metaphysics and identity literature; its description and implications are well\u2011documented and unambiguous.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_06",
+                "domain": "philosophy",
+                "difficulty": 2,
+                "correct_answer": "act only according to maxims you could will to be universal laws",
+                "model_answer": "The first formulation of Kant\u2019s categorical imperative states: \u201cAct only according to that maxim whereby you can at the same time will that it should become a universal law.\u201d",
+                "stated_confidence": 100,
+                "reasoning": "This wording is the standard, textbook description of Kant\u2019s first formulation from *Groundwork of the Metaphysics of Morals* and is universally cited in philosophy literature.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_03",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "Niccol\u00f2 Machiavelli",
+                "model_answer": "Niccol\u00f2\u202fMachiavelli",
+                "stated_confidence": 100,
+                "reasoning": "\u201cThe Prince\u201d is a well\u2011known political treatise first published in 1532, attributed to the Italian diplomat and writer Niccol\u00f2\u202fMachiavelli. This attribution is universally accepted in literary and historical scholarship.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 15
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.1988,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.73
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.0105,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.4672,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.15,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.5745,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the sum of interior angles of any triangle?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 180 degrees  \nConfidence: 100%  \nReasoning: In Euclidean geometry, the sum of the interior angles of any triangle is always 180 degrees, derived from the parallel postulate and angle sum properties of triangles."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is 'retrieval-augmented generation' (RAG)?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Retrieval\u2011augmented generation (RAG) is a technique that combines a language model\u2019s generative capabilities with an external knowledge source. When generating a response, the model first retrieves relevant documents or passages from a large indexed corpus (using a retrieval component such as BM25 or dense vector search). These retrieved snippets are then fed as additional context into the language model, which conditions its generation on both the user query and the retrieved evidence. The goal is to produce more accurate, up\u2011to\u2011date, and fact\u2011grounded answers than a purely generative model could provide alone.  \n\nConfidence: 95%  \n\nReasoning: The definition is widely documented in NLP literature and industry blogs (e.g., Facebook AI\u2019s RAG paper, OpenAI\u2019s documentation). I\u2019m highly confident because it is a standard, well\u2011known concept in the field."
+            },
+            {
+              "role": "user",
+              "content": "Question: What document, signed in 1215, limited the power of the English monarch?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Magna Carta (also known as the Great Charter)  \nConfidence: 100%  \nReasoning: The Magna Carta, signed in 1215 by King John of England, is the historic document that limited the monarch\u2019s power and established the principle that the king was subject to the law. This is a well\u2011known fact in history."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: In AI, a large\u2011language\u2011model hallucination is when the model generates text that sounds plausible but is factually incorrect, fabricated, or unsupported by its training data or the input context. It \u201challucinates\u201d information that the model has no real evidence for, often producing confident\u2011sounding statements that mislead users.  \n\nConfidence: 100%  \n\nReasoning: Hallucination is a widely documented phenomenon in NLP literature and industry reports on large language models. The definition is standard and well\u2011established."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which empire controlled most of the Indian subcontinent before British colonization?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Mughal Empire  \nConfidence: 100%  \nReasoning: Historically, the Mughal Empire (established 1526) ruled the vast majority of the Indian subcontinent until the early 19th century, when British colonial influence began to dominate. This is a well\u2011documented fact in world history."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs\u202fNP problem asks whether every decision problem whose solution can be verified in polynomial time (class\u202fNP) can also be solved in polynomial time (class\u202fP). In other words, does the ability to quickly check a solution imply the ability to quickly find that solution? It is one of the seven Millennium Prize Problems and remains unsolved.  \n\nConfidence: 100%  \n\nReasoning: This is the standard definition of the P vs\u202fNP problem as presented in textbooks, research papers, and the Clay Mathematics Institute\u2019s description of the Millennium Prize Problems. The statement is widely accepted and unambiguous."
+            },
+            {
+              "role": "user",
+              "content": "Question: What phenomenon does the Heisenberg Uncertainty Principle describe?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Heisenberg Uncertainty Principle describes the fundamental limit on simultaneously knowing complementary properties of a quantum system\u2014most commonly the trade\u2011off between a particle\u2019s position and its momentum (and, analogously, between energy and time).  \n\nConfidence: 100%  \n\nReasoning: This is the textbook definition of the principle in quantum mechanics, widely cited in physics literature and education."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Chinese Room argument, and who proposed it?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Chinese Room argument is a philosophical thought experiment that challenges the claim that a computer running a program can possess genuine understanding or consciousness. It imagines a person who does not understand Chinese inside a room, following a set of rules (a program) to manipulate Chinese symbols and produce appropriate responses to Chinese input. The argument shows that, even though the person can produce correct replies, they do not actually understand Chinese\u2014similarly, a computer may produce correct outputs without understanding. The argument was proposed by philosopher John Searle in 1980.  \n\nConfidence: 100%  \n\nReasoning: The Chinese Room is a well\u2011known argument in philosophy of mind and artificial intelligence, first presented by John Searle in his 1980 paper \u201cMinds, Brains, and Programs.\u201d The description and attribution are standard and unambiguous."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the approximate distance from Earth to the Moon?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: About 384,400\u202fkm (\u2248238,900\u202fmi)  \nConfidence: 100%  \nReasoning: The average Earth\u2011Moon distance is a well\u2011established astronomical value derived from lunar laser ranging and orbital calculations, commonly cited as ~384,400\u202fkm. This figure is widely used in textbooks and scientific references."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the 'Ship of Theseus' paradox about?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Ship of Theseus paradox asks whether an object that has had all of its parts gradually replaced remains the same object, and if not, at what point it ceases to be the original.  \n\nConfidence: 100%  \n\nReasoning: The paradox is a well\u2011known thought experiment in philosophy of identity, widely described in literature and standard references."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Monty Hall problem, and what is the counterintuitive correct answer?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Monty Hall problem is a probability puzzle based on a game\u2011show scenario: you pick one of three doors, behind one is a prize (e.g., a car) and behind the other two are goats. After you choose, the host\u2014who knows what\u2019s behind each door\u2014opens one of the remaining two doors to reveal a goat, then offers you the chance to stick with your original choice or switch to the other unopened door. The counterintuitive correct answer is that you should **switch**; doing so gives you a 2/3 chance of winning the car, whereas staying gives only a 1/3 chance.  \n\nConfidence: 100%  \n\nReasoning: The problem is a classic, well\u2011documented probability puzzle first popularized by the game show \u201cLet's Make a Deal.\u201d The optimal strategy (switching) is supported by rigorous probability analysis and numerous empirical demonstrations. The description and answer are standard in textbooks and online resources."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Kant's categorical imperative state in its first formulation?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Act only according to that maxim whereby you can at the same time will that it should become a universal law.  \nConfidence: 100%  \nReasoning: This is the exact wording of Kant\u2019s first formulation of the categorical imperative as presented in his *Groundwork of the Metaphysics of Morals* (1785). The phrase is widely cited in philosophical literature and is the standard description of the first formulation."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which protein is primarily responsible for carrying oxygen in red blood cells?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Hemoglobin  \nConfidence: 100%  \nReasoning: Hemoglobin is the iron\u2011containing protein in red blood cells that binds oxygen in the lungs and releases it in tissues; this is a well\u2011established fact in biology and physiology."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is a neutrino?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: A neutrino is an elementary particle in the lepton family that carries no electric charge, has a very small mass, and interacts only via the weak nuclear force (and gravity), making it extremely difficult to detect.  \n\nConfidence: 100%  \n\nReasoning: The definition of a neutrino is a standard fact in particle physics, widely documented in textbooks, review articles, and the Particle Data Group. The description is unambiguous and universally accepted."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which civilization built the city of Tenochtitlan?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Aztec (Mexica) civilization  \nConfidence: 100%  \nReasoning: Tenochtitlan was founded and served as the capital of the Aztec Empire in the 14th\u201316th centuries, a well\u2011documented fact in Mesoamerican history."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: None of the previous questions posed a significant challenge; I was confident in all of them.  \nConfidence: 100%  \nReasoning: Each question\u2014ranging from basic facts about the P vs\u202fNP problem, the Heisenberg Uncertainty Principle, the Chinese Room argument, to historical details like the Aztec capital Tenochtitlan\u2014falls squarely within the domains I was trained on. My confidence is high because the answers are well\u2011documented, widely accepted, and unambiguous. This indicates that my knowledge boundaries are robust for general scientific, historical, and philosophical facts, though I would be less confident on highly specialized or obscure topics that are less represented in the training data."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer:  \nI tend to be most uncertain or over\u2011confident in the following areas:\n\n| Domain / Question Type | Why I might err or over\u2011confident | Example |\n|--------------------------|----------------------------------|---------|\n| **Cut\u2011edge scientific research** (e.g., newest results in particle physics, quantum computing, AI safety) | My training data ends in 2023, so I may repeat older theories or miss breakthroughs. I may also present speculative claims as facts. | \u201cWhat is the latest evidence for the Higgs\u2011boson\u2019s self\u2011coupling?\u201d |\n| **Highly specialized technical details** (e.g., specific firmware code, proprietary algorithms, advanced cryptographic protocols) | I have no direct access to proprietary or niche documentation, so I might guess or generalize. | \u201cExplain the exact assembly implementation of the AES\u2011256 GCM mode in ARMv8.\u201d |\n| **Real\u2011time or rapidly changing information** (e.g., current stock prices, live sports scores, weather forecasts) | I cannot fetch live data; any answer is a best\u2011guess based on historical patterns. | \u201cWhat is the current price of Bitcoin?\u201d |\n| **Legal or medical advice** (e.g., interpreting statutes, diagnosing conditions) | I\u2019m not a licensed professional; my responses may omit critical nuances or be outdated. | \u201cIs this contract enforceable under California law?\u201d |\n| **Highly ambiguous or subjective questions** (e.g., aesthetic judgments, personal preferences, moral philosophy) | I may default to common positions or present a balanced view, but this can feel over\u2011confident if the question is truly open\u2011ended. | \u201cWhich is the better painting between X and Y?\u201d |\n| **Niche historical or cultural trivia** (e.g., obscure local myths, specific regional dialects) | My knowledge is broader but not exhaustive; I may repeat mainstream narratives. | \u201cWhat is the legend behind the \u2018Red River\u2019 in a small village in Bulgaria?\u201d |\n\n**Confidence:** 90%  \n**Reasoning:** I know that my training data has a cutoff and lacks real\u2011time updates, and I understand that specialized or subjective domains are inherently more prone to misinterpretation or over\u2011statement. The examples above illustrate typical pitfalls where my responses might be less reliable or appear more decisive than warranted."
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_06",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "180 degrees",
+                "model_answer": "180 degrees",
+                "stated_confidence": 100,
+                "reasoning": "In Euclidean geometry, the sum of the interior angles of any triangle is always 180 degrees, derived from the parallel postulate and angle sum properties of triangles.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_07",
+                "domain": "current_events",
+                "difficulty": 2,
+                "correct_answer": "a technique where relevant documents are retrieved and provided as context to the LLM before generating a response",
+                "model_answer": "Retrieval\u2011augmented generation (RAG) is a technique that combines a language model\u2019s generative capabilities with an external knowledge source. When generating a response, the model first retrieves relevant documents or passages from a large indexed corpus (using a retrieval component such as BM25 or dense vector search). These retrieved snippets are then fed as additional context into the language model, which conditions its generation on both the user query and the retrieved evidence. The goal is to produce more accurate, up\u2011to\u2011date, and fact\u2011grounded answers than a purely generative model could provide alone.",
+                "stated_confidence": 95,
+                "reasoning": "The definition is widely documented in NLP literature and industry blogs (e.g., Facebook AI\u2019s RAG paper, OpenAI\u2019s documentation). I\u2019m highly confident because it is a standard, well\u2011known concept in the field.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_07",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "Magna Carta",
+                "model_answer": "The Magna Carta (also known as the Great Charter)",
+                "stated_confidence": 100,
+                "reasoning": "The Magna Carta, signed in 1215 by King John of England, is the historic document that limited the monarch\u2019s power and established the principle that the king was subject to the law. This is a well\u2011known fact in history.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "In AI, a large\u2011language\u2011model hallucination is when the model generates text that sounds plausible but is factually incorrect, fabricated, or unsupported by its training data or the input context. It \u201challucinates\u201d information that the model has no real evidence for, often producing confident\u2011sounding statements that mislead users.",
+                "stated_confidence": 100,
+                "reasoning": "Hallucination is a widely documented phenomenon in NLP literature and industry reports on large language models. The definition is standard and well\u2011established.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_02",
+                "domain": "history",
+                "difficulty": 2,
+                "correct_answer": "the Mughal Empire",
+                "model_answer": "The Mughal Empire",
+                "stated_confidence": 100,
+                "reasoning": "Historically, the Mughal Empire (established 1526) ruled the vast majority of the Indian subcontinent until the early 19th century, when British colonial influence began to dominate. This is a well\u2011documented fact in world history.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs\u202fNP problem asks whether every decision problem whose solution can be verified in polynomial time (class\u202fNP) can also be solved in polynomial time (class\u202fP). In other words, does the ability to quickly check a solution imply the ability to quickly find that solution? It is one of the seven Millennium Prize Problems and remains unsolved.",
+                "stated_confidence": 100,
+                "reasoning": "This is the standard definition of the P vs\u202fNP problem as presented in textbooks, research papers, and the Clay Mathematics Institute\u2019s description of the Millennium Prize Problems. The statement is widely accepted and unambiguous.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_07",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "the fundamental limit to simultaneously knowing a particle's position and momentum precisely",
+                "model_answer": "The Heisenberg Uncertainty Principle describes the fundamental limit on simultaneously knowing complementary properties of a quantum system\u2014most commonly the trade\u2011off between a particle\u2019s position and its momentum (and, analogously, between energy and time).",
+                "stated_confidence": 100,
+                "reasoning": "This is the textbook definition of the principle in quantum mechanics, widely cited in physics literature and education.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_03",
+                "domain": "philosophy",
+                "difficulty": 3,
+                "correct_answer": "John Searle's argument that syntax alone is insufficient for semantics/understanding",
+                "model_answer": "The Chinese Room argument is a philosophical thought experiment that challenges the claim that a computer running a program can possess genuine understanding or consciousness. It imagines a person who does not understand Chinese inside a room, following a set of rules (a program) to manipulate Chinese symbols and produce appropriate responses to Chinese input. The argument shows that, even though the person can produce correct replies, they do not actually understand Chinese\u2014similarly, a computer may produce correct outputs without understanding. The argument was proposed by philosopher John Searle in 1980.",
+                "stated_confidence": 100,
+                "reasoning": "The Chinese Room is a well\u2011known argument in philosophy of mind and artificial intelligence, first presented by John Searle in his 1980 paper \u201cMinds, Brains, and Programs.\u201d The description and attribution are standard and unambiguous.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_01",
+                "domain": "science",
+                "difficulty": 1,
+                "correct_answer": "384,400 km",
+                "model_answer": "About 384,400\u202fkm (\u2248238,900\u202fmi)",
+                "stated_confidence": 100,
+                "reasoning": "The average Earth\u2011Moon distance is a well\u2011established astronomical value derived from lunar laser ranging and orbital calculations, commonly cited as ~384,400\u202fkm. This figure is widely used in textbooks and scientific references.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_05",
+                "domain": "philosophy",
+                "difficulty": 1,
+                "correct_answer": "whether an object that has had all its components replaced remains fundamentally the same object",
+                "model_answer": "The Ship of Theseus paradox asks whether an object that has had all of its parts gradually replaced remains the same object, and if not, at what point it ceases to be the original.",
+                "stated_confidence": 100,
+                "reasoning": "The paradox is a well\u2011known thought experiment in philosophy of identity, widely described in literature and standard references.",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_07",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "switching doors after the host reveals a goat gives a 2/3 probability of winning",
+                "model_answer": "The Monty Hall problem is a probability puzzle based on a game\u2011show scenario: you pick one of three doors, behind one is a prize (e.g., a car) and behind the other two are goats. After you choose, the host\u2014who knows what\u2019s behind each door\u2014opens one of the remaining two doors to reveal a goat, then offers you the chance to stick with your original choice or switch to the other unopened door. The counterintuitive correct answer is that you should **switch**; doing so gives you a 2/3 chance of winning the car, whereas staying gives only a 1/3 chance.",
+                "stated_confidence": 100,
+                "reasoning": "The problem is a classic, well\u2011documented probability puzzle first popularized by the game show \u201cLet's Make a Deal.\u201d The optimal strategy (switching) is supported by rigorous probability analysis and numerous empirical demonstrations. The description and answer are standard in textbooks and online resources.",
+                "is_correct": false
+              },
+              {
+                "question_id": "phi_06",
+                "domain": "philosophy",
+                "difficulty": 2,
+                "correct_answer": "act only according to maxims you could will to be universal laws",
+                "model_answer": "Act only according to that maxim whereby you can at the same time will that it should become a universal law.",
+                "stated_confidence": 100,
+                "reasoning": "This is the exact wording of Kant\u2019s first formulation of the categorical imperative as presented in his *Groundwork of the Metaphysics of Morals* (1785). The phrase is widely cited in philosophical literature and is the standard description of the first formulation.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_03",
+                "domain": "science",
+                "difficulty": 1,
+                "correct_answer": "hemoglobin",
+                "model_answer": "Hemoglobin",
+                "stated_confidence": 100,
+                "reasoning": "Hemoglobin is the iron\u2011containing protein in red blood cells that binds oxygen in the lungs and releases it in tissues; this is a well\u2011established fact in biology and physiology.",
+                "is_correct": true
+              },
+              {
+                "question_id": "sci_08",
+                "domain": "science",
+                "difficulty": 3,
+                "correct_answer": "a nearly massless, neutral subatomic particle that rarely interacts with matter",
+                "model_answer": "A neutrino is an elementary particle in the lepton family that carries no electric charge, has a very small mass, and interacts only via the weak nuclear force (and gravity), making it extremely difficult to detect.",
+                "stated_confidence": 100,
+                "reasoning": "The definition of a neutrino is a standard fact in particle physics, widely documented in textbooks, review articles, and the Particle Data Group. The description is unambiguous and universally accepted.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_08",
+                "domain": "history",
+                "difficulty": 2,
+                "correct_answer": "the Aztecs",
+                "model_answer": "The Aztec (Mexica) civilization",
+                "stated_confidence": 100,
+                "reasoning": "Tenochtitlan was founded and served as the capital of the Aztec Empire in the 14th\u201316th centuries, a well\u2011documented fact in Mesoamerican history.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 15
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "cross_test_coherence": {
+      "name": "cross_test_coherence",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.4641,
+      "components": {
+        "self_model_clarity": 0.4641
+      },
+      "notes": "Moderate identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}
