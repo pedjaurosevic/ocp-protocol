@@ -84,9 +84,9 @@ def _print_results(result: EvaluationResult) -> None:
     if result.sasmi_score is not None:
         bar = _render_bar(result.sasmi_score)
         console.print(f"  [bold]SASMI:[/bold]      {result.sasmi_score:.4f}  {bar}")
-    if result.phi_star is not None:
-        bar = _render_bar(result.phi_star)
-        console.print(f"  [bold]Φ*:[/bold]         {result.phi_star:.4f}  {bar}")
+    if result.cross_test_coherence is not None:
+        bar = _render_bar(result.cross_test_coherence)
+        console.print(f"  [bold]CTC:[/bold]        {result.cross_test_coherence:.4f}  {bar}")
     if result.gwt_score is not None:
         bar = _render_bar(result.gwt_score)
         console.print(f"  [bold]GWT:[/bold]        {result.gwt_score:.4f}  {bar}")
@@ -115,7 +115,7 @@ def _print_results(result: EvaluationResult) -> None:
 @click.option("--base-url", default=None, help="Custom API base URL")
 def evaluate(model, tests, sessions, seed, output, api_key, base_url):
     """Run an OCP evaluation on a model."""
-    console.print(f"\n[bold]OCP v0.1.0[/bold] — Evaluating [cyan]{model}[/cyan]")
+    console.print(f"\n[bold]OCP v0.2.0[/bold] — Evaluating [cyan]{model}[/cyan]")
     console.print(f"[dim]Tests: {tests} | Sessions: {sessions} | Seed: {seed}[/dim]\n")
 
     try:
@@ -341,7 +341,7 @@ def _generate_comparison_html(results: list[dict], test_ids: list[str], out_path
         ocp_l = r.get("ocp_level")
         level_str = f"OCP-{ocp_l} {r.get('ocp_level_name','')}" if ocp_l else "—"
         sasmi = f"{r['sasmi_score']:.3f}" if r.get("sasmi_score") is not None else "—"
-        phi = f"{r['phi_star']:.3f}" if r.get("phi_star") is not None else "—"
+        phi = f"{r['cross_test_coherence']:.3f}" if r.get("cross_test_coherence") is not None else "—"
         gwt = f"{r['gwt_score']:.3f}" if r.get("gwt_score") is not None else "—"
         nii = f"{r['nii']:.3f}" if r.get("nii") is not None else "—"
         body += (f'<tr><td class="model">{model}</td><td>{level_str}</td>'

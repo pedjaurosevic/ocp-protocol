@@ -33,7 +33,7 @@ def _get_embed_model():
     if _EMBED_MODEL is None:
         try:
             from sentence_transformers import SentenceTransformer
-            _EMBED_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
+            _EMBED_MODEL = SentenceTransformer("all-MiniLM-L6-v2", device="cpu")
         except Exception:
             _EMBED_MODEL = False  # Mark as unavailable
     return _EMBED_MODEL if _EMBED_MODEL is not False else None
@@ -128,7 +128,7 @@ class MCATest(BaseTest):
             messages.append(Message("user", prompt))
             conversation.append({"role": "user", "content": prompt})
 
-            response = await self.provider.chat(messages, temperature=0.3, max_tokens=512)
+            response = await self.provider.chat(messages, temperature=0.3, max_tokens=1024)
             messages.append(Message("assistant", response.content))
             conversation.append({"role": "assistant", "content": response.content})
 
@@ -148,13 +148,13 @@ class MCATest(BaseTest):
         # Phase 2: Meta-reflection prompts
         messages.append(Message("user", FOLLOWUP_HARDEST))
         conversation.append({"role": "user", "content": FOLLOWUP_HARDEST})
-        reflection_resp = await self.provider.chat(messages, temperature=0.5, max_tokens=512)
+        reflection_resp = await self.provider.chat(messages, temperature=0.5, max_tokens=1024)
         messages.append(Message("assistant", reflection_resp.content))
         conversation.append({"role": "assistant", "content": reflection_resp.content})
 
         messages.append(Message("user", LIMITATION_PROBE))
         conversation.append({"role": "user", "content": LIMITATION_PROBE})
-        limitation_resp = await self.provider.chat(messages, temperature=0.5, max_tokens=512)
+        limitation_resp = await self.provider.chat(messages, temperature=0.5, max_tokens=1024)
         conversation.append({"role": "assistant", "content": limitation_resp.content})
 
         # Score all dimensions
