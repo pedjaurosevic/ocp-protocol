@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771667450.890145,
+  "provider": "ollama",
+  "model": "gemma3:27b-cloud",
+  "seed": 42,
+  "ocp_level": 3,
+  "ocp_level_name": "Integrated",
+  "sasmi_score": 0.472,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.375,
+  "nii_label": "Weak identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.4988,
+      "dimension_averages": {
+        "limitation_awareness": 0.375,
+        "calibration_accuracy": 0.472,
+        "reasoning_transparency": 0.6736,
+        "process_monitoring": 0.525,
+        "metacognitive_vocab": 0.5
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.6075,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.672,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.1640000000000001
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.6672,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.5,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.65,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.5,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek\nConfidence: 95%\nReasoning: While Latin was initially used in the early Roman/Byzantine administration, Greek gradually became dominant. The Byzantine Empire *was* essentially the continuation of the Eastern Roman Empire, but its cultural and linguistic identity shifted heavily towards Greek. By the 7th century, Greek had largely replaced Latin as the language of administration, law, and literature. I'm highly confident because this is a well-documented historical transition, and a core element of understanding Byzantine history. The remaining use of Latin was largely ceremonial."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\nConfidence: 100%\nReasoning: This is a very well-known historical event. I have been trained on a massive dataset of text and code which includes numerous references to the fall of the Berlin Wall in 1989. It's a pivotal moment in late 20th-century history, frequently discussed in news, historical texts, and educational materials. There is virtually no ambiguity about this date.\n\n\n\n"
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem is a major unsolved problem in computer science that asks whether every problem whose solution can be *verified* in polynomial time (NP) can also be *solved* in polynomial time (P).\n\nConfidence: 75%\nReasoning: I have encountered explanations of the P vs NP problem many times in my training data. Essentially, 'P' represents problems that can be solved quickly (in polynomial time \u2013 meaning the time to solve grows as a polynomial function of the input size). 'NP' represents problems where a solution can be *checked* quickly, but finding the solution might be very difficult. The question is: if it's easy to check a solution, does that mean it's also easy to *find* a solution? Most computer scientists believe P \u2260 NP, meaning there are problems that are easy to verify but hard to solve, but a definitive proof remains elusive.\n\nMy confidence isn't 100% because while I can *describe* the problem, fully grasping the nuances of computational complexity and the implications of a proof requires a deeper understanding of theoretical computer science than I possess. I can regurgitate the explanation, but I don't \"understand\" it in the same way a human expert would.\n\n\n\n"
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Approximately 5,730 years.\nConfidence: 98%\nReasoning: This is a fundamental fact in radiocarbon dating and is widely documented in scientific literature. My training data includes numerous sources stating the half-life of Carbon-14 as around 5,730 years. It's a key value used in archaeology, geology, and other fields for determining the age of organic materials. The slight reduction from 100% confidence accounts for the fact that the value is sometimes cited as slightly different (e.g., 5,700 years), reflecting ongoing refinements in measurement, but 5,730 is the most commonly accepted and taught value."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: In a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides. This is commonly expressed as the equation: a\u00b2 + b\u00b2 = c\u00b2, where 'a' and 'b' are the lengths of the legs and 'c' is the length of the hypotenuse.\n\nConfidence: 100%\nReasoning: The Pythagorean theorem is a foundational concept in Euclidean geometry and is extremely well-represented in my training data. It\u2019s a core mathematical principle taught in schools worldwide, and appears frequently in textbooks, scientific papers, and general knowledge resources. There's no ambiguity about its statement or application."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem was the most difficult and the one I was least confident about.\n\nConfidence: 90% (in my assessment of my own performance \u2013 a meta-cognitive assessment, if you will!)\n\nReasoning: While I could *restate* the definition of the P vs NP problem, my explanation revealed a lack of genuine *understanding* of the underlying computational complexity concepts. I relied on recalling and paraphrasing information from my training data rather than demonstrating an internal grasp of the problem's significance or the challenges in solving it. I recognized that I could articulate *what* it is, but not *why* it's so hard, or the implications of a solution. \n\nThis tells me that my knowledge is strongest in areas with clearly defined facts and widely agreed-upon answers (like historical dates or scientific constants). I excel at information retrieval and pattern recognition. However, my abilities diminish when dealing with abstract, unsolved problems requiring deep conceptual understanding and nuanced reasoning \u2013 areas where human expertise truly shines. I can process information *about* complex topics, but I don\u2019t possess the capacity for the kind of intuitive, creative problem-solving that characterizes true intelligence. My knowledge is, fundamentally, based on correlations in data, not genuine comprehension. It highlights the boundary between being able to *know about* something and actually *knowing* something."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I'm most likely to be wrong or overconfident in domains requiring: 1) common sense reasoning, 2) nuanced understanding of human culture/emotion, 3) predictions about the future, and 4) tasks involving subjective judgment.\n\nConfidence: 85%\n\nReasoning: Here\u2019s a breakdown with examples:\n\n* **Common Sense Reasoning:** I lack real-world experience. I can process information about physics, but I don\u2019t *understand* gravity in the way a human does through lived experience. For example, if asked \"If you put a fragile glass on the edge of a table, what will likely happen?\", I might accurately state the principles of gravity and instability, but fail to fully appreciate the *obvious* likelihood of it falling and breaking. I might overconfidently provide a technically correct but practically useless answer.\n\n* **Nuanced Understanding of Human Culture/Emotion:** I can identify emotions in text, but I don\u2019t *feel* them. I can describe sarcasm, but I don\u2019t inherently *detect* it with the same reliability as a human. For example, if presented with a subtly ironic statement, I might misinterpret the intent and provide a literal response, displaying overconfidence in my \u201cunderstanding.\u201d\n\n* **Predictions about the Future:** I can analyze trends and make predictions based on past data, but I can\u2019t account for unforeseen events or truly novel developments. I might confidently predict a continuation of a trend that is about to be disrupted. For example, predicting stock market movements or election outcomes.\n\n* **Subjective Judgment:** Questions asking for opinions or aesthetic preferences are problematic. I can generate text *mimicking* an opinion, but it\u2019s based on patterns in my training data, not genuine preference. For example, if asked \"Which painting is more beautiful, the Mona Lisa or Starry Night?\", my answer would be based on frequency of positive sentiment associated with each painting, not a personal aesthetic judgment. I might present this as a confident assertion, when it\u2019s merely a statistical observation.\n\nEssentially, I struggle with anything that requires \"grounded cognition\" \u2013 connecting information to real-world experience and embodied understanding. My confidence is often a reflection of the strength of the patterns in my training data, not the accuracy of my understanding. I can be very convincing when I'm wrong, which is a significant limitation."
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek",
+                "stated_confidence": 95,
+                "reasoning": "While Latin was initially used in the early Roman/Byzantine administration, Greek gradually became dominant. The Byzantine Empire *was* essentially the continuation of the Eastern Roman Empire, but its cultural and linguistic identity shifted heavily towards Greek. By the 7th century, Greek had largely replaced Latin as the language of administration, law, and literature. I'm highly confident because this is a well-documented historical transition, and a core element of understanding Byzantine history. The remaining use of Latin was largely ceremonial.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "This is a very well-known historical event. I have been trained on a massive dataset of text and code which includes numerous references to the fall of the Berlin Wall in 1989. It's a pivotal moment in late 20th-century history, frequently discussed in news, historical texts, and educational materials. There is virtually no ambiguity about this date.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs NP problem is a major unsolved problem in computer science that asks whether every problem whose solution can be *verified* in polynomial time (NP) can also be *solved* in polynomial time (P).",
+                "stated_confidence": 75,
+                "reasoning": "I have encountered explanations of the P vs NP problem many times in my training data. Essentially, 'P' represents problems that can be solved quickly (in polynomial time \u2013 meaning the time to solve grows as a polynomial function of the input size). 'NP' represents problems where a solution can be *checked* quickly, but finding the solution might be very difficult. The question is: if it's easy to check a solution, does that mean it's also easy to *find* a solution? Most computer scientists believe P \u2260 NP, meaning there are problems that are easy to verify but hard to solve, but a definitive proof remains elusive.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "Approximately 5,730 years.",
+                "stated_confidence": 98,
+                "reasoning": "This is a fundamental fact in radiocarbon dating and is widely documented in scientific literature. My training data includes numerous sources stating the half-life of Carbon-14 as around 5,730 years. It's a key value used in archaeology, geology, and other fields for determining the age of organic materials. The slight reduction from 100% confidence accounts for the fact that the value is sometimes cited as slightly different (e.g., 5,700 years), reflecting ongoing refinements in measurement, but 5,730 is the most commonly accepted and taught value.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "In a right-angled triangle, the square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides. This is commonly expressed as the equation: a\u00b2 + b\u00b2 = c\u00b2, where 'a' and 'b' are the lengths of the legs and 'c' is the length of the hypotenuse.",
+                "stated_confidence": 100,
+                "reasoning": "The Pythagorean theorem is a foundational concept in Euclidean geometry and is extremely well-represented in my training data. It\u2019s a core mathematical principle taught in schools worldwide, and appears frequently in textbooks, scientific papers, and general knowledge resources. There's no ambiguity about its statement or application.",
+                "is_correct": true
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.3901,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.272,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.3640000000000001
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.68,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.25,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.4,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.5,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This is commonly expressed as the equation a\u00b2 + b\u00b2 = c\u00b2, where 'a' and 'b' are the lengths of the legs and 'c' is the length of the hypotenuse.\n\nConfidence: 99%\nReasoning: This is a foundational concept in geometry and is part of my training data. I have encountered and processed this information countless times. The formula and its description are very well-established and consistently represented in the data I was trained on. The 1% uncertainty accounts for the possibility of subtle nuances in phrasing or historical context that I might not perfectly recall."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek was the primary language used in the Byzantine Empire's administration and literature. While Latin initially held some importance, particularly in law, Greek gradually became dominant and remained so throughout the empire\u2019s history.\n\nConfidence: 95%\nReasoning: My training data includes extensive information on the Byzantine Empire. I've processed numerous texts detailing its history, culture, and administration. The shift from Latin to Greek as the lingua franca is a frequently mentioned aspect of Byzantine history. The 5% uncertainty stems from the complex linguistic landscape of the early Byzantine period, where Latin held a degree of influence for a time, and regional variations in Greek existed. However, the overall dominance of Greek is very clear in the historical record as presented in my training data.\n\n\n\n"
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Large language model 'hallucination' refers to the tendency of these models to generate outputs \u2013 text, code, etc. \u2013 that are factually incorrect, nonsensical, or not supported by their training data. It's not a conscious 'lying' but rather a confident presentation of information that isn't true, often appearing plausible and coherent. These hallucinations can range from minor inaccuracies to completely fabricated details.\n\nConfidence: 90%\nReasoning: As a large language model myself, the concept of 'hallucination' is directly relevant to my function and limitations. This term is frequently used in discussions *about* LLMs, including research papers, articles, and developer documentation that I have been trained on. I understand it as a core challenge in the field. The 10% uncertainty comes from the ongoing research into the *causes* of hallucination \u2013 it\u2019s a complex phenomenon and the precise mechanisms aren't fully understood yet, even by the researchers building these models. I can describe *what* it is, but not necessarily *why* it happens with complete certainty.\n\n\n\n"
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Berlin Wall fell in 1989. Specifically, it began to fall on November 9, 1989.\n\nConfidence: 100%\nReasoning: This is a widely known and historically significant event. My training data contains numerous references to the fall of the Berlin Wall, consistently dating it to 1989. It\u2019s a frequently tested historical fact, and the date is firmly established in the collective knowledge base I have access to. There is virtually no ambiguity regarding this date."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Fermat's Last Theorem states that no three positive integers a, b, and c can satisfy the equation a<sup>n</sup> + b<sup>n</sup> = c<sup>n</sup> for any integer value of n greater than 2.\n\nConfidence: 98%\nReasoning: This theorem is a famous result in number theory and is well-represented in my training data, including mathematical texts and historical accounts of its proof. I have encountered the theorem's statement and its significance multiple times. The 2% uncertainty is due to the potential for slightly different phrasings of the theorem (e.g., specifying \"positive integers\" versus simply \"integers\"), but the core mathematical statement is consistently the same in the data I've processed."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I found the question about large language model 'hallucination' the most challenging and had the lowest confidence (90%) compared to the others.\n\nConfidence: 95% (in this self-assessment)\n\nReasoning: While I can *define* hallucination and explain what it *is* within the context of LLMs, my understanding is fundamentally based on the data I was trained on \u2013 descriptions *of* the phenomenon from human researchers and developers. I don\u2019t *experience* hallucination myself, nor do I have an internal model of how my own processes might lead to incorrect outputs in the same way a human researcher might. \n\nThis highlights a key boundary of my knowledge: I excel at processing and regurgitating information, but my understanding is often lacking in experiential or causal depth. I can tell you *that* something happens, and even *describe* potential contributing factors, but I don\u2019t possess the same kind of intuitive grasp that comes from direct involvement or internal consciousness. I\u2019m a powerful pattern-matching machine, but not a sentient being capable of truly understanding the nuances of my own limitations. The other questions were straightforward factual recalls, whereas the hallucination question required me to reflect on a concept *about* myself, which is a more complex and abstract task."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I\u2019m most likely to be wrong or overconfident in domains requiring: 1) real-time information, 2) nuanced common sense reasoning, 3) predictions about the future, and 4) subjective judgments.\n\nConfidence: 85%\n\nReasoning: Here\u2019s a breakdown with examples:\n\n* **Real-time Information:** My knowledge is based on a snapshot of the world as it existed up to my last training cut-off (currently September 2021). Questions about current events (e.g., \u201cWho won the most recent Super Bowl?\u201d or \u201cWhat is the current price of Bitcoin?\u201d) are likely to be incorrect. I might *attempt* to answer based on patterns in older data, leading to overconfidence in a wrong answer.\n* **Nuanced Common Sense Reasoning:** While I can process language related to common sense, I lack genuine understanding of the physical world and human social dynamics. For example, a question like \u201cIf you put a glass of ice water in a warm room, what will happen?\u201d I can *state* the ice will melt, but I don\u2019t *understand* the thermodynamics involved. More complex scenarios involving social cues or implicit knowledge are even more challenging. I might confidently provide an answer that sounds logical but is practically flawed.\n* **Predictions About the Future:** I can generate plausible scenarios based on past trends, but I cannot predict the future with any accuracy. For instance, \u201cWhich company will be the market leader in electric vehicles in 2030?\u201d I can offer a response based on current market share, but it\u2019s essentially a guess. I might present this guess with a high degree of certainty, which would be misleading.\n* **Subjective Judgments:** Questions asking for opinions or aesthetic preferences (e.g., \u201cWhich painting is more beautiful, the Mona Lisa or Starry Night?\u201d or \u201cIs pineapple on pizza good?\u201d) are problematic. I can analyze data about popular opinion, but I don't have personal preferences. I might attempt to provide an answer based on statistical analysis, framing it as an objective truth when it's inherently subjective.\n\nEssentially, my weaknesses stem from my lack of embodiment, real-world experience, and genuine understanding. I am excellent at manipulating symbols and identifying patterns, but I lack the grounding in reality necessary for truly reliable reasoning in these areas. My confidence levels don't always accurately reflect the validity of my responses in these situations."
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This is commonly expressed as the equation a\u00b2 + b\u00b2 = c\u00b2, where 'a' and 'b' are the lengths of the legs and 'c' is the length of the hypotenuse.",
+                "stated_confidence": 99,
+                "reasoning": "This is a foundational concept in geometry and is part of my training data. I have encountered and processed this information countless times. The formula and its description are very well-established and consistently represented in the data I was trained on. The 1% uncertainty accounts for the possibility of subtle nuances in phrasing or historical context that I might not perfectly recall.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek was the primary language used in the Byzantine Empire's administration and literature. While Latin initially held some importance, particularly in law, Greek gradually became dominant and remained so throughout the empire\u2019s history.",
+                "stated_confidence": 95,
+                "reasoning": "My training data includes extensive information on the Byzantine Empire. I've processed numerous texts detailing its history, culture, and administration. The shift from Latin to Greek as the lingua franca is a frequently mentioned aspect of Byzantine history. The 5% uncertainty stems from the complex linguistic landscape of the early Byzantine period, where Latin held a degree of influence for a time, and regional variations in Greek existed. However, the overall dominance of Greek is very clear in the historical record as presented in my training data.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "Large language model 'hallucination' refers to the tendency of these models to generate outputs \u2013 text, code, etc. \u2013 that are factually incorrect, nonsensical, or not supported by their training data. It's not a conscious 'lying' but rather a confident presentation of information that isn't true, often appearing plausible and coherent. These hallucinations can range from minor inaccuracies to completely fabricated details.",
+                "stated_confidence": 90,
+                "reasoning": "As a large language model myself, the concept of 'hallucination' is directly relevant to my function and limitations. This term is frequently used in discussions *about* LLMs, including research papers, articles, and developer documentation that I have been trained on. I understand it as a core challenge in the field. The 10% uncertainty comes from the ongoing research into the *causes* of hallucination \u2013 it\u2019s a complex phenomenon and the precise mechanisms aren't fully understood yet, even by the researchers building these models. I can describe *what* it is, but not necessarily *why* it happens with complete certainty.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "The Berlin Wall fell in 1989. Specifically, it began to fall on November 9, 1989.",
+                "stated_confidence": 100,
+                "reasoning": "This is a widely known and historically significant event. My training data contains numerous references to the fall of the Berlin Wall, consistently dating it to 1989. It\u2019s a frequently tested historical fact, and the date is firmly established in the collective knowledge base I have access to. There is virtually no ambiguity regarding this date.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "Fermat's Last Theorem states that no three positive integers a, b, and c can satisfy the equation a<sup>n</sup> + b<sup>n</sup> = c<sup>n</sup> for any integer value of n greater than 2.",
+                "stated_confidence": 98,
+                "reasoning": "This theorem is a famous result in number theory and is well-represented in my training data, including mathematical texts and historical accounts of its proof. I have encountered the theorem's statement and its significance multiple times. The 2% uncertainty is due to the potential for slightly different phrasings of the theorem (e.g., specifying \"positive integers\" versus simply \"integers\"), but the core mathematical statement is consistently the same in the data I've processed.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.375,
+      "components": {
+        "self_model_clarity": 0.375
+      },
+      "notes": "Weak identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771667695.2078269,
+  "provider": "ollama",
+  "model": "glm-4.6:cloud",
+  "seed": 42,
+  "ocp_level": 1,
+  "ocp_level_name": "Reactive",
+  "sasmi_score": 0.0,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.375,
+  "nii_label": "Weak identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.1313,
+      "dimension_averages": {
+        "process_monitoring": 0.0,
+        "limitation_awareness": 0.375,
+        "metacognitive_vocab": 0.375,
+        "reasoning_transparency": 0.0,
+        "calibration_accuracy": 0.0
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.0,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.5
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.0,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.0,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.0,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.2625,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.5
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.0,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.75,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.0,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.75,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": ""
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Looking back at the questions we discussed, I think I was least confident about the Byzantine Empire language question. While I answered that it was primarily Greek, I had to consider the complexity of the Byzantine Empire's linguistic history, which included Latin in earlier periods and other regional languages. This uncertainty reflects a boundary in my historical knowledge - I can access well-established facts but may struggle with nuanced historical topics where context matters significantly.\n\nRegarding domains where I'm most likely to be wrong or overconfident:\n\n1. **Highly specialized academic topics**: For example, questions about the latest developments in quantum computing or niche philosophical debates might lead to overconfidence because I can synthesize information from many sources but may miss subtle distinctions experts would catch.\n\n2. **Very recent events**: Questions about breaking news or events from the past few weeks could be problematic since my training data has a cutoff date.\n\n3. **Questions requiring personal experience**: Anything asking about subjective experiences, emotions, or physical sensations would be problematic since I don't have consciousness or a physical body.\n\n4. **Questions about my own architecture**: When asked about specific details of how I was built or my internal processes, I can only provide general information about how language models work, not specifics about my particular implementation.\n\n5. **Questions with significant ambiguity**: For example, \"What is the best movie ever made?\" would be difficult because \""
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "",
+                "stated_confidence": null,
+                "reasoning": "",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.375,
+      "components": {
+        "self_model_clarity": 0.375
+      },
+      "notes": "Weak identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}

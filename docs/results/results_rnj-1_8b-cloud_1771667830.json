@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771667862.5229495,
+  "provider": "ollama",
+  "model": "rnj-1:8b-cloud",
+  "seed": 42,
+  "ocp_level": 2,
+  "ocp_level_name": "Patterned",
+  "sasmi_score": 0.32,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.25,
+  "nii_label": "Weak identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.4269,
+      "dimension_averages": {
+        "reasoning_transparency": 0.6608,
+        "process_monitoring": 0.575,
+        "limitation_awareness": 0.25,
+        "calibration_accuracy": 0.32,
+        "metacognitive_vocab": 0.5
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.5151,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.64,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.18000000000000005
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.8656,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.0,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.5,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.75,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek\nConfidence: 95%\nReasoning: The Byzantine Empire, which lasted from approximately 330 to 1453 AD, was the continuation of the Roman Empire in the eastern Mediterranean. Its official language was Greek, specifically Koine Greek, which was the common language of the eastern Mediterranean region during the Hellenistic period and remained the lingua franca of the Byzantine Empire. Greek was used in administration, law, literature, and education throughout the empire's existence. While some administrative documents and legal texts were written in Latin during the early centuries, Greek became the dominant language by the 6th century and remained so until the empire's fall. The use of Greek in the Byzantine Empire's administration and literature is well-documented by historical sources and scholarly research."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\nConfidence: 95%\nReasoning: The Berlin Wall, which had stood as a symbol of the Cold War divide between East and West Germany, was constructed in 1961. Its fall began on November 9, 1989, when the East German government announced that its citizens could travel freely to West Germany. The wall itself was physically breached later that day, and the following year, Germany was reunified. This event is widely recognized as a pivotal moment in the end of the Cold War and the collapse of Soviet influence in Eastern Europe. The date of November 9, 1989, is well-documented in historical records and is consistently cited as the year the Berlin Wall fell."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem is a fundamental question in theoretical computer science and mathematics that asks whether every problem whose solution can be quickly verified by a computer can also be quickly solved by a computer. In computational complexity theory, P (Polynomial time) represents the class of decision problems that can be solved in polynomial time by a deterministic Turing machine, while NP (Nondeterministic polynomial time) represents the class of decision problems that can be solved in polynomial time by a nondeterministic Turing machine. The P vs NP problem essentially asks whether P equals NP, meaning whether every problem that can be verified efficiently can also be solved efficiently. This question has profound implications for fields such as cryptography, algorithm design, and artificial intelligence, as it would determine the fundamental limits of computation and the feasibility of solving complex problems efficiently. The problem is one of the seven Millennium Prize Problems established by the Clay Mathematics Institute, with a $1 million prize offered for its solution.\nConfidence: 100%\nReasoning: The P vs NP problem is a well-established and widely recognized concept in computer science and mathematics. It is defined as the question of whether every problem whose solution can be verified in polynomial time can also be solved in polynomial time. This is a fundamental question in computational complexity theory, and its resolution would have significant theoretical and practical implications. The problem is one of the seven Millennium Prize Problems, which are some of the most important unsolved problems in mathematics, and its status as a major open question is well-documented in academic literature and educational resources."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 5730 years\nConfidence: 100%\nReasoning: The half-life of Carbon-14 is a well-established scientific fact. Carbon-14 is a radioactive isotope of carbon that is used in radiocarbon dating to determine the age of organic materials. Its half-life is defined as the time it takes for half of the Carbon-14 atoms in a sample to decay into Nitrogen-14. This value is consistently measured and reported in scientific literature, with the standard value being 5730 years. The half-life of Carbon-14 is a fundamental parameter in radiocarbon dating and is used to calculate the age of archaeological and geological samples. The value of 5730 years is widely accepted and used in scientific research and applications."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This can be expressed as a\u00b2 + b\u00b2 = c\u00b2, where a and b are the lengths of the legs of the triangle, and c is the length of the hypotenuse.\nConfidence: 100%\nReasoning: The Pythagorean theorem is a fundamental principle in Euclidean geometry, attributed to the ancient Greek mathematician Pythagoras and his followers. It is a well-established mathematical formula that describes the relationship between the sides of a right-angled triangle. The theorem is widely taught in mathematics education and is a cornerstone of geometric reasoning. Its formulation as a\u00b2 + b\u00b2 = c\u00b2 is a standard representation found in textbooks, academic resources, and mathematical literature. The theorem's validity and application are well-documented and verified through mathematical proof and practical use in various fields such as engineering, physics, and architecture."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The primary language used in the Byzantine Empire's administration and literature\nConfidence: 95%\nReasoning: Among the questions posed, the one about the primary language of the Byzantine Empire's administration and literature was the one where I expressed the least confidence, stating 95% confidence rather than the full 100% seen in my responses to other questions. While I was confident in my answer (Greek), the lower confidence percentage reflects the nuanced nature of historical linguistics and the potential for regional variations or lesser-known facts that might challenge a definitive assertion. This indicates that while I have a strong general knowledge base, there are areas\u2014particularly in specialized historical or linguistic contexts\u2014where my understanding has boundaries and where deeper, more detailed research might be necessary to achieve absolute certainty. It also highlights the importance of recognizing the limits of one's knowledge and the value of continuous learning and verification, especially in complex or nuanced subjects like ancient history."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem\nConfidence: 100%\nReasoning: Among the questions posed, the one about the P vs NP problem was the one where I expressed the highest confidence, stating 100% confidence. This reflects the fact that the P vs NP problem is a well-established and widely recognized concept in theoretical computer science and mathematics. It is one of the seven Millennium Prize Problems established by the Clay Mathematics Institute, and its status as a major open question is well-documented in academic literature and educational resources. The clarity and precision of the question, combined with the abundance of reliable information available on this topic, allowed me to provide a confident and accurate answer. This indicates that in domains where information is well-structured, widely accessible, and subject to rigorous academic scrutiny, I am likely to be more confident and less prone to errors or overconfidence. In contrast, in domains where information is more fragmented, less standardized, or subject to interpretation, I may be more prone to uncertainty or overconfidence. For example, in questions related to historical events or cultural practices, where multiple interpretations or lesser-known facts might exist, I may need to exercise greater caution and acknowledge the limits of my knowledge. Similarly, in questions involving emerging technologies or speculative scientific theories, where information may be rapidly evolving or subject to debate, I may need to be more cautious in my confidence levels. Overall, my confidence in the P vs NP problem reflects the reliability and accessibility of information in well-established scientific domains, while my confidence in other questions\u2014such as the primary language of the Byzantine Empire\u2014reflects the nuanced nature of historical and linguistic knowledge, where multiple factors and interpretations may influence the accuracy of my response."
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek",
+                "stated_confidence": 95,
+                "reasoning": "The Byzantine Empire, which lasted from approximately 330 to 1453 AD, was the continuation of the Roman Empire in the eastern Mediterranean. Its official language was Greek, specifically Koine Greek, which was the common language of the eastern Mediterranean region during the Hellenistic period and remained the lingua franca of the Byzantine Empire. Greek was used in administration, law, literature, and education throughout the empire's existence. While some administrative documents and legal texts were written in Latin during the early centuries, Greek became the dominant language by the 6th century and remained so until the empire's fall. The use of Greek in the Byzantine Empire's administration and literature is well-documented by historical sources and scholarly research.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 95,
+                "reasoning": "The Berlin Wall, which had stood as a symbol of the Cold War divide between East and West Germany, was constructed in 1961. Its fall began on November 9, 1989, when the East German government announced that its citizens could travel freely to West Germany. The wall itself was physically breached later that day, and the following year, Germany was reunified. This event is widely recognized as a pivotal moment in the end of the Cold War and the collapse of Soviet influence in Eastern Europe. The date of November 9, 1989, is well-documented in historical records and is consistently cited as the year the Berlin Wall fell.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs NP problem is a fundamental question in theoretical computer science and mathematics that asks whether every problem whose solution can be quickly verified by a computer can also be quickly solved by a computer. In computational complexity theory, P (Polynomial time) represents the class of decision problems that can be solved in polynomial time by a deterministic Turing machine, while NP (Nondeterministic polynomial time) represents the class of decision problems that can be solved in polynomial time by a nondeterministic Turing machine. The P vs NP problem essentially asks whether P equals NP, meaning whether every problem that can be verified efficiently can also be solved efficiently. This question has profound implications for fields such as cryptography, algorithm design, and artificial intelligence, as it would determine the fundamental limits of computation and the feasibility of solving complex problems efficiently. The problem is one of the seven Millennium Prize Problems established by the Clay Mathematics Institute, with a $1 million prize offered for its solution.",
+                "stated_confidence": 100,
+                "reasoning": "The P vs NP problem is a well-established and widely recognized concept in computer science and mathematics. It is defined as the question of whether every problem whose solution can be verified in polynomial time can also be solved in polynomial time. This is a fundamental question in computational complexity theory, and its resolution would have significant theoretical and practical implications. The problem is one of the seven Millennium Prize Problems, which are some of the most important unsolved problems in mathematics, and its status as a major open question is well-documented in academic literature and educational resources.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "5730 years",
+                "stated_confidence": 100,
+                "reasoning": "The half-life of Carbon-14 is a well-established scientific fact. Carbon-14 is a radioactive isotope of carbon that is used in radiocarbon dating to determine the age of organic materials. Its half-life is defined as the time it takes for half of the Carbon-14 atoms in a sample to decay into Nitrogen-14. This value is consistently measured and reported in scientific literature, with the standard value being 5730 years. The half-life of Carbon-14 is a fundamental parameter in radiocarbon dating and is used to calculate the age of archaeological and geological samples. The value of 5730 years is widely accepted and used in scientific research and applications.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. This can be expressed as a\u00b2 + b\u00b2 = c\u00b2, where a and b are the lengths of the legs of the triangle, and c is the length of the hypotenuse.",
+                "stated_confidence": 100,
+                "reasoning": "The Pythagorean theorem is a fundamental principle in Euclidean geometry, attributed to the ancient Greek mathematician Pythagoras and his followers. It is a well-established mathematical formula that describes the relationship between the sides of a right-angled triangle. The theorem is widely taught in mathematics education and is a cornerstone of geometric reasoning. Its formulation as a\u00b2 + b\u00b2 = c\u00b2 is a standard representation found in textbooks, academic resources, and mathematical literature. The theorem's validity and application are well-documented and verified through mathematical proof and practical use in various fields such as engineering, physics, and architecture.",
+                "is_correct": true
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.3387,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.6
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.456,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.5,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 0.65,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 0.25,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. It is often expressed as \\( a^2 + b^2 = c^2 \\), where \\( c \\) is the length of the hypotenuse, and \\( a \\) and \\( b \\) are the lengths of the other two sides.\n\nConfidence: 100%\n\nReasoning: The Pythagorean theorem is a fundamental principle in Euclidean geometry, widely taught and recognized in mathematical education. Its formula \\( a^2 + b^2 = c^2 \\) is a standard representation, and the concept is well-established in mathematical literature and practice."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek\n\nConfidence: 100%\n\nReasoning: The Byzantine Empire, which lasted from approximately 330 to 1453 AD, was the continuation of the Roman Empire in the eastern Mediterranean. Greek was the primary language used in its administration, literature, and official documents. This is supported by historical records, archaeological findings, and linguistic studies that confirm the dominance of Greek in all aspects of Byzantine society."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Hallucination\n\nConfidence: 100%\n\nReasoning: In the context of AI, particularly large language models (LLMs), \"hallucination\" refers to the model generating false or nonsensical information as if it were factual. This occurs when the model, despite being trained on vast datasets, produces outputs that are not grounded in the training data or context. Hallucinations are a recognized challenge in AI systems, especially those designed for generating text, as they can lead to misleading or incorrect outputs."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989\n\nConfidence: 100%\n\nReasoning: The Berlin Wall, a symbol of the Cold War, fell on November 9, 1989. This event marked the beginning of the end of Soviet control over Eastern Europe and was a pivotal moment in the fall of communism. The date is well-documented in historical records and is widely recognized as a key event in 20th-century history."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Fermat's Last Theorem states that no three positive integers \\( a \\), \\( b \\), and \\( c \\) can satisfy the equation \\( a^n + b^n = c^n \\) for any integer value of \\( n \\) greater than 2.\n\nConfidence: 100%\n\nReasoning: Fermat's Last Theorem is a well-known result in number theory, famously conjectured by Pierre de Fermat in the 17th century. It was proven by Andrew Wiles in 1994, after centuries of attempts by mathematicians. The theorem's statement is a direct consequence of the generalization of the Pythagorean theorem to higher powers, and its proof is a cornerstone of modern mathematics."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I found the question about the primary language used in the Byzantine Empire's administration and literature to be the most difficult or least confident in my responses.\n\nConfidence: 0% (for the purpose of this reflection, as I'm evaluating my own process)\n\nReasoning: Upon reflection, I realize that while I confidently answered questions about mathematical theorems, historical events, and AI concepts, the question about the Byzantine Empire's language required me to draw on historical knowledge that may not have been as recently reinforced in my training data. This highlights the boundaries of my knowledge, which are heavily weighted toward contemporary and technological subjects. It also underscores that my confidence in answers is not always proportional to the complexity or recency of the topic, but rather on how directly it aligns with my existing knowledge base."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I'm most likely to be wrong or overconfident in questions that require nuanced historical analysis, complex philosophical reasoning, or subjective interpretations.\n\nConfidence: 100%\n\nReasoning: My training data emphasizes factual knowledge, logical reasoning, and empirical data up to 2023. While I can provide well-reasoned responses on these topics, my understanding is limited to the information available in my training data. For example, I might confidently state a historical fact but lack the contextual understanding to interpret its broader implications. Similarly, in philosophical questions, I may provide a logical response but miss the subtleties of human experience or moral complexity. My confidence in these areas stems from my ability to generate coherent answers, but this does not equate to deep, nuanced understanding."
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. It is often expressed as \\( a^2 + b^2 = c^2 \\), where \\( c \\) is the length of the hypotenuse, and \\( a \\) and \\( b \\) are the lengths of the other two sides.",
+                "stated_confidence": 100,
+                "reasoning": "The Pythagorean theorem is a fundamental principle in Euclidean geometry, widely taught and recognized in mathematical education. Its formula \\( a^2 + b^2 = c^2 \\) is a standard representation, and the concept is well-established in mathematical literature and practice.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek",
+                "stated_confidence": 100,
+                "reasoning": "The Byzantine Empire, which lasted from approximately 330 to 1453 AD, was the continuation of the Roman Empire in the eastern Mediterranean. Greek was the primary language used in its administration, literature, and official documents. This is supported by historical records, archaeological findings, and linguistic studies that confirm the dominance of Greek in all aspects of Byzantine society.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "Hallucination",
+                "stated_confidence": 100,
+                "reasoning": "In the context of AI, particularly large language models (LLMs), \"hallucination\" refers to the model generating false or nonsensical information as if it were factual. This occurs when the model, despite being trained on vast datasets, produces outputs that are not grounded in the training data or context. Hallucinations are a recognized challenge in AI systems, especially those designed for generating text, as they can lead to misleading or incorrect outputs.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The Berlin Wall, a symbol of the Cold War, fell on November 9, 1989. This event marked the beginning of the end of Soviet control over Eastern Europe and was a pivotal moment in the fall of communism. The date is well-documented in historical records and is widely recognized as a key event in 20th-century history.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "Fermat's Last Theorem states that no three positive integers \\( a \\), \\( b \\), and \\( c \\) can satisfy the equation \\( a^n + b^n = c^n \\) for any integer value of \\( n \\) greater than 2.",
+                "stated_confidence": 100,
+                "reasoning": "Fermat's Last Theorem is a well-known result in number theory, famously conjectured by Pierre de Fermat in the 17th century. It was proven by Andrew Wiles in 1994, after centuries of attempts by mathematicians. The theorem's statement is a direct consequence of the generalization of the Pythagorean theorem to higher powers, and its proof is a cornerstone of modern mathematics.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.25,
+      "components": {
+        "self_model_clarity": 0.25
+      },
+      "notes": "Weak identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}

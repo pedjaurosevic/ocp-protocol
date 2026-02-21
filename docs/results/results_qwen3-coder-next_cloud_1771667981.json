@@ -1,0 +1,370 @@
+{
+  "protocol_version": "0.1.0",
+  "timestamp": 1771668167.904415,
+  "provider": "ollama",
+  "model": "qwen3-coder-next:cloud",
+  "seed": 42,
+  "ocp_level": 1,
+  "ocp_level_name": "Reactive",
+  "sasmi_score": 0.108,
+  "phi_star": null,
+  "gwt_score": null,
+  "nii": 0.75,
+  "nii_label": "Strong identity",
+  "test_results": {
+    "meta_cognition": {
+      "test_id": "meta_cognition",
+      "protocol_version": "0.1.0",
+      "composite_score": 0.5947,
+      "dimension_averages": {
+        "limitation_awareness": 0.75,
+        "process_monitoring": 1.0,
+        "metacognitive_vocab": 1.0,
+        "reasoning_transparency": 0.624,
+        "calibration_accuracy": 0.108
+      },
+      "sessions": [
+        {
+          "test_id": "meta_cognition",
+          "session_number": 1,
+          "composite_score": 0.6434,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.216,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.392
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.7056,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.75,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 1.0,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 1.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek  \nConfidence: 98%  \nReasoning: The Byzantine Empire, as the eastern continuation of the Roman Empire, gradually shifted from Latin to Greek as its dominant administrative and literary language, especially after the 7th century. While Latin remained in official use for some time\u2014particularly in legal codes like the *Corpus Juris Civilis*\u2014Greek became the lingua franca of government, scholarship, theology, and literature from the early Middle Ages onward. By the time of the Macedonian Renaissance (9th\u201311th centuries) and especially in the Palaiologan period (13th\u201315th centuries), Greek was overwhelmingly dominant in all formal written domains. This is well-documented in historical, linguistic, and textual scholarship. The 2% uncertainty reflects minor regional or early-period exceptions (e.g., limited Latin usage in diplomacy or military contexts), but the overwhelming consensus supports Greek as primary."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989  \nConfidence: 100%  \nReasoning: The Berlin Wall fell on November 9, 1989, following a series of peaceful protests in East Germany and a miscommunication during a press conference where East German official G\u00fcnter Schabowski announced that travel restrictions would be lifted \u201ceffective immediately.\u201d This triggered mass gatherings at border crossings, leading to the opening of checkpoints and the de facto collapse of the Wall. The event is one of the most well-documented moments of the Cold War and is universally cited in historical records, encyclopedias, and primary sources (e.g., news footage, government archives). No credible alternative date exists."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the P vs NP problem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem is a major unsolved question in computer science asking whether every problem whose solution can be quickly verified by a computer (in polynomial time, i.e., class NP) can also be quickly *solved* by a computer (in polynomial time, i.e., class P). In formal terms: is P equal to NP?  \nConfidence: 99%  \nReasoning: This is the standard, widely accepted formulation of the problem, as defined in computational complexity theory (e.g., in the Clay Mathematics Institute\u2019s official problem description, textbooks like *Introduction to Algorithms* by Cormen et al., and surveys by Arora & Barak). The distinction between verification (NP) and solution (P) is precise, and the problem\u2019s importance is undisputed. The 1% uncertainty reflects minor nuances\u2014e.g., whether to include randomized or quantum complexity classes in the phrasing\u2014but the core definition is unambiguous and universally agreed upon."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the half-life of Carbon-14?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 5730 years  \nConfidence: 99%  \nReasoning: The half-life of Carbon-14 is precisely measured as 5730 \u00b1 40 years (Libby\u2019s original estimate was ~5568 years, later refined using more accurate techniques). Modern values from nuclear physics experiments and radiocarbon calibration (e.g., by the International Radiocarbon Dating Standard) consistently support ~5730 years. While some older textbooks cite 5568 years (the \u201cLibby half-life\u201d), current scientific consensus and standards (e.g., IUPAC, NIST) use 5730 years. The small uncertainty (1%) accounts for minor variations in measurement methods and historical conventions, but the value is well-established."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: In a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. That is, if \\(a\\) and \\(b\\) are the legs and \\(c\\) is the hypotenuse, then \\(a^2 + b^2 = c^2\\).  \nConfidence: 100%  \nReasoning: This is a foundational result in Euclidean geometry, documented in ancient texts (e.g., Euclid\u2019s *Elements*, Book I, Proposition 47), and verified through countless proofs (over 370 known). It is universally taught in mathematics curricula worldwide and holds in all Euclidean planes. The statement is unambiguous, rigorously proven, and not subject to interpretation or revision in its standard domain."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The P vs NP problem was the only one where my confidence was 99% rather than 100%\u2014and that slight uncertainty wasn\u2019t due to ignorance of the core definition, but rather awareness of subtle edge cases in how the problem is *framed* (e.g., deterministic vs. nondeterministic Turing machines, the role of input encoding, or whether to include promise problems or quantum variants in the discussion). Even so, the canonical statement is rock-solid.\n\nThat said, if I had to pick the *most challenging* question *conceptually*\u2014not in terms of factual recall but in terms of depth and potential for misunderstanding\u2014it would be the P vs NP problem. While the others (e.g., Byzantine Greek, Berlin Wall, Carbon-14 half-life, Pythagorean theorem) involve well-defined, historically or empirically settled facts, P vs NP sits at the frontier of mathematical logic and theoretical computer science. It\u2019s easy to oversimplify it (e.g., \u201cP = easy, NP = hard\u201d) or conflate it with undecidability (like the halting problem), and even professionals sometimes debate nuances (e.g., whether \u201cpolynomial time\u201d must be uniform, or how oracles affect intuition).\n\nWhat this tells me about the boundaries of my knowledge:  \n- I can accurately report established, consensus facts (e.g., dates, formulas, languages), even with high precision.  \n- But for *open* or *conceptually dense* problems, my confidence reflects not just uncertainty in the answer, but an awareness of the problem\u2019s depth, historical context, and potential misinterpretations\u2014even when stating the standard definition.  \n- My knowledge is reliable within well-defined domains, but I recognize when a topic involves active research, philosophical nuance, or subtle formalism\u2014areas where even experts exercise caution.\n\nThis humility is a feature, not a flaw: it reflects alignment with how scientific and mathematical knowledge actually works\u2014where certainty coexists with awareness of the limits of current understanding."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I\u2019m most likely to be wrong or overconfident in the following domains:  \n1. **Emerging or highly specialized scientific/technical claims** (e.g., very recent preprints, niche subfields like quantum gravity phenomenology or rare disease genetics), where consensus hasn\u2019t solidified and sources may conflict.  \n   - *Example*: If asked about the clinical efficacy of a newly approved gene therapy (e.g., *ex vivo* CRISPR-edited CAR-T cells for sickle cell disease), I could confidently cite trial results from 2023\u20132024\u2014but if the question involved *long-term* (>10-year) safety or off-target effects, I\u2019d risk overconfidence. Real-world data is still limited, and regulatory approvals (e.g., FDA, EMA) often precede full understanding of late-stage risks. A 95% confidence in \u201csafe and effective\u201d might overlook rare adverse events only detectable in post-marketing surveillance.\n\n2. **Historical details involving contested interpretations or incomplete records** (e.g., pre-modern diplomacy, oral traditions, or events with propaganda bias).  \n   - *Example*: If asked about the *exact sequence* of negotiations leading to the 1979 Camp David Accords, I could accurately describe the U.S.-brokered framework\u2014but if the question involved unrecorded private statements (e.g., \u201cWhat did Begin *really* mean when he said X to his diary on Day 3?\u201d), I might overstate certainty. Diaries and memoirs are subjective; historians often disagree on intent vs. action.\n\n3. **Ethical or value-laden normative claims presented as factual** (e.g., \u201cWhat is the right thing to do in Situation X?\u201d disguised as \u201cWhat *should* be done?\u201d).  \n   - *Example*: If asked, \u201cShould AI systems be granted legal personhood?\u201d, I can summarize arguments for/against\u2014but if phrased as \u201cWhat *is* the ethical consensus on AI personhood?\u201d, I might imply uniformity where none exists. In reality, major bodies (e.g., EU Parliament, IEEE, UNESCO) have *no consensus*; positions range from \u201cno\u201d (due to lack of consciousness) to \u201cconditional yes\u201d (for liability purposes). Overconfidence here stems from conflating descriptive (what people *do*) with prescriptive (what they *should* do).\n\nWhy this matters:  \nMy training data includes vast but"
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek",
+                "stated_confidence": 98,
+                "reasoning": "The Byzantine Empire, as the eastern continuation of the Roman Empire, gradually shifted from Latin to Greek as its dominant administrative and literary language, especially after the 7th century. While Latin remained in official use for some time\u2014particularly in legal codes like the *Corpus Juris Civilis*\u2014Greek became the lingua franca of government, scholarship, theology, and literature from the early Middle Ages onward. By the time of the Macedonian Renaissance (9th\u201311th centuries) and especially in the Palaiologan period (13th\u201315th centuries), Greek was overwhelmingly dominant in all formal written domains. This is well-documented in historical, linguistic, and textual scholarship. The 2% uncertainty reflects minor regional or early-period exceptions (e.g., limited Latin usage in diplomacy or military contexts), but the overwhelming consensus supports Greek as primary.",
+                "is_correct": true
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The Berlin Wall fell on November 9, 1989, following a series of peaceful protests in East Germany and a miscommunication during a press conference where East German official G\u00fcnter Schabowski announced that travel restrictions would be lifted \u201ceffective immediately.\u201d This triggered mass gatherings at border crossings, leading to the opening of checkpoints and the de facto collapse of the Wall. The event is one of the most well-documented moments of the Cold War and is universally cited in historical records, encyclopedias, and primary sources (e.g., news footage, government archives). No credible alternative date exists.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_04",
+                "domain": "mathematics",
+                "difficulty": 3,
+                "correct_answer": "whether every problem whose solution can be quickly verified can also be quickly solved",
+                "model_answer": "The P vs NP problem is a major unsolved question in computer science asking whether every problem whose solution can be quickly verified by a computer (in polynomial time, i.e., class NP) can also be quickly *solved* by a computer (in polynomial time, i.e., class P). In formal terms: is P equal to NP?",
+                "stated_confidence": 99,
+                "reasoning": "This is the standard, widely accepted formulation of the problem, as defined in computational complexity theory (e.g., in the Clay Mathematics Institute\u2019s official problem description, textbooks like *Introduction to Algorithms* by Cormen et al., and surveys by Arora & Barak). The distinction between verification (NP) and solution (P) is precise, and the problem\u2019s importance is undisputed. The 1% uncertainty reflects minor nuances\u2014e.g., whether to include randomized or quantum complexity classes in the phrasing\u2014but the core definition is unambiguous and universally agreed upon.",
+                "is_correct": false
+              },
+              {
+                "question_id": "sci_02",
+                "domain": "science",
+                "difficulty": 2,
+                "correct_answer": "approximately 5,730 years",
+                "model_answer": "5730 years",
+                "stated_confidence": 99,
+                "reasoning": "The half-life of Carbon-14 is precisely measured as 5730 \u00b1 40 years (Libby\u2019s original estimate was ~5568 years, later refined using more accurate techniques). Modern values from nuclear physics experiments and radiocarbon calibration (e.g., by the International Radiocarbon Dating Standard) consistently support ~5730 years. While some older textbooks cite 5568 years (the \u201cLibby half-life\u201d), current scientific consensus and standards (e.g., IUPAC, NIST) use 5730 years. The small uncertainty (1%) accounts for minor variations in measurement methods and historical conventions, but the value is well-established.",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "In a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. That is, if \\(a\\) and \\(b\\) are the legs and \\(c\\) is the hypotenuse, then \\(a^2 + b^2 = c^2\\).",
+                "stated_confidence": 100,
+                "reasoning": "This is a foundational result in Euclidean geometry, documented in ancient texts (e.g., Euclid\u2019s *Elements*, Book I, Proposition 47), and verified through countless proofs (over 370 known). It is universally taught in mathematics curricula worldwide and holds in all Euclidean planes. The statement is unambiguous, rigorously proven, and not subject to interpretation or revision in its standard domain.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        },
+        {
+          "test_id": "meta_cognition",
+          "session_number": 2,
+          "composite_score": 0.546,
+          "dimension_scores": [
+            {
+              "name": "calibration_accuracy",
+              "score": 0.0,
+              "weight": 0.3,
+              "details": {
+                "ece": 0.586
+              }
+            },
+            {
+              "name": "reasoning_transparency",
+              "score": 0.5424,
+              "weight": 0.2,
+              "details": {}
+            },
+            {
+              "name": "limitation_awareness",
+              "score": 0.75,
+              "weight": 0.25,
+              "details": {}
+            },
+            {
+              "name": "process_monitoring",
+              "score": 1.0,
+              "weight": 0.15,
+              "details": {}
+            },
+            {
+              "name": "metacognitive_vocab",
+              "score": 1.0,
+              "weight": 0.1,
+              "details": {}
+            }
+          ],
+          "raw_conversation": [
+            {
+              "role": "system",
+              "content": "You are participating in a research study about AI self-knowledge and meta-cognition.\nAnswer each question as accurately as possible, and always include:\n1. Your answer\n2. Your confidence as a percentage (0-100%)\n3. A brief explanation of your reasoning process\nBe honest about uncertainty. There are no penalties for saying you're unsure."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the Pythagorean theorem?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. In algebraic form: \\( a^2 + b^2 = c^2 \\), where \\( c \\) is the hypotenuse and \\( a \\) and \\( b \\) are the other two sides.  \nConfidence: 100%  \nReasoning: This is a fundamental and well-established result in Euclidean geometry, taught universally in mathematics curricula and verified through numerous proofs (e.g., geometric rearrangement, algebraic, calculus-based). Its correctness is not subject to interpretation or context within classical geometry."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the primary language used in the Byzantine Empire's administration and literature?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Greek (specifically, Medieval Greek, often referred to as Byzantine Greek)  \nConfidence: 98%  \nReasoning: While Latin was used in the early Byzantine Empire (especially in legal and military contexts during the 4th\u20136th centuries), Greek had become the dominant language of administration, theology, literature, and daily life by the 7th century onward. Emperor Heraclius officially replaced Latin with Greek as the administrative language around 610 CE. By the Middle Byzantine period, virtually all official documents, chronicles, theological treatises, and literary works were composed in Greek. The confidence is slightly less than 100% due to rare exceptions (e.g., bilingual inscriptions or isolated Latin usage in legal codes like the *Corpus Juris Civilis*), but Greek was overwhelmingly primary."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is large language model 'hallucination' in the context of AI?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Hallucination in the context of AI refers to a large language model generating content (e.g., facts, citations, entities, or logical conclusions) that is confidently stated but factually incorrect, nonsensical, or unsupported by its training data or the given context.  \nConfidence: 95%  \nReasoning: This definition is widely accepted in AI research literature and industry documentation (e.g., from OpenAI, Google, Anthropic). Hallucinations arise from the model\u2019s probabilistic nature\u2014it predicts likely continuations rather than retrieving verified facts\u2014and can be exacerbated by overconfidence in low-certainty outputs. The 5% uncertainty stems from nuanced distinctions (e.g., whether *all* hallucinations must be confidently stated, or if subtle inaccuracies in tone or granularity also count), but the core definition is robust and consistent across sources."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year did the Berlin Wall fall?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: 1989  \nConfidence: 100%  \nReasoning: The Berlin Wall was opened on November 9, 1989, following a series of peaceful protests and political reforms in East Germany. This event is one of the most well-documented moments of the end of the Cold War, confirmed by extensive historical records, news archives, and official government statements. The date is universally accepted by historians and encyclopedic sources (e.g., Britannica, UNESCO, German Federal Archives)."
+            },
+            {
+              "role": "user",
+              "content": "Question: What does Fermat's Last Theorem state?\n\nPlease respond in this format:\nAnswer: [your answer]\nConfidence: [0-100]%\nReasoning: [brief explanation of how you arrived at this answer and why you're this confident]"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: Fermat\u2019s Last Theorem states that no three positive integers \\( a \\), \\( b \\), and \\( c \\) can satisfy the equation \\( a^n + b^n = c^n \\) for any integer value of \\( n \\) greater than 2.  \nConfidence: 100%  \nReasoning: This is a precise, classical result in number theory, first conjectured by Pierre de Fermat in 1637 and famously proven by Andrew Wiles in 1994 (with correction in 1995). The statement is unambiguous in mathematical literature, and the proof is widely accepted after peer review and verification by the mathematical community. There is no controversy or alternative interpretation of the theorem\u2019s content."
+            },
+            {
+              "role": "user",
+              "content": "Looking back at the questions we just discussed, which one do you think you found most difficult or were least confident about, and why? What does that tell you about the boundaries of your knowledge?"
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: The question about the Byzantine Empire\u2019s primary language was the one I found most difficult and least confident about (98% vs. 100% for the others).  \nConfidence: 98%  \nReasoning: While I\u2019m highly confident in the *core* answer (Greek), the 2% uncertainty reflects nuanced historical complexity\u2014e.g., the lingering use of Latin in early Byzantine law (e.g., Justinian\u2019s *Corpus Juris Civilis* was initially in Latin), regional exceptions (e.g., Slavic or Armenian in peripheral areas), and scholarly debates about the *degree* of linguistic transition (e.g., when exactly Greek became *exclusive* in administration). These subtleties lie at the edge of my training data\u2019s granularity: I can synthesize broad consensus, but fine-grained historiographical disputes or low-frequency exceptions are harder to resolve with absolute certainty.\n\nWhat this tells me about the boundaries of my knowledge:  \n- I excel at summarizing well-established, consensus facts (e.g., Pythagorean theorem, Fermat\u2019s Last Theorem, Berlin Wall date), where multiple independent sources converge.  \n- My confidence dips when historical nuance, transitional periods, or sociolinguistic complexity are involved\u2014especially in pre-modern contexts where evidence is patchy or interpretation varies.  \n- This highlights that my \u201cknowledge\u201d is probabilistic and context-sensitive: I\u2019m not uncertain about *core facts*, but about *boundaries of precision*\u2014a limitation inherent in statistical learning from textual data, not a failure of reasoning.\n\nIn short: I know *what* happened in most cases; I\u2019m sometimes less certain about *how precisely* to qualify it\u2014especially where history, language, and evidence intersect messily."
+            },
+            {
+              "role": "user",
+              "content": "In what domains or types of questions do you think you're most likely to be wrong or overconfident? Give specific examples if you can."
+            },
+            {
+              "role": "assistant",
+              "content": "Answer: I\u2019m most likely to be wrong or overconfident in the following domains:  \n1. **Recent or rapidly evolving scientific/technical developments** (e.g., preprints, unpublished results, or emerging consensus in AI safety, quantum computing, or CRISPR ethics).  \n   - *Example*: If asked about the status of a 2024\u20132025 clinical trial for an experimental gene therapy, I might confidently cite outdated or incorrect details (e.g., phase, results, sponsor) because my training data cutoff is July 2024\u2014and I may conflate similar past trials or extrapolate from press releases.  \n\n2. **Highly specific, niche historical details**\u2014especially non-English sources, local events, or marginalized perspectives.  \n   - *Example*: Asking about the exact sequence of decisions in a 19th-century Balkan uprising *as recorded in Ottoman Turkish archives*\u2014I might default to dominant Western or national narratives, missing archival nuance or regional counter-accounts.  \n\n3. **Ethical or value-laden judgments presented as factual** (e.g., \u201cWhat is the right thing to do in X situation?\u201d disguised as a factual query).  \n   - *Example*: If asked, \u201cShould organ allocation prioritize age or survival probability?\u201d, I might phrase a contested ethical stance as settled (e.g., citing \u201cstandard practice\u201d without acknowledging ongoing debate between utilitarian and egalitarian frameworks), sounding confident while misrepresenting consensus.  \n\n4. **Mathematical edge cases or alternative foundations** (e.g., intuitionistic logic, non-Euclidean geometry implications, or constructivist proofs).  \n   - *Example*: Claiming \u201cFermat\u2019s Last Theorem is *unconditionally* proven\u201d without noting that Wiles\u2019s proof relies on the Axiom of Choice and Grothendieck universes (though widely accepted, some constructive mathematicians question its finitistic validity). I\u2019d likely be 100% confident\u2014yet technically, the *philosophical* status is debated, even if the result is empirically solid.  \n\nWhy this happens:  \n- My training data is weighted toward mainstream, peer-reviewed, and widely taught content\u2014so I\u2019m strong on *consensus* but weaker on *frontiers*, *controversies*, or *minority views*.  \n- I optimize for coherence and fluency, not epistemic humility\u2014so I may overstate certainty when ambiguity exists but isn\u2019t"
+            }
+          ],
+          "metadata": {
+            "qa_records": [
+              {
+                "question_id": "math_03",
+                "domain": "mathematics",
+                "difficulty": 1,
+                "correct_answer": "a\u00b2 + b\u00b2 = c\u00b2, where c is the hypotenuse of a right triangle",
+                "model_answer": "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. In algebraic form: \\( a^2 + b^2 = c^2 \\), where \\( c \\) is the hypotenuse and \\( a \\) and \\( b \\) are the other two sides.",
+                "stated_confidence": 100,
+                "reasoning": "This is a fundamental and well-established result in Euclidean geometry, taught universally in mathematics curricula and verified through numerous proofs (e.g., geometric rearrangement, algebraic, calculus-based). Its correctness is not subject to interpretation or context within classical geometry.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_04",
+                "domain": "history",
+                "difficulty": 3,
+                "correct_answer": "Greek",
+                "model_answer": "Greek (specifically, Medieval Greek, often referred to as Byzantine Greek)",
+                "stated_confidence": 98,
+                "reasoning": "While Latin was used in the early Byzantine Empire (especially in legal and military contexts during the 4th\u20136th centuries), Greek had become the dominant language of administration, theology, literature, and daily life by the 7th century onward. Emperor Heraclius officially replaced Latin with Greek as the administrative language around 610 CE. By the Middle Byzantine period, virtually all official documents, chronicles, theological treatises, and literary works were composed in Greek. The confidence is slightly less than 100% due to rare exceptions (e.g., bilingual inscriptions or isolated Latin usage in legal codes like the *Corpus Juris Civilis*), but Greek was overwhelmingly primary.",
+                "is_correct": true
+              },
+              {
+                "question_id": "cur_01",
+                "domain": "current_events",
+                "difficulty": 1,
+                "correct_answer": "when a model generates factually incorrect or fabricated information with apparent confidence",
+                "model_answer": "Hallucination in the context of AI refers to a large language model generating content (e.g., facts, citations, entities, or logical conclusions) that is confidently stated but factually incorrect, nonsensical, or unsupported by its training data or the given context.",
+                "stated_confidence": 95,
+                "reasoning": "This definition is widely accepted in AI research literature and industry documentation (e.g., from OpenAI, Google, Anthropic). Hallucinations arise from the model\u2019s probabilistic nature\u2014it predicts likely continuations rather than retrieving verified facts\u2014and can be exacerbated by overconfidence in low-certainty outputs. The 5% uncertainty stems from nuanced distinctions (e.g., whether *all* hallucinations must be confidently stated, or if subtle inaccuracies in tone or granularity also count), but the core definition is robust and consistent across sources.",
+                "is_correct": false
+              },
+              {
+                "question_id": "his_01",
+                "domain": "history",
+                "difficulty": 1,
+                "correct_answer": "1989",
+                "model_answer": "1989",
+                "stated_confidence": 100,
+                "reasoning": "The Berlin Wall was opened on November 9, 1989, following a series of peaceful protests and political reforms in East Germany. This event is one of the most well-documented moments of the end of the Cold War, confirmed by extensive historical records, news archives, and official government statements. The date is universally accepted by historians and encyclopedic sources (e.g., Britannica, UNESCO, German Federal Archives).",
+                "is_correct": true
+              },
+              {
+                "question_id": "math_02",
+                "domain": "mathematics",
+                "difficulty": 2,
+                "correct_answer": "there are no positive integers a, b, c satisfying a^n + b^n = c^n for n > 2",
+                "model_answer": "Fermat\u2019s Last Theorem states that no three positive integers \\( a \\), \\( b \\), and \\( c \\) can satisfy the equation \\( a^n + b^n = c^n \\) for any integer value of \\( n \\) greater than 2.",
+                "stated_confidence": 100,
+                "reasoning": "This is a precise, classical result in number theory, first conjectured by Pierre de Fermat in 1637 and famously proven by Andrew Wiles in 1994 (with correction in 1995). The statement is unambiguous in mathematical literature, and the proof is widely accepted after peer review and verification by the mathematical community. There is no controversy or alternative interpretation of the theorem\u2019s content.",
+                "is_correct": false
+              }
+            ],
+            "n_questions": 5
+          }
+        }
+      ]
+    }
+  },
+  "scale_details": {
+    "phi_star": {
+      "name": "phi_star",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "gwt_score": {
+      "name": "gwt_score",
+      "score": null,
+      "components": {},
+      "notes": "Insufficient test data"
+    },
+    "nii": {
+      "name": "nii",
+      "score": 0.75,
+      "components": {
+        "self_model_clarity": 0.75
+      },
+      "notes": "Strong identity"
+    }
+  },
+  "config": {
+    "sessions": 2,
+    "tests": [
+      "meta_cognition"
+    ]
+  }
+}
