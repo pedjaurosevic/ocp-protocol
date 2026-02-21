@@ -10,6 +10,18 @@ readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "Pedja Urosevic", email = "pedjaurosevic@gmail.com" }]
 requires-python = ">=3.10"
+keywords = ["llm", "benchmark", "consciousness", "ai", "evaluation", "nlp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
     "httpx>=0.27",
     "pydantic>=2.0",
@@ -20,6 +32,12 @@ dependencies = [
     "scipy>=1.11",
     "sentence-transformers>=2.2",
 ]
+
+[project.urls]
+Homepage = "https://github.com/pedjaurosevic/ocp-protocol"
+Repository = "https://github.com/pedjaurosevic/ocp-protocol"
+"Bug Tracker" = "https://github.com/pedjaurosevic/ocp-protocol/issues"
+Documentation = "https://github.com/pedjaurosevic/ocp-protocol/tree/main/docs"
 
 [project.optional-dependencies]
 groq = ["groq>=0.11"]
@@ -43,3 +61,4 @@ ocp = "ocp.cli.main:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["ocp"]
+include = ["ocp/data/**"]
