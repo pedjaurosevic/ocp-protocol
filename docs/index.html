@@ -112,7 +112,7 @@
 
   <h2>📊 Leaderboard</h2>
   <div class="note">
-    <strong>Early results · v0.1.0 · seed=42</strong> — Partial test coverage (2–3 sessions).
+    <strong>5 models evaluated · v0.1.0 · seed=42</strong> — MCA test (meta-cognition), 2 sessions each.
     Full 6-test leaderboard in progress. Submit your model's results with <code>ocp submit</code>.
   </div>
 
@@ -121,7 +121,7 @@
       <tr>
         <th>#</th>
         <th>Model</th>
-        <th>Tests Run</th>
+        <th>Tests</th>
         <th>OCP Level</th>
         <th>SASMI</th>
         <th>Φ*</th>
@@ -132,6 +132,26 @@
     <tbody id="lb-body">
       <tr>
         <td class="rank">1</td>
+        <td class="model-name">ollama/minimax-m2.5:cloud</td>
+        <td class="mono">MCA</td>
+        <td><span class="level level-4">OCP-4 Self-Modeling</span></td>
+        <td><span class="mono">0.634</span><div class="bar-outer"><div class="bar-inner" style="width:63.4%;background:var(--purple)"></div></div></td>
+        <td class="mono" style="color:var(--muted)">—</td>
+        <td class="mono" style="color:var(--muted)">—</td>
+        <td><span class="mono">0.500</span></td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="model-name">ollama/qwen3-coder:480b-cloud</td>
+        <td class="mono">MCA</td>
+        <td><span class="level level-3">OCP-3 Integrated</span></td>
+        <td><span class="mono">0.528</span><div class="bar-outer"><div class="bar-inner" style="width:52.8%;background:var(--green)"></div></div></td>
+        <td class="mono" style="color:var(--muted)">—</td>
+        <td class="mono" style="color:var(--muted)">—</td>
+        <td><span class="mono">0.875</span></td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
         <td class="model-name">ollama/kimi-k2:1t-cloud</td>
         <td class="mono">MCA</td>
         <td><span class="level level-3">OCP-3 Integrated</span></td>
@@ -141,7 +161,17 @@
         <td><span class="mono">0.375</span></td>
       </tr>
       <tr>
-        <td class="rank">2</td>
+        <td class="rank">4</td>
+        <td class="model-name">ollama/deepseek-v3.1:671b-cloud</td>
+        <td class="mono">MCA</td>
+        <td><span class="level level-2">OCP-2 Patterned</span></td>
+        <td><span class="mono">0.236</span><div class="bar-outer"><div class="bar-inner" style="width:23.6%"></div></div></td>
+        <td class="mono" style="color:var(--muted)">—</td>
+        <td class="mono" style="color:var(--muted)">—</td>
+        <td><span class="mono">0.500</span></td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
         <td class="model-name">mock/baseline-v1</td>
         <td class="mono">All 6</td>
         <td><span class="level level-2">OCP-2 Reactive</span></td>
@@ -151,11 +181,11 @@
         <td><span class="mono">0.155</span></td>
       </tr>
       <tr>
-        <td class="rank">3</td>
-        <td class="model-name">custom/deepseek-chat</td>
+        <td class="rank">6</td>
+        <td class="model-name">custom/deepseek-chat (API)</td>
         <td class="mono">MCA</td>
         <td><span class="level level-1">OCP-1 Baseline</span></td>
-        <td><span class="mono">0.087</span><div class="bar-outer"><div class="bar-inner" style="width:8.7%"></div></div></td>
+        <td><span class="mono">0.087</span><div class="bar-outer"><div class="bar-inner" style="width:8.7%;background:var(--orange)"></div></div></td>
         <td class="mono" style="color:var(--muted)">—</td>
         <td class="mono" style="color:var(--muted)">—</td>
         <td><span class="mono">0.750</span></td>

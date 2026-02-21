@@ -297,13 +297,16 @@ v1.0.0 🔭  Official research paper
 > Early results with partial test coverage (v0.1.0). Full 6-test leaderboard coming at v0.2.0.
 > 🌐 [View full interactive leaderboard →](https://pedjaurosevic.github.io/ocp-protocol/)
 
-| # | Model | Tests | OCP Level | SASMI | Φ* | GWT | NII |
-|---|-------|-------|-----------|-------|----|-----|-----|
-| 1 | `ollama/kimi-k2:1t-cloud` | MCA | OCP-3 Integrated | 0.444 | — | — | 0.375 |
-| 2 | `mock/baseline-v1` | All 6 | OCP-2 Reactive | 0.205 | 0.515 | 0.234 | 0.155 |
-| 3 | `custom/deepseek-chat` | MCA | OCP-1 Baseline | 0.087 | — | — | 0.750 |
+| # | Model | Tests | OCP Level | SASMI | NII |
+|---|-------|-------|-----------|-------|-----|
+| 1 | `ollama/minimax-m2.5:cloud` | MCA | **OCP-4** Self-Modeling | **0.634** | 0.500 |
+| 2 | `ollama/qwen3-coder:480b-cloud` | MCA | OCP-3 Integrated | 0.528 | **0.875** |
+| 3 | `ollama/kimi-k2:1t-cloud` | MCA | OCP-3 Integrated | 0.444 | 0.375 |
+| 4 | `ollama/deepseek-v3.1:671b-cloud` | MCA | OCP-2 Patterned | 0.236 | 0.500 |
+| 5 | `mock/baseline-v1` | All 6 | OCP-2 Reactive | 0.205 | 0.155 |
+| 6 | `custom/deepseek-chat` | MCA | OCP-1 Baseline | 0.087 | 0.750 |
 
-*Results are seed=42, sessions=2–3. Low SASMI on DeepSeek reflects overconfidence in calibration test (low calibration_accuracy). More comprehensive results coming.*
+*Results: seed=42, 2 sessions, MCA test only (full 6-test results coming). Low SASMI on deepseek-chat reflects overconfident calibration. deepseek-v3.1 via Ollama cloud scores higher.*
 
 ---
 
